@@ -8406,7 +8406,7 @@
             <div class="nav-links">
                 <a href="#benefits">لماذا لوتس؟</a>
                 <a href="#colors">الألوان</a>
-                <a href="#order-form">اطلبي الآن</a>
+                <a href="#actual-order-form">اطلبي الآن</a>
             </div>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -8425,7 +8425,7 @@
                     <div class="special-offer">
                         <span>عرض خاص: وفري أكثر عند شراء قطعتين أو ثلاثة!</span>
                     </div>
-                    <a href="#order-form" class="btn">اطلبي الآن واحصلي على عرضك</a>
+                    <a href="#actual-order-form" class="btn">اطلبي الآن واحصلي على عرضك</a>
                     <div class="hero-badges">
                         <div class="hero-badge">
                             <i class="fas fa-truck"></i>
@@ -8537,7 +8537,7 @@
                 </div>
                 
                 <div class="lotus-color-action">
-                    <button class="lotus-color-button">اطلبي الآن</button>
+                    <a href="#actual-order-form" class="lotus-color-button">اطلبي الآن</a>
                 </div>
             </div>
         </div>
@@ -8562,7 +8562,7 @@
                                 <span>الدفع عند الاستلام</span>
                             </div>
                         </div>
-                        <a href="#order-form" class="price-option-btn">اطلبي الآن</a>
+                        <a href="#actual-order-form" class="price-option-btn">اطلبي الآن</a>
                     </div>
                     <div class="price-option">
                         <div class="option-title">2 فستان</div>
@@ -8578,7 +8578,7 @@
                                 <span>الدفع عند الاستلام</span>
                             </div>
                         </div>
-                        <a href="#order-form" class="price-option-btn">اطلبي الآن</a>
+                        <a href="#actual-order-form" class="price-option-btn">اطلبي الآن</a>
                     </div>
                     <div class="price-option">
                         <div class="best-value">العرض الأفضل</div>
@@ -8597,12 +8597,12 @@
                         <div class="free-shipping">
                             <i class="fas fa-truck"></i> شحن مجاني!
                         </div>
-                        <a href="#order-form" class="price-option-btn">اطلبي الآن</a>
+                        <a href="#actual-order-form" class="price-option-btn">اطلبي الآن</a>
                     </div>
                 </div>
             </div>
             <h2 class="section-title">نموذج الطلب الفوري</h2>
-            <div class="order-form-container">
+            <div class="order-form-container" id="actual-order-form">
                 <form id="orderForm" class="order-form">
                     <div class="form-group">
                         <h3 class="form-subtitle"><i class="fas fa-palette"></i> اختيار اللون</h3>
@@ -9156,7 +9156,7 @@
 
                 <div class="testimonial-card fade-in-up delay-1">
                     <div class="testimonial-image-container">
-                        <img src="public/images/reviews/review-2.webp" alt="تقييم عميل" loading="lazy">
+                        <img src="public/images/reviews/review-5.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9212,7 +9212,7 @@
 
                 <div class="testimonial-card fade-in-up delay-2">
                     <div class="testimonial-image-container">
-                        <img src="public/images/reviews/review-5.png" alt="تقييم عميل" loading="lazy">
+                        <img src="public/images/reviews/review-2.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9301,7 +9301,7 @@
                             </a>
                         </li>
                         <li class="footer-link-item">
-                            <a href="#order-form" class="footer-link">
+                            <a href="#actual-order-form" class="footer-link">
                                 <i class="fas fa-chevron-left"></i>
                                 <span>اطلبي الآن</span>
                             </a>
@@ -10850,8 +10850,8 @@
         // Initialization when DOM is fully loaded
         document.addEventListener('DOMContentLoaded', function() {
             // ربط أزرار الطلب الرئيسية بفورم الطلب مع تأثير انتقال سلس
-            const orderButtons = document.querySelectorAll('.price-option-btn');
-            const orderForm = document.getElementById('order-form');
+            const orderButtons = document.querySelectorAll('a[href="#actual-order-form"]');
+            const orderForm = document.getElementById('actual-order-form');
             
             if (orderButtons.length > 0 && orderForm) {
                 orderButtons.forEach(button => {

@@ -178,9 +178,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             <div class="slider-container" id="height-slider-container">
                 <span class="slider-label">الطول <span class="slider-value" id="height-value">165 سم</span></span>
-                <input type="range" min="145" max="190" value="165" class="range-slider" id="height-slider">
+                <input type="range" min="150" max="185" value="165" class="range-slider" id="height-slider">
                 <div class="range-values">
-                    <span>145</span>
                     <span>150</span>
                     <span>155</span>
                     <span>160</span>
@@ -189,13 +188,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span>175</span>
                     <span>180</span>
                     <span>185</span>
-                    <span>190</span>
                 </div>
             </div>
             
             <div class="slider-container" id="weight-slider-container">
-                <span class="slider-label">الوزن <span class="slider-value" id="weight-value">65 كجم</span></span>
-                <input type="range" min="40" max="100" value="65" class="range-slider" id="weight-slider">
+                <span class="slider-label">الوزن <span class="slider-value" id="weight-value">60 كجم</span></span>
+                <input type="range" min="40" max="90" value="60" class="range-slider" id="weight-slider">
                 <div class="range-values">
                     <span>40</span>
                     <span>50</span>
@@ -203,14 +201,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span>70</span>
                     <span>80</span>
                     <span>90</span>
-                    <span>100</span>
                 </div>
             </div>
             
             <div class="result-container">
                 <h4 class="result-title">المقاس الموصى به</h4>
-                <div class="recommended-size" id="recommended-size">L</div>
-                <p class="size-note">المقاس الموصى به هو <span id="size-name">L</span></p>
+                <div class="recommended-size" id="recommended-size">M</div>
+                <p class="size-note">المقاس الموصى به هو <span id="size-name">M</span></p>
             </div>
         </div>
     `;
@@ -218,11 +215,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // البحث عن مكان لإضافة الآلة الحاسبة
     const orderFormSection = document.querySelector('#order-form');
     if (orderFormSection) {
-        // إنشاء حاوية لآلة حاسبة المقاسات وإدراجها قبل فورم الطلب
+        // إنشاء حاوية لآلة حاسبة المقاسات
         const calculatorContainer = document.createElement('div');
         calculatorContainer.innerHTML = calculatorHTML;
+        
+        // إدراج الآلة الحاسبة قبل نموذج الطلب
         orderFormSection.parentNode.insertBefore(calculatorContainer.firstElementChild, orderFormSection);
-            
+        
         // تنفيذ وظائف آلة حاسبة المقاسات
         initSizeCalculator();
         
@@ -235,6 +234,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // وظيفة لتهيئة آلة حاسبة المقاسات
     function initSizeCalculator() {
+        // Variables para almacenar los valores actuales
+        let currentHeight = 165; // Valor inicial en cm
+        let currentWeight = 60; // Valor inicial en kg
+        let currentUnit = 'metric'; // Unidad inicial: metric o imperial
+        
+        // Definición de tallas para mujeres
+        const womenSizes = [
+            { size: 'M', heightRange: [155, 165], weightRange: [50, 60] },
+            { size: 'L', heightRange: [165, 170], weightRange: [60, 70] },
+            { size: 'XL', heightRange: [170, 175], weightRange: [70, 80] },
+            { size: 'XXL', heightRange: [175, 185], weightRange: [80, 90] }
+        ];
+        
         // العناصر الرئيسية
         const heightSlider = document.getElementById('height-slider');
         const weightSlider = document.getElementById('weight-slider');
@@ -244,187 +256,249 @@ document.addEventListener('DOMContentLoaded', function() {
         const sizeName = document.getElementById('size-name');
         const unitOptions = document.querySelectorAll('.unit-option');
         
-        // المقاسات بناءً على البيانات المقدمة للنساء
-        const sizesMetric = [
-            { size: 'M', heightMin: 155, heightMax: 165, weightMin: 50, weightMax: 60 },
-            { size: 'L', heightMin: 165, heightMax: 170, weightMin: 60, weightMax: 70 },
-            { size: 'XL', heightMin: 170, heightMax: 175, weightMin: 70, weightMax: 80 },
-            { size: 'XXL', heightMin: 175, heightMax: 185, weightMin: 80, weightMax: 90 }
-        ];
+        // تهيئة قيم البداية
+        initializeCalculator();
         
-        // تحويل المقاسات المترية إلى إمبريالي
-        const sizesImperial = sizesMetric.map(size => ({
-            size: size.size,
-            heightMin: Math.round(size.heightMin / 30.48 * 10) / 10, // تحويل سم إلى قدم
-            heightMax: Math.round(size.heightMax / 30.48 * 10) / 10,
-            weightMin: Math.round(size.weightMin * 2.205), // تحويل كجم إلى رطل
-            weightMax: Math.round(size.weightMax * 2.205)
-        }));
-        
-        // المتغيرات الحالية
-        let currentUnit = 'metric';
-        let currentHeight = 165;
-        let currentWeight = 65;
-        
-        // تحديث أشرطة التمرير عند تغيير الوحدة
+        // تحويث أشرطة التمرير عند تغيير الوحدة
         unitOptions.forEach(option => {
             option.addEventListener('click', function() {
-                const unit = this.dataset.unit;
-                if (unit === currentUnit) return;
-                
-                // تحديث التنشيط المرئي
                 unitOptions.forEach(opt => opt.classList.remove('active'));
                 this.classList.add('active');
                 
-                // تحويل القيم
-                if (unit === 'imperial') {
-                    // تحويل من متري إلى إمبريالي
-                    currentHeight = Math.round(currentHeight / 30.48 * 10) / 10;
-                    currentWeight = Math.round(currentWeight * 2.205);
-                    
-                    // تحديث أشرطة التمرير
-                    heightSlider.min = 4.8;
-                    heightSlider.max = 6.2;
-                    heightSlider.step = 0.1;
-                    heightSlider.value = currentHeight;
-                    heightValue.textContent = currentHeight + ' قدم';
-                    
-                    weightSlider.min = 88;
-                    weightSlider.max = 220;
-                    weightSlider.value = currentWeight;
-                    weightValue.textContent = currentWeight + ' رطل';
-                    
-                    // تحديث نص القيم
-                    document.querySelectorAll('#height-slider-container .range-values span').forEach((span, i) => {
-                        const value = 4.8 + (i * 0.15);
-                        span.textContent = value.toFixed(1);
-                    });
-                    
-                    document.querySelectorAll('#weight-slider-container .range-values span').forEach((span, i) => {
-                        const value = 88 + (i * 22);
-                        span.textContent = Math.round(value);
-                    });
-                    
-                } else {
-                    // تحويل من إمبريالي إلى متري
-                    currentHeight = Math.round(currentHeight * 30.48) / 100;
-                    currentWeight = Math.round(currentWeight / 2.205);
-                    
-                    // تحديث أشرطة التمرير
-                    heightSlider.min = 145;
-                    heightSlider.max = 190;
-                    heightSlider.step = 1;
-                    heightSlider.value = currentHeight;
-                    heightValue.textContent = currentHeight + ' سم';
-                    
-                    weightSlider.min = 40;
-                    weightSlider.max = 100;
-                    weightSlider.value = currentWeight;
-                    weightValue.textContent = currentWeight + ' كجم';
-                    
-                    // تحديث نص القيم
-                    document.querySelectorAll('#height-slider-container .range-values span').forEach((span, i) => {
-                        span.textContent = 145 + (i * 5);
-                    });
-                    
-                    document.querySelectorAll('#weight-slider-container .range-values span').forEach((span, i) => {
-                        span.textContent = 40 + (i * 10);
-                    });
+                const newUnit = this.getAttribute('data-unit');
+                if (newUnit !== currentUnit) {
+                    currentUnit = newUnit;
+                    convertValues();
+                    updateSliders();
                 }
-                
-                currentUnit = unit;
-                updateRecommendedSize();
             });
         });
         
         // تحديث قيمة الطول عند تحريك شريط التمرير
         heightSlider.addEventListener('input', function() {
             currentHeight = parseFloat(this.value);
-            heightValue.textContent = currentHeight + (currentUnit === 'metric' ? ' سم' : ' قدم');
+            updateHeightValue();
             updateRecommendedSize();
         });
         
         // تحديث قيمة الوزن عند تحريك شريط التمرير
         weightSlider.addEventListener('input', function() {
             currentWeight = parseFloat(this.value);
-            weightValue.textContent = currentWeight + (currentUnit === 'metric' ? ' كجم' : ' رطل');
+            updateWeightValue();
             updateRecommendedSize();
         });
         
         // وظيفة لتحديث المقاس الموصى به بناءً على الطول والوزن
         function updateRecommendedSize() {
-            const sizes = currentUnit === 'metric' ? sizesMetric : sizesImperial;
-            let selectedSize = '';
+            let size = '';
+            const height = parseInt(heightValue.textContent);
+            const weight = parseInt(weightValue.textContent);
             
-            // التحقق من كل نطاق مقاس
-            for (const size of sizes) {
-                if (currentHeight >= size.heightMin && currentHeight <= size.heightMax && 
-                    currentWeight >= size.weightMin && currentWeight <= size.weightMax) {
-                    selectedSize = size.size;
-                    break;
+            // تحديد المقاس بناءً على نطاقات محددة للنساء
+            // تحديثات نطاقات المقاسات للنساء
+            if (currentUnit === 'metric') {
+                // النطاقات المترية (سم/كجم)
+                if (height >= 155 && height < 165 && weight >= 50 && weight < 60) {
+                    size = 'M';
+                } else if ((height >= 165 && height < 170 && weight >= 60 && weight < 70)) {
+                    size = 'L';
+                } else if ((height >= 170 && height < 175 && weight >= 70 && weight < 80)) {
+                    size = 'XL';
+                } else if ((height >= 175 && height <= 185 && weight >= 80 && weight <= 90)) {
+                    size = 'XXL';
+                } else {
+                    // خارج النطاق المحدد
+                    size = 'غير متوفر';
+                }
+            } else {
+                // النطاقات الإمبريالية (بوصة/رطل)
+                // تحويل نطاقات المقاسات المترية إلى الإمبريالية
+                // M: 155-165 cm (61-65 inches), 50-60 kg (110-132 lbs)
+                // L: 165-170 cm (65-67 inches), 60-70 kg (132-154 lbs)
+                // XL: 170-175 cm (67-69 inches), 70-80 kg (154-176 lbs)
+                // XXL: 175-185 cm (69-73 inches), 80-90 kg (176-198 lbs)
+                if (height >= 61 && height < 65 && weight >= 110 && weight < 132) {
+                    size = 'M';
+                } else if ((height >= 65 && height < 67 && weight >= 132 && weight < 154)) {
+                    size = 'L';
+                } else if ((height >= 67 && height < 69 && weight >= 154 && weight < 176)) {
+                    size = 'XL';
+                } else if ((height >= 69 && height <= 73 && weight >= 176 && weight <= 198)) {
+                    size = 'XXL';
+                } else {
+                    // خارج النطاق المحدد
+                    size = 'غير متوفر';
                 }
             }
             
-            // إذا لم يتم العثور على مقاس مطابق، ابحث عن أقرب مقاس بناءً على الطول
-            if (!selectedSize) {
-                let closestSize = sizes[0];
-                let minDistance = Infinity;
+            // تحديث المقاس الموصى به في الواجهة
+            recommendedSize.textContent = size;
+            sizeName.textContent = size;
+        }
+        
+        // تحديث أشرطة التمرير عند تغيير الوحدة
+        function updateSliders() {
+            if (currentUnit === 'metric') {
+                // Configuración para centímetros
+                heightSlider.min = 150;
+                heightSlider.max = 190;
+                heightSlider.step = 1;
+                heightSlider.value = currentHeight;
                 
-                for (const size of sizes) {
-                    // التحقق مما إذا كان الطول ضمن النطاق، ثم التحقق من المسافة للوزن
-                    if (currentHeight >= size.heightMin && currentHeight <= size.heightMax) {
-                        if (currentWeight < size.weightMin) {
-                            const distance = size.weightMin - currentWeight;
-                            if (distance < minDistance) {
-                                minDistance = distance;
-                                closestSize = size;
-                            }
-                        } else {
-                            const distance = currentWeight - size.weightMax;
-                            if (distance < minDistance) {
-                                minDistance = distance;
-                                closestSize = size;
-                            }
-                        }
-                    } else {
-                        // إذا كان الطول خارج النطاق، فحدد أقرب نطاق
-                        const heightDist = currentHeight < size.heightMin ? 
-                                        size.heightMin - currentHeight : 
-                                        currentHeight - size.heightMax;
-                        
-                        // أضف مسافة إضافية للوزن إذا كان خارج النطاق
-                        let weightDist = 0;
-                        if (currentWeight < size.weightMin) {
-                            weightDist = size.weightMin - currentWeight;
-                        } else if (currentWeight > size.weightMax) {
-                            weightDist = currentWeight - size.weightMax;
-                        }
-                        
-                        const totalDist = heightDist + weightDist;
-                        if (totalDist < minDistance) {
-                            minDistance = totalDist;
-                            closestSize = size;
-                        }
-                    }
-                }
+                // Configuración para kilogramos
+                weightSlider.min = 45;
+                weightSlider.max = 95;
+                weightSlider.step = 1;
+                weightSlider.value = currentWeight;
+            } else {
+                // Configuración para pulgadas
+                heightSlider.min = 59; // ~150cm
+                heightSlider.max = 75; // ~190cm
+                heightSlider.step = 1;
+                heightSlider.value = currentHeight;
                 
-                selectedSize = closestSize.size;
+                // Configuración para libras
+                weightSlider.min = 99; // ~45kg
+                weightSlider.max = 209; // ~95kg
+                weightSlider.step = 1;
+                weightSlider.value = currentWeight;
             }
             
-            // التحقق من الحالات الخاصة للقيم المتطرفة
-            if (currentHeight < 155 || currentHeight > 185 || currentWeight < 50 || currentWeight > 90) {
-                if (currentUnit === 'metric') {
-                    if (currentHeight < 155 && currentWeight < 50) selectedSize = 'S'; // أصغر من الحد الأدنى
-                    else if (currentHeight > 185 && currentWeight > 90) selectedSize = 'XXXL'; // أكبر من الحد الأقصى
-                }
-            }
-            
-            // تحديث المقاس الموصى به
-            recommendedSize.textContent = selectedSize;
-            sizeName.textContent = selectedSize;
+            updateHeightValue();
+            updateWeightValue();
         }
         
         // التحديث المبدئي
         updateRecommendedSize();
+    }
+
+    // تهيئة قيم البداية
+    function initializeCalculator() {
+        // تعيين القيم الافتراضية للوحدات المترية
+        if (currentUnit === 'metric') {
+            // القيم المترية
+            heightSlider.min = 150;
+            heightSlider.max = 190;
+            heightSlider.value = 165;
+            heightSlider.step = 1;
+            heightValue.textContent = heightSlider.value;
+            heightUnitLabel.textContent = 'سم';
+
+            weightSlider.min = 45;
+            weightSlider.max = 95;
+            weightSlider.value = 60;
+            weightSlider.step = 1;
+            weightValue.textContent = weightSlider.value;
+            weightUnitLabel.textContent = 'كجم';
+        } else {
+            // القيم الإمبريالية
+            heightSlider.min = 59; // ~150 cm
+            heightSlider.max = 75; // ~190 cm
+            heightSlider.value = 65; // ~165 cm
+            heightSlider.step = 1;
+            heightValue.textContent = heightSlider.value;
+            heightUnitLabel.textContent = 'بوصة';
+
+            weightSlider.min = 99; // ~45 kg
+            weightSlider.max = 209; // ~95 kg
+            weightSlider.value = 132; // ~60 kg
+            weightSlider.step = 1;
+            weightValue.textContent = weightSlider.value;
+            weightUnitLabel.textContent = 'رطل';
+        }
+
+        // تحديث القيم الحالية
+        currentHeight = heightSlider.value;
+        currentWeight = weightSlider.value;
+        
+        // تحديث المقاس الموصى به
+        updateRecommendedSize();
+    }
+
+    // تهيئة قيم البداية
+    // العثور على أقرب مقاس بناء على الطول والوزن
+    function findClosestSize(sizes) {
+        let closestSize = '';
+        let minDistance = Infinity;
+        
+        for (const size of sizes) {
+            let heightDist = 0;
+            let weightDist = 0;
+            
+            if (currentUnit === 'metric') {
+                // حساب المسافة للطول
+                if (currentHeight < size.heightRange[0]) {
+                    heightDist = size.heightRange[0] - currentHeight;
+                } else if (currentHeight > size.heightRange[1]) {
+                    heightDist = currentHeight - size.heightRange[1];
+                }
+                
+                // حساب المسافة للوزن
+                if (currentWeight < size.weightRange[0]) {
+                    weightDist = size.weightRange[0] - currentWeight;
+                } else if (currentWeight > size.weightRange[1]) {
+                    weightDist = currentWeight - size.weightRange[1];
+                }
+            } else {
+                // حساب المسافة للطول (النظام الإمبراطوري)
+                if (currentHeight < size.heightRange[0]) {
+                    heightDist = size.heightRange[0] - currentHeight;
+                } else if (currentHeight > size.heightRange[1]) {
+                    heightDist = currentHeight - size.heightRange[1];
+                }
+                
+                // حساب المسافة للوزن (النظام الإمبراطوري)
+                if (currentWeight < size.weightRange[0]) {
+                    weightDist = size.weightRange[0] - currentWeight;
+                } else if (currentWeight > size.weightRange[1]) {
+                    weightDist = currentWeight - size.weightRange[1];
+                }
+            }
+            
+            // حساب المسافة الإجمالية
+            const totalDist = heightDist + weightDist;
+            
+            if (totalDist < minDistance) {
+                minDistance = totalDist;
+                closestSize = size.size;
+            }
+        }
+        
+        return closestSize;
+    }
+
+    // Función para actualizar el valor mostrado de altura
+    function updateHeightValue() {
+        if (currentUnit === 'metric') {
+            heightValue.textContent = `${currentHeight} سم`;
+        } else {
+            // Convertir cm a pies y pulgadas para mostrar
+            const inches = Math.round(currentHeight);
+            const feet = Math.floor(inches / 12);
+            const remainingInches = inches % 12;
+            heightValue.textContent = `${feet}'${remainingInches}"`;
+        }
+    }
+    
+    // Función para actualizar el valor mostrado de peso
+    function updateWeightValue() {
+        if (currentUnit === 'metric') {
+            weightValue.textContent = `${currentWeight} كجم`;
+        } else {
+            weightValue.textContent = `${currentWeight} رطل`;
+        }
+    }
+    
+    // Función para convertir valores entre unidades métricas e imperiales
+    function convertValues() {
+        if (currentUnit === 'metric') {
+            // Convertir de imperial a métrico
+            currentHeight = Math.round(currentHeight * 2.54); // pulgadas a cm
+            currentWeight = Math.round(currentWeight * 0.453592); // libras a kg
+        } else {
+            // Convertir de métrico a imperial
+            currentHeight = Math.round(currentHeight / 2.54); // cm a pulgadas
+            currentWeight = Math.round(currentWeight / 0.453592); // kg a libras
+        }
     }
 }); 
