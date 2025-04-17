@@ -483,7 +483,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
         }
 
@@ -625,7 +625,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -742,7 +742,7 @@
             right: 0;
             width: 150px;
             height: 150px;
-            background-image: url('images/icons/savings.svg');
+            background-image: url('public/images/icons/savings.svg');
             background-size: contain;
             background-repeat: no-repeat;
             opacity: 0.1;
@@ -918,7 +918,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -1121,7 +1121,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -2079,7 +2079,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -2301,7 +2301,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: -1;
         }
@@ -3838,7 +3838,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -4060,7 +4060,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: -1;
         }
@@ -5597,7 +5597,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -5819,7 +5819,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: -1;
         }
@@ -7356,7 +7356,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -7578,7 +7578,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/subtle-pattern.png');
+            background-image: url('public/images/subtle-pattern.png');
             opacity: 0.05;
             z-index: -1;
         }
@@ -8391,7 +8391,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
     </style>
 </head>
 <body>
@@ -8407,7 +8406,7 @@
             <div class="nav-links">
                 <a href="#benefits">لماذا لوتس؟</a>
                 <a href="#colors">الألوان</a>
-                <a href="#order-form">اطلبي الآن</a>
+                <a href="#actual-order-form">اطلبي الآن</a>
             </div>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -8426,7 +8425,7 @@
                     <div class="special-offer">
                         <span>عرض خاص: وفري أكثر عند شراء قطعتين أو ثلاثة!</span>
                     </div>
-                    <a href="#order-form" class="btn">اطلبي الآن واحصلي على عرضك</a>
+                    <a href="#actual-order-form" class="btn">اطلبي الآن واحصلي على عرضك</a>
                     <div class="hero-badges">
                         <div class="hero-badge">
                             <i class="fas fa-truck"></i>
@@ -8439,8 +8438,8 @@
                     </div>
                 </div>
                 <div class="hero-image hero-video-wrapper">
-                    <video class="hero-video" src="images/black/black_video.mp4" autoplay loop muted playsinline poster="images/black-in-home.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.15);">
-                        متصفحك لا يدعم تشغيل الفيديو. <img src="images/black-in-home.jpg" alt="فستان لوتس الأنيق">
+                    <video class="hero-video" src="public/images/black/black_video.mp4" autoplay loop muted playsinline poster="public/images/black-in-home.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.15);">
+                        متصفحك لا يدعم تشغيل الفيديو. <img src="public/images/black-in-home.jpg" alt="فستان لوتس الأنيق">
                     </video>
                 </div>
             </div>
@@ -8491,26 +8490,26 @@
         <h3>اكتشفي ألوان فستان لوتس</h3>
         <div class="lotus-color-container">
             <div class="lotus-main-image">
-                <img src="images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس" id="main-color-image">
+                <img src="public/images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس" id="main-color-image">
             </div>
             <div class="lotus-color-details">
                 <div class="lotus-color-selectors">
                     <h4 class="lotus-color-selector-title">اختاري اللون المناسب لكِ</h4>
                     <div class="lotus-color-options">
                         <div class="lotus-color-option" data-color="أحمر" 
-                             data-main="images/red/red-color.png" 
+                             data-main="public/images/red/red-color.png" 
                              style="background-color: #B74141;">
                         </div>
                         <div class="lotus-color-option" data-color="بيج" 
-                             data-main="images/Beige/1.jpg" 
+                             data-main="public/images/Beige/1.jpg" 
                              style="background-color: #D2B48C;">
                         </div>
                         <div class="lotus-color-option" data-color="أبيض" 
-                             data-main="images/white/white-color-4.jpg" 
+                             data-main="public/images/white/white-color-4.jpg" 
                              style="background-color: #F5F5F5; border: 1px solid #e0e0e0;">
                         </div>
                         <div class="lotus-color-option active" data-color="أسود" 
-                             data-main="images/black/TH_K1109614_001_0.jpeg" 
+                             data-main="public/images/black/TH_K1109614_001_0.jpeg" 
                              style="background-color: #333333;">
                         </div>
                     </div>
@@ -8523,22 +8522,22 @@
                 
                 <div class="lotus-thumbnails" id="color-thumbnails">
                     <!-- Black thumbnails (default) -->
-                    <div class="lotus-thumbnail active" data-image="images/black/TH_K1109614_001_0.jpeg">
-                        <img src="images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس أسود">
+                    <div class="lotus-thumbnail active" data-image="public/images/black/TH_K1109614_001_0.jpeg">
+                        <img src="public/images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس أسود">
                     </div>
-                    <div class="lotus-thumbnail" data-image="images/black/TH_K1109614_001_D0.jpeg">
-                        <img src="images/black/TH_K1109614_001_D0.jpeg" alt="فستان لوتس أسود">
+                    <div class="lotus-thumbnail" data-image="public/images/black/TH_K1109614_001_D0.jpeg">
+                        <img src="public/images/black/TH_K1109614_001_D0.jpeg" alt="فستان لوتس أسود">
                     </div>
-                    <div class="lotus-thumbnail" data-image="images/black/TH_K1109614_001_B0.jpeg">
-                        <img src="images/black/TH_K1109614_001_B0.jpeg" alt="فستان لوتس أسود">
+                    <div class="lotus-thumbnail" data-image="public/images/black/TH_K1109614_001_B0.jpeg">
+                        <img src="public/images/black/TH_K1109614_001_B0.jpeg" alt="فستان لوتس أسود">
                     </div>
-                    <div class="lotus-thumbnail" data-image="images/black/TH_K1109614_001_F0.avif">
-                        <img src="images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس أسود">
+                    <div class="lotus-thumbnail" data-image="public/images/black/TH_K1109614_001_F0.avif">
+                        <img src="public/images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس أسود">
                     </div>
                 </div>
                 
                 <div class="lotus-color-action">
-                    <button class="lotus-color-button">اطلبي الآن</button>
+                    <a href="#actual-order-form" class="lotus-color-button">اطلبي الآن</a>
                 </div>
             </div>
         </div>
@@ -8563,7 +8562,7 @@
                                 <span>الدفع عند الاستلام</span>
                             </div>
                         </div>
-                        <a href="#order-form" class="price-option-btn">اطلبي الآن</a>
+                        <a href="#actual-order-form" class="price-option-btn">اطلبي الآن</a>
                     </div>
                     <div class="price-option">
                         <div class="option-title">2 فستان</div>
@@ -8579,7 +8578,7 @@
                                 <span>الدفع عند الاستلام</span>
                             </div>
                         </div>
-                        <a href="#order-form" class="price-option-btn">اطلبي الآن</a>
+                        <a href="#actual-order-form" class="price-option-btn">اطلبي الآن</a>
                     </div>
                     <div class="price-option">
                         <div class="best-value">العرض الأفضل</div>
@@ -8598,12 +8597,12 @@
                         <div class="free-shipping">
                             <i class="fas fa-truck"></i> شحن مجاني!
                         </div>
-                        <a href="#order-form" class="price-option-btn">اطلبي الآن</a>
+                        <a href="#actual-order-form" class="price-option-btn">اطلبي الآن</a>
                     </div>
                 </div>
             </div>
             <h2 class="section-title">نموذج الطلب الفوري</h2>
-            <div class="order-form-container">
+            <div class="order-form-container" id="actual-order-form">
                 <form id="orderForm" class="order-form">
                     <div class="form-group">
                         <h3 class="form-subtitle"><i class="fas fa-palette"></i> اختيار اللون</h3>
@@ -8631,7 +8630,7 @@
                         </div>
                         <div class="color-preview">
                             <div id="colorPreview" class="color-preview-image">
-                                <img src="images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس" id="colorPreviewImage">
+                                <img src="public/images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس" id="colorPreviewImage">
                             </div>
                         </div>
                     </div>
@@ -9104,121 +9103,6 @@
         }
         </style>
         
-        <!-- Modal de Confirmación de Pedido -->
-        <div class="modal fade" id="orderConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="orderConfirmationModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="orderConfirmationModalLabel">إتمام الطلب</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4>بيانات العميل</h4>
-                                <form id="customerInfoForm">
-                                    <div class="form-group">
-                                        <label for="customerName">الاسم بالكامل</label>
-                                        <input type="text" class="form-control" id="customerName" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="customerPhone">رقم الهاتف</label>
-                                        <input type="tel" class="form-control" id="customerPhone" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="customerAddress">العنوان بالتفصيل</label>
-                                        <textarea class="form-control" id="customerAddress" rows="3" required></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="customerGovernorate">المحافظة</label>
-                                        <select class="form-control" id="customerGovernorate" required>
-                                            <option value="" selected disabled>اختر المحافظة</option>
-                                            <option value="القاهرة">القاهرة</option>
-                                            <option value="الجيزة">الجيزة</option>
-                                            <option value="الإسكندرية">الإسكندرية</option>
-                                            <option value="البحيرة">البحيرة</option>
-                                            <option value="مطروح">مطروح</option>
-                                            <option value="المنوفية">المنوفية</option>
-                                            <option value="القليوبية">القليوبية</option>
-                                            <option value="الشرقية">الشرقية</option>
-                                            <option value="كفر الشيخ">كفر الشيخ</option>
-                                            <option value="الغربية">الغربية</option>
-                                            <option value="الدقهلية">الدقهلية</option>
-                                            <option value="دمياط">دمياط</option>
-                                            <option value="بورسعيد">بورسعيد</option>
-                                            <option value="الإسماعيلية">الإسماعيلية</option>
-                                            <option value="السويس">السويس</option>
-                                            <option value="بني سويف">بني سويف</option>
-                                            <option value="الفيوم">الفيوم</option>
-                                            <option value="المنيا">المنيا</option>
-                                            <option value="أسيوط">أسيوط</option>
-                                            <option value="سوهاج">سوهاج</option>
-                                            <option value="قنا">قنا</option>
-                                            <option value="الأقصر">الأقصر</option>
-                                            <option value="أسوان">أسوان</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="customerNotes">ملاحظات (اختياري)</label>
-                                        <textarea class="form-control" id="customerNotes" rows="2"></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-6">
-                                <h4>ملخص الطلب</h4>
-                                <div id="orderSummaryContainer" class="order-summary-container">
-                                    <!-- سيتم تعبئة هذا القسم ديناميكيًا -->
-                                </div>
-                                
-                                <div class="payment-methods mt-4">
-                                    <h4>طريقة الدفع</h4>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="paymentMethod" id="codPayment" value="cod" checked>
-                                        <label class="form-check-label" for="codPayment">
-                                            <i class="fas fa-money-bill-wave"></i> الدفع عند الاستلام
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <!-- القسم الخاص بحالات الطلب -->
-                                <div id="orderStatusSection" class="mt-4" style="display: none;">
-                                    <div id="orderProcessing">
-                                        <div class="d-flex align-items-center">
-                                            <div class="spinner-border text-primary mr-2" role="status">
-                                                <span class="sr-only">جاري المعالجة...</span>
-                                            </div>
-                                            <div>جاري معالجة طلبك...</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div id="orderSuccess" style="display: none;">
-                                        <div class="alert alert-success">
-                                            <i class="fas fa-check-circle"></i> تم تأكيد طلبك بنجاح!
-                                        </div>
-                                        <p>سنتواصل معك قريبًا لتأكيد تفاصيل الشحن.</p>
-                                        <div class="order-id">رقم الطلب: <span id="confirmedOrderId"></span></div>
-                                    </div>
-                                    
-                                    <div id="orderError" style="display: none;">
-                                        <div class="alert alert-danger">
-                                            <i class="fas fa-exclamation-circle"></i> حدث خطأ أثناء معالجة طلبك
-                                        </div>
-                                        <p>يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
-                        <button type="button" class="btn btn-primary" id="submitOrderBtn">تأكيد الطلب</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
         <!-- Notification -->
         <div class="notification" id="notification">
             <div class="notification-icon">
@@ -9254,7 +9138,7 @@
             <div class="testimonials-slider">
                 <div class="testimonial-card fade-in-up">
                     <div class="testimonial-image-container">
-                        <img src="images/reviews/review-1.webp" alt="تقييم عميل" loading="lazy">
+                        <img src="public/images/reviews/review-1.webp" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9272,7 +9156,7 @@
 
                 <div class="testimonial-card fade-in-up delay-1">
                     <div class="testimonial-image-container">
-                        <img src="images/reviews/review-2.webp" alt="تقييم عميل" loading="lazy">
+                        <img src="public/images/reviews/review-5.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9290,7 +9174,7 @@
 
                 <div class="testimonial-card fade-in-up delay-2">
                     <div class="testimonial-image-container">
-                        <img src="images/reviews/review-3.png" alt="تقييم عميل" loading="lazy">
+                        <img src="public/images/reviews/review-3.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9310,7 +9194,7 @@
             <div class="testimonials-slider" style="margin-top: 30px;">
                 <div class="testimonial-card fade-in-up delay-1">
                     <div class="testimonial-image-container">
-                        <img src="images/reviews/review-4.png" alt="تقييم عميل" loading="lazy">
+                        <img src="public/images/reviews/review-4.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9328,7 +9212,7 @@
 
                 <div class="testimonial-card fade-in-up delay-2">
                     <div class="testimonial-image-container">
-                        <img src="images/reviews/review-5.png" alt="تقييم عميل" loading="lazy">
+                        <img src="public/images/reviews/review-2.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9346,7 +9230,7 @@
 
                 <div class="testimonial-card fade-in-up delay-3">
                     <div class="testimonial-image-container">
-                        <img src="images/reviews/review-6.png" alt="تقييم عميل" loading="lazy">
+                        <img src="public/images/reviews/review-6.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9366,7 +9250,7 @@
             <div class="featured-testimonial" style="text-align: center; margin-top: 50px;">
                 <div class="testimonial-card" style="max-width: 600px; margin: 0 auto; position: relative;">
                     <div class="testimonial-image-container">
-                        <img src="images/reviews/review-7.png" alt="تقييم مميز" loading="lazy">
+                        <img src="public/images/reviews/review-7.png" alt="تقييم مميز" loading="lazy">
                     </div>
                     <div class="testimonial-badge">مراجعة مميزة</div>
                     <div class="testimonial-content">
@@ -9417,7 +9301,7 @@
                             </a>
                         </li>
                         <li class="footer-link-item">
-                            <a href="#order-form" class="footer-link">
+                            <a href="#actual-order-form" class="footer-link">
                                 <i class="fas fa-chevron-left"></i>
                                 <span>اطلبي الآن</span>
                             </a>
@@ -9680,41 +9564,41 @@
                     name: 'اللون الأسود',
                     description: 'فستان أنيق بتصميم عصري يناسب مختلف المناسبات',
                     thumbnails: [
-                        'images/black/TH_K1109614_001_0.jpeg',
-                        'images/black/TH_K1109614_001_D0.jpeg',
-                        'images/black/TH_K1109614_001_B0.jpeg',
-                        'images/black/TH_K1109614_001_F0.avif'
+                        'public/images/black/TH_K1109614_001_0.jpeg',
+                        'public/images/black/TH_K1109614_001_D0.jpeg',
+                        'public/images/black/TH_K1109614_001_B0.jpeg',
+                        'public/images/black/TH_K1109614_001_F0.avif'
                     ]
                 },
                 'بيج': {
                     name: 'اللون البيج',
                     description: 'فستان بلون البيج الهادئ والأنيق للإطلالات اليومية والرسمية',
                     thumbnails: [
-                        'images/Beige/1.jpg',
-                        'images/Beige/in-home.jpg',
-                        'images/Beige/in-home2.jpg',
-                        'images/Beige/in-seat.jpg'
+                        'public/images/Beige/1.jpg',
+                        'public/images/Beige/in-home.jpg',
+                        'public/images/Beige/in-home2.jpg',
+                        'public/images/Beige/in-seat.jpg'
                     ]
                 },
                 'أحمر': {
                     name: 'اللون الأحمر',
                     description: 'فستان باللون الأحمر الجذاب للإطلالات المميزة والمناسبات الخاصة',
                     thumbnails: [
-                        'images/red/red-color.png',
-                        'images/red/red_color_fabric.avif',
-                        'images/red/red-color-official-2.avif',
-                        'images/red/red-color-official-4.avif',
-                        'images/red/red-official-order.png'
+                        'public/images/red/red-color.png',
+                        'public/images/red/red_color_fabric.avif',
+                        'public/images/red/red-color-official-2.avif',
+                        'public/images/red/red-color-official-4.avif',
+                        'public/images/red/red-official-order.png'
                     ]
                 },
                 'أبيض': {
                     name: 'اللون الأبيض',
                     description: 'فستان أبيض أنيق بتصميم راقي يناسب المناسبات الخاصة والإطلالات المميزة',
                     thumbnails: [
-                        'images/white/white-color-4.jpg',
-                        'images/white/white-color-2.jpg',
-                        'images/white/white-color-5.jpg',
-                        'images/white/white-color-6.jpg'
+                        'public/images/white/white-color-4.jpg',
+                        'public/images/white/white-color-2.jpg',
+                        'public/images/white/white-color-5.jpg',
+                        'public/images/white/white-color-6.jpg'
                     ]
                 }
             };
@@ -9846,34 +9730,34 @@
                 'أسود': {
                     name: 'اللون الأسود',
                     description: 'فستان أنيق بتصميم عصري يناسب مختلف المناسبات',
-                    mainImage: 'images/black/TH_K1109614_001_F0.avif',
+                    mainImage: 'public/images/black/TH_K1109614_001_F0.avif',
                     thumbnails: [
-                        'images/black/TH_K1109614_001_0.jpeg',
-                        'images/black/TH_K1109614_001_D0.jpeg',
-                        'images/black/TH_K1109614_001_B0.jpeg',
-                        'images/black/TH_K1109614_001_F0.avif'
+                        'public/images/black/TH_K1109614_001_0.jpeg',
+                        'public/images/black/TH_K1109614_001_D0.jpeg',
+                        'public/images/black/TH_K1109614_001_B0.jpeg',
+                        'public/images/black/TH_K1109614_001_F0.avif'
                     ]
                 },
                 'بيج': {
                     name: 'اللون البيج',
                     description: 'فستان بلون البيج الهادئ والأنيق للإطلالات اليومية والرسمية',
-                    mainImage: 'images/Beige/in-seat.jpg',
+                    mainImage: 'public/images/Beige/in-seat.jpg',
                     thumbnails: [
-                        'images/Beige/in-home.jpg',
-                        'images/Beige/in-home2.jpg',
-                        'images/Beige/standing.jpg',
-                        'images/Beige/walking.jpg'
+                        'public/images/Beige/in-home.jpg',
+                        'public/images/Beige/in-home2.jpg',
+                        'public/images/Beige/standing.jpg',
+                        'public/images/Beige/walking.jpg'
                     ]
                 },
                 'أحمر': {
                     name: 'اللون الأحمر',
                     description: 'فستان باللون الأحمر الجذاب للإطلالات المميزة والمناسبات الخاصة',
-                    mainImage: 'images/red/red-color.png',
+                    mainImage: 'public/images/red/red-color.png',
                     thumbnails: [
-                        'images/red/red-color-main.png',
-                        'images/red/red_color_fabric.avif',
-                        'images/red/red-color-official-3.avif',
-                        'images/red/red-official-order.png'
+                        'public/images/red/red-color-main.png',
+                        'public/images/red/red_color_fabric.avif',
+                        'public/images/red/red-color-official-3.avif',
+                        'public/images/red/red-official-order.png'
                     ]
                 }
             };
@@ -10021,10 +9905,10 @@
             
             // Color preview images
             const colorImages = {
-                'أبيض': 'images/white/white-color-4.jpg',
-                'أسود': 'images/black/TH_K1109614_001_F0.avif',
-                'بيج': 'images/Beige/in-home.jpg',
-                'أحمر': 'images/red/red-color.png'
+                'أبيض': 'public/images/white/white-color-4.jpg',
+                'أسود': 'public/images/black/TH_K1109614_001_F0.avif',
+                'بيج': 'public/images/Beige/in-home.jpg',
+                'أحمر': 'public/images/red/red-color.png'
             };
             
             // Update color preview image
@@ -10966,8 +10850,8 @@
         // Initialization when DOM is fully loaded
         document.addEventListener('DOMContentLoaded', function() {
             // ربط أزرار الطلب الرئيسية بفورم الطلب مع تأثير انتقال سلس
-            const orderButtons = document.querySelectorAll('.price-option-btn');
-            const orderForm = document.getElementById('order-form');
+            const orderButtons = document.querySelectorAll('a[href="#actual-order-form"]');
+            const orderForm = document.getElementById('actual-order-form');
             
             if (orderButtons.length > 0 && orderForm) {
                 orderButtons.forEach(button => {
@@ -11765,9 +11649,10 @@
         `;
         // إضافة الستايل الجديد إلى رأس المستند
         document.head.appendChild(styleElement);
-    }
-    });
-</script>
-<script src="js/size-calculator.js"></script>
+    </script>
+    <!-- Size Chart Script -->
+    <script src="js/size-chart.js"></script>
+    <!-- Size Calculator Script -->
+    <script src="js/size-calculator.js"></script>
 </body>
 </html>
