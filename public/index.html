@@ -16,6 +16,174 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
+        /* Size Calculator Styles */
+        .size-calculator-container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .unit-selector {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+            gap: 10px;
+        }
+        
+        .unit-btn {
+            padding: 8px 20px;
+            border: 1px solid #e0e0e0;
+            background-color: #f8f8f8;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+        
+        .unit-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        
+        .measurement-slider-container {
+            margin-bottom: 25px;
+        }
+        
+        .measurement-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            text-align: right;
+        }
+        
+        .slider-value-display {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 600;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .slider-container {
+            position: relative;
+            height: 20px;
+            margin: 30px 0;
+        }
+        
+        .slider-scale {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            width: 100%;
+            top: -20px;
+            color: #777;
+            font-size: 0.8rem;
+        }
+        
+        .measurement-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #e0e0e0;
+            outline: none;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .measurement-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .measurement-slider::-moz-range-thumb {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 3;
+            border: none;
+        }
+        
+        .slider-thumb {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(255, 215, 0, 0.3);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .recommended-size-container {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .recommended-size-header {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .recommended-size {
+            font-size: 80px;
+            font-weight: 700;
+            color: var(--accent-color);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        
+        .size-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        .size-description span {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        .size-change-animation {
+            animation: sizeChange 0.5s ease;
+        }
+        
+        @keyframes sizeChange {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
         /* أنماط أزرار إضافة الفساتين والقوائم المنسدلة */
         .add-dress-btn, .add-more-dresses-btn {
             background: linear-gradient(135deg, var(--accent-color), #800f1a);
@@ -483,7 +651,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
         }
 
@@ -625,7 +793,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -742,7 +910,7 @@
             right: 0;
             width: 150px;
             height: 150px;
-            background-image: url('public/images/icons/savings.svg');
+            background-image: url('images/icons/savings.svg');
             background-size: contain;
             background-repeat: no-repeat;
             opacity: 0.1;
@@ -918,7 +1086,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -1121,7 +1289,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -1175,11 +1343,11 @@
         }
         
         .color-selection {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
     margin: 18px 0 12px 0;
-}
+        }
         
         .color-radio, .size-radio {
             position: relative;
@@ -2044,7 +2212,7 @@
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+            transform: translateY(0);
             }
         }
         
@@ -2079,7 +2247,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -2301,7 +2469,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: -1;
         }
@@ -3838,7 +4006,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -4060,7 +4228,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: -1;
         }
@@ -5597,7 +5765,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -5819,7 +5987,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: -1;
         }
@@ -6982,7 +7150,7 @@
                 min-height: 320px;
                 border-radius: 14px;
             }
-            .lotus-main-image img {
+        .lotus-main-image img {
                 border-radius: 14px;
             }
         
@@ -7356,7 +7524,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: 0;
         }
@@ -7578,7 +7746,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('public/images/subtle-pattern.png');
+            background-image: url('images/subtle-pattern.png');
             opacity: 0.05;
             z-index: -1;
         }
@@ -8438,8 +8606,8 @@
                     </div>
                 </div>
                 <div class="hero-image hero-video-wrapper">
-                    <video class="hero-video" src="public/images/black/black_video.mp4" autoplay loop muted playsinline poster="public/images/black-in-home.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.15);">
-                        متصفحك لا يدعم تشغيل الفيديو. <img src="public/images/black-in-home.jpg" alt="فستان لوتس الأنيق">
+                    <video class="hero-video" src="images/black/black_video.mp4" autoplay loop muted playsinline poster="images/black-in-home.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.15);">
+                        متصفحك لا يدعم تشغيل الفيديو. <img src="images/black-in-home.jpg" alt="فستان لوتس الأنيق">
                     </video>
                 </div>
             </div>
@@ -8490,26 +8658,26 @@
         <h3>اكتشفي ألوان فستان لوتس</h3>
         <div class="lotus-color-container">
             <div class="lotus-main-image">
-                <img src="public/images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس" id="main-color-image">
+                <img src="images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس" id="main-color-image">
             </div>
             <div class="lotus-color-details">
                 <div class="lotus-color-selectors">
                     <h4 class="lotus-color-selector-title">اختاري اللون المناسب لكِ</h4>
                     <div class="lotus-color-options">
                         <div class="lotus-color-option" data-color="أحمر" 
-                             data-main="public/images/red/red-color.png" 
+                             data-main="images/red/red-color.png" 
                              style="background-color: #B74141;">
                         </div>
                         <div class="lotus-color-option" data-color="بيج" 
-                             data-main="public/images/Beige/1.jpg" 
+                             data-main="images/Beige/1.jpg" 
                              style="background-color: #D2B48C;">
                         </div>
                         <div class="lotus-color-option" data-color="أبيض" 
-                             data-main="public/images/white/white-color-4.jpg" 
+                             data-main="images/white/white-color-4.jpg" 
                              style="background-color: #F5F5F5; border: 1px solid #e0e0e0;">
                         </div>
                         <div class="lotus-color-option active" data-color="أسود" 
-                             data-main="public/images/black/TH_K1109614_001_0.jpeg" 
+                             data-main="images/black/TH_K1109614_001_0.jpeg" 
                              style="background-color: #333333;">
                         </div>
                     </div>
@@ -8522,17 +8690,17 @@
                 
                 <div class="lotus-thumbnails" id="color-thumbnails">
                     <!-- Black thumbnails (default) -->
-                    <div class="lotus-thumbnail active" data-image="public/images/black/TH_K1109614_001_0.jpeg">
-                        <img src="public/images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس أسود">
+                    <div class="lotus-thumbnail active" data-image="images/black/TH_K1109614_001_0.jpeg">
+                        <img src="images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس أسود">
                     </div>
-                    <div class="lotus-thumbnail" data-image="public/images/black/TH_K1109614_001_D0.jpeg">
-                        <img src="public/images/black/TH_K1109614_001_D0.jpeg" alt="فستان لوتس أسود">
+                    <div class="lotus-thumbnail" data-image="images/black/TH_K1109614_001_D0.jpeg">
+                        <img src="images/black/TH_K1109614_001_D0.jpeg" alt="فستان لوتس أسود">
                     </div>
-                    <div class="lotus-thumbnail" data-image="public/images/black/TH_K1109614_001_B0.jpeg">
-                        <img src="public/images/black/TH_K1109614_001_B0.jpeg" alt="فستان لوتس أسود">
+                    <div class="lotus-thumbnail" data-image="images/black/TH_K1109614_001_B0.jpeg">
+                        <img src="images/black/TH_K1109614_001_B0.jpeg" alt="فستان لوتس أسود">
                     </div>
-                    <div class="lotus-thumbnail" data-image="public/images/black/TH_K1109614_001_F0.avif">
-                        <img src="public/images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس أسود">
+                    <div class="lotus-thumbnail" data-image="images/black/TH_K1109614_001_F0.avif">
+                        <img src="images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس أسود">
                     </div>
                 </div>
                 
@@ -8601,6 +8769,66 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Size Calculator Section -->
+            <div class="section" id="size-calculator-section">
+                <h2 class="section-title">حساب المقاس المناسب</h2>
+                <div class="size-calculator-container">
+                    <div class="unit-selector">
+                        <button id="metric-btn" class="unit-btn active">متري (سم، كجم)</button>
+                        <button id="imperial-btn" class="unit-btn">إمبريالي (قدم، رطل)</button>
+                    </div>
+                    
+                    <!-- Height Slider -->
+                    <div class="measurement-slider-container">
+                        <div class="measurement-label">الطول</div>
+                        <div class="slider-value-display" id="height-value">175 سم</div>
+                        <div class="slider-container">
+                            <div class="slider-scale">
+                                <span>150</span>
+                                <span>160</span>
+                                <span>170</span>
+                                <span>180</span>
+                                <span>190</span>
+                                <span>200</span>
+                                <span>210</span>
+                            </div>
+                            <input type="range" id="height-slider" class="measurement-slider" min="150" max="210" value="175" step="1">
+                            <div class="slider-thumb" id="height-thumb"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Weight Slider -->
+                    <div class="measurement-slider-container">
+                        <div class="measurement-label">الوزن</div>
+                        <div class="slider-value-display" id="weight-value">80 كجم</div>
+                        <div class="slider-container">
+                            <div class="slider-scale">
+                                <span>40</span>
+                                <span>60</span>
+                                <span>80</span>
+                                <span>100</span>
+                                <span>120</span>
+                                <span>140</span>
+                                <span>160</span>
+                            </div>
+                            <input type="range" id="weight-slider" class="measurement-slider" min="40" max="160" value="80" step="1">
+                            <div class="slider-thumb" id="weight-thumb"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Size Recommendation -->
+                    <div class="recommended-size-container">
+                        <div class="recommended-size-header">المقاس الموصى به</div>
+                        <div class="recommended-size" id="recommended-size">L</div>
+                        <div class="size-description">
+                            المقاس الموصى به هو <span id="size-name">L</span> لمقاساتك الشخصية.<br>
+                            يرجى الرجوع إلى جدول المقاسات الدقيقة للحصول على المقاسات الدقيقة
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <h2 class="section-title">نموذج الطلب الفوري</h2>
             <div class="order-form-container">
                 <form id="orderForm" class="order-form">
@@ -8630,7 +8858,7 @@
                         </div>
                         <div class="color-preview">
                             <div id="colorPreview" class="color-preview-image">
-                                <img src="public/images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس" id="colorPreviewImage">
+                                <img src="images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس" id="colorPreviewImage">
                             </div>
                         </div>
                     </div>
@@ -8665,16 +8893,16 @@
                                     <div class="discount-label">خصم 16% - سعر القطعة: 649 جنيه فقط</div>
                                 </div>
                             </button>
+                            </div>
                         </div>
-                    </div>
-                    
+
                     <div id="secondDressOptions" class="added-dress-container" style="display: none;">
                         <div class="added-dress-header">
                             <h4><i class="fas fa-tshirt"></i> الفستان الثاني <span class="discount-badge">خصم 16%</span></h4>
                             <button type="button" class="remove-dress-btn" id="removeSecondDress">
                                 <i class="fas fa-times"></i>
                             </button>
-                        </div>
+                            </div>
                         <div class="added-dress-content">
                             <div class="added-dress-color">
                                 <label class="added-dress-label">اللون:</label>
@@ -8695,8 +8923,8 @@
                                         <input type="radio" name="color2" value="أبيض">
                                         <span class="order-color-swatch" style="background:#fff; border:2px solid #e0e0e0;"></span>
                                     </label>
-                                </div>
                             </div>
+                        </div>
                             <div class="added-dress-size">
                                 <label class="added-dress-label">المقاس:</label>
                                 <div class="size-selection dress-size-selection">
@@ -8727,16 +8955,16 @@
                                     <div class="discount-label">خصم 29% - سعر القطعة: 549 جنيه + شحن مجاني</div>
                                 </div>
                             </button>
+                            </div>
                         </div>
-                    </div>
-                    
+
                     <div id="thirdDressOptions" class="added-dress-container" style="display: none;">
                         <div class="added-dress-header">
                             <h4><i class="fas fa-tshirt"></i> الفستان الثالث <span class="discount-badge">خصم 29% + شحن مجاني</span></h4>
                             <button type="button" class="remove-dress-btn" id="removeThirdDress">
                                 <i class="fas fa-times"></i>
                             </button>
-                        </div>
+                                </div>
                         <div class="added-dress-content">
                             <div class="added-dress-color">
                                 <label class="added-dress-label">اللون:</label>
@@ -9103,6 +9331,121 @@
         }
         </style>
         
+        <!-- Modal de Confirmación de Pedido -->
+        <div class="modal fade" id="orderConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="orderConfirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="orderConfirmationModalLabel">إتمام الطلب</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>بيانات العميل</h4>
+                                <form id="customerInfoForm">
+                                    <div class="form-group">
+                                        <label for="customerName">الاسم بالكامل</label>
+                                        <input type="text" class="form-control" id="customerName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerPhone">رقم الهاتف</label>
+                                        <input type="tel" class="form-control" id="customerPhone" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerAddress">العنوان بالتفصيل</label>
+                                        <textarea class="form-control" id="customerAddress" rows="3" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerGovernorate">المحافظة</label>
+                                        <select class="form-control" id="customerGovernorate" required>
+                                            <option value="" selected disabled>اختر المحافظة</option>
+                                            <option value="القاهرة">القاهرة</option>
+                                            <option value="الجيزة">الجيزة</option>
+                                            <option value="الإسكندرية">الإسكندرية</option>
+                                            <option value="البحيرة">البحيرة</option>
+                                            <option value="مطروح">مطروح</option>
+                                            <option value="المنوفية">المنوفية</option>
+                                            <option value="القليوبية">القليوبية</option>
+                                            <option value="الشرقية">الشرقية</option>
+                                            <option value="كفر الشيخ">كفر الشيخ</option>
+                                            <option value="الغربية">الغربية</option>
+                                            <option value="الدقهلية">الدقهلية</option>
+                                            <option value="دمياط">دمياط</option>
+                                            <option value="بورسعيد">بورسعيد</option>
+                                            <option value="الإسماعيلية">الإسماعيلية</option>
+                                            <option value="السويس">السويس</option>
+                                            <option value="بني سويف">بني سويف</option>
+                                            <option value="الفيوم">الفيوم</option>
+                                            <option value="المنيا">المنيا</option>
+                                            <option value="أسيوط">أسيوط</option>
+                                            <option value="سوهاج">سوهاج</option>
+                                            <option value="قنا">قنا</option>
+                                            <option value="الأقصر">الأقصر</option>
+                                            <option value="أسوان">أسوان</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerNotes">ملاحظات (اختياري)</label>
+                                        <textarea class="form-control" id="customerNotes" rows="2"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>ملخص الطلب</h4>
+                                <div id="orderSummaryContainer" class="order-summary-container">
+                                    <!-- سيتم تعبئة هذا القسم ديناميكيًا -->
+                                </div>
+                                
+                                <div class="payment-methods mt-4">
+                                    <h4>طريقة الدفع</h4>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="codPayment" value="cod" checked>
+                                        <label class="form-check-label" for="codPayment">
+                                            <i class="fas fa-money-bill-wave"></i> الدفع عند الاستلام
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <!-- القسم الخاص بحالات الطلب -->
+                                <div id="orderStatusSection" class="mt-4" style="display: none;">
+                                    <div id="orderProcessing">
+                                        <div class="d-flex align-items-center">
+                                            <div class="spinner-border text-primary mr-2" role="status">
+                                                <span class="sr-only">جاري المعالجة...</span>
+                                            </div>
+                                            <div>جاري معالجة طلبك...</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="orderSuccess" style="display: none;">
+                                        <div class="alert alert-success">
+                                            <i class="fas fa-check-circle"></i> تم تأكيد طلبك بنجاح!
+                                        </div>
+                                        <p>سنتواصل معك قريبًا لتأكيد تفاصيل الشحن.</p>
+                                        <div class="order-id">رقم الطلب: <span id="confirmedOrderId"></span></div>
+                                    </div>
+                                    
+                                    <div id="orderError" style="display: none;">
+                                        <div class="alert alert-danger">
+                                            <i class="fas fa-exclamation-circle"></i> حدث خطأ أثناء معالجة طلبك
+                                        </div>
+                                        <p>يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+                        <button type="button" class="btn btn-primary" id="submitOrderBtn">تأكيد الطلب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Notification -->
         <div class="notification" id="notification">
             <div class="notification-icon">
@@ -9138,7 +9481,7 @@
             <div class="testimonials-slider">
                 <div class="testimonial-card fade-in-up">
                     <div class="testimonial-image-container">
-                        <img src="public/images/reviews/review-1.webp" alt="تقييم عميل" loading="lazy">
+                        <img src="images/reviews/review-1.webp" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9156,7 +9499,7 @@
 
                 <div class="testimonial-card fade-in-up delay-1">
                     <div class="testimonial-image-container">
-                        <img src="public/images/reviews/review-2.webp" alt="تقييم عميل" loading="lazy">
+                        <img src="images/reviews/review-2.webp" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9174,7 +9517,7 @@
 
                 <div class="testimonial-card fade-in-up delay-2">
                     <div class="testimonial-image-container">
-                        <img src="public/images/reviews/review-3.png" alt="تقييم عميل" loading="lazy">
+                        <img src="images/reviews/review-3.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9194,7 +9537,7 @@
             <div class="testimonials-slider" style="margin-top: 30px;">
                 <div class="testimonial-card fade-in-up delay-1">
                     <div class="testimonial-image-container">
-                        <img src="public/images/reviews/review-4.png" alt="تقييم عميل" loading="lazy">
+                        <img src="images/reviews/review-4.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9212,7 +9555,7 @@
 
                 <div class="testimonial-card fade-in-up delay-2">
                     <div class="testimonial-image-container">
-                        <img src="public/images/reviews/review-5.png" alt="تقييم عميل" loading="lazy">
+                        <img src="images/reviews/review-5.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9230,7 +9573,7 @@
 
                 <div class="testimonial-card fade-in-up delay-3">
                     <div class="testimonial-image-container">
-                        <img src="public/images/reviews/review-6.png" alt="تقييم عميل" loading="lazy">
+                        <img src="images/reviews/review-6.png" alt="تقييم عميل" loading="lazy">
                     </div>
                     <div class="testimonial-content">
                         <div class="rating">
@@ -9250,7 +9593,7 @@
             <div class="featured-testimonial" style="text-align: center; margin-top: 50px;">
                 <div class="testimonial-card" style="max-width: 600px; margin: 0 auto; position: relative;">
                     <div class="testimonial-image-container">
-                        <img src="public/images/reviews/review-7.png" alt="تقييم مميز" loading="lazy">
+                        <img src="images/reviews/review-7.png" alt="تقييم مميز" loading="lazy">
                     </div>
                     <div class="testimonial-badge">مراجعة مميزة</div>
                     <div class="testimonial-content">
@@ -9564,41 +9907,41 @@
                     name: 'اللون الأسود',
                     description: 'فستان أنيق بتصميم عصري يناسب مختلف المناسبات',
                     thumbnails: [
-                        'public/images/black/TH_K1109614_001_0.jpeg',
-                        'public/images/black/TH_K1109614_001_D0.jpeg',
-                        'public/images/black/TH_K1109614_001_B0.jpeg',
-                        'public/images/black/TH_K1109614_001_F0.avif'
+                        'images/black/TH_K1109614_001_0.jpeg',
+                        'images/black/TH_K1109614_001_D0.jpeg',
+                        'images/black/TH_K1109614_001_B0.jpeg',
+                        'images/black/TH_K1109614_001_F0.avif'
                     ]
                 },
                 'بيج': {
                     name: 'اللون البيج',
                     description: 'فستان بلون البيج الهادئ والأنيق للإطلالات اليومية والرسمية',
                     thumbnails: [
-                        'public/images/Beige/1.jpg',
-                        'public/images/Beige/in-home.jpg',
-                        'public/images/Beige/in-home2.jpg',
-                        'public/images/Beige/in-seat.jpg'
+                        'images/Beige/1.jpg',
+                        'images/Beige/in-home.jpg',
+                        'images/Beige/in-home2.jpg',
+                        'images/Beige/in-seat.jpg'
                     ]
                 },
                 'أحمر': {
                     name: 'اللون الأحمر',
                     description: 'فستان باللون الأحمر الجذاب للإطلالات المميزة والمناسبات الخاصة',
                     thumbnails: [
-                        'public/images/red/red-color.png',
-                        'public/images/red/red_color_fabric.avif',
-                        'public/images/red/red-color-official-2.avif',
-                        'public/images/red/red-color-official-4.avif',
-                        'public/images/red/red-official-order.png'
+                        'images/red/red-color.png',
+                        'images/red/red_color_fabric.avif',
+                        'images/red/red-color-official-2.avif',
+                        'images/red/red-color-official-4.avif',
+                        'images/red/red-official-order.png'
                     ]
                 },
                 'أبيض': {
                     name: 'اللون الأبيض',
                     description: 'فستان أبيض أنيق بتصميم راقي يناسب المناسبات الخاصة والإطلالات المميزة',
                     thumbnails: [
-                        'public/images/white/white-color-4.jpg',
-                        'public/images/white/white-color-2.jpg',
-                        'public/images/white/white-color-5.jpg',
-                        'public/images/white/white-color-6.jpg'
+                        'images/white/white-color-4.jpg',
+                        'images/white/white-color-2.jpg',
+                        'images/white/white-color-5.jpg',
+                        'images/white/white-color-6.jpg'
                     ]
                 }
             };
@@ -9730,34 +10073,34 @@
                 'أسود': {
                     name: 'اللون الأسود',
                     description: 'فستان أنيق بتصميم عصري يناسب مختلف المناسبات',
-                    mainImage: 'public/images/black/TH_K1109614_001_F0.avif',
+                    mainImage: 'images/black/TH_K1109614_001_F0.avif',
                     thumbnails: [
-                        'public/images/black/TH_K1109614_001_0.jpeg',
-                        'public/images/black/TH_K1109614_001_D0.jpeg',
-                        'public/images/black/TH_K1109614_001_B0.jpeg',
-                        'public/images/black/TH_K1109614_001_F0.avif'
+                        'images/black/TH_K1109614_001_0.jpeg',
+                        'images/black/TH_K1109614_001_D0.jpeg',
+                        'images/black/TH_K1109614_001_B0.jpeg',
+                        'images/black/TH_K1109614_001_F0.avif'
                     ]
                 },
                 'بيج': {
                     name: 'اللون البيج',
                     description: 'فستان بلون البيج الهادئ والأنيق للإطلالات اليومية والرسمية',
-                    mainImage: 'public/images/Beige/in-seat.jpg',
+                    mainImage: 'images/Beige/in-seat.jpg',
                     thumbnails: [
-                        'public/images/Beige/in-home.jpg',
-                        'public/images/Beige/in-home2.jpg',
-                        'public/images/Beige/standing.jpg',
-                        'public/images/Beige/walking.jpg'
+                        'images/Beige/in-home.jpg',
+                        'images/Beige/in-home2.jpg',
+                        'images/Beige/standing.jpg',
+                        'images/Beige/walking.jpg'
                     ]
                 },
                 'أحمر': {
                     name: 'اللون الأحمر',
                     description: 'فستان باللون الأحمر الجذاب للإطلالات المميزة والمناسبات الخاصة',
-                    mainImage: 'public/images/red/red-color.png',
+                    mainImage: 'images/red/red-color.png',
                     thumbnails: [
-                        'public/images/red/red-color-main.png',
-                        'public/images/red/red_color_fabric.avif',
-                        'public/images/red/red-color-official-3.avif',
-                        'public/images/red/red-official-order.png'
+                        'images/red/red-color-main.png',
+                        'images/red/red_color_fabric.avif',
+                        'images/red/red-color-official-3.avif',
+                        'images/red/red-official-order.png'
                     ]
                 }
             };
@@ -9905,10 +10248,10 @@
             
             // Color preview images
             const colorImages = {
-                'أبيض': 'public/images/white/white-color-4.jpg',
-                'أسود': 'public/images/black/TH_K1109614_001_F0.avif',
-                'بيج': 'public/images/Beige/in-home.jpg',
-                'أحمر': 'public/images/red/red-color.png'
+                'أبيض': 'images/white/white-color-4.jpg',
+                'أسود': 'images/black/TH_K1109614_001_F0.avif',
+                'بيج': 'images/Beige/in-home.jpg',
+                'أحمر': 'images/red/red-color.png'
             };
             
             // Update color preview image
@@ -10048,7 +10391,7 @@
                 
                 // تحريك الإشعار لإظهاره بتأثير حركي
                 setTimeout(() => {
-                    notification.classList.add('show');
+                notification.classList.add('show');
                 }, 10);
                 
                 // إخفاء الإشعار تلقائيًا بعد 3 ثوانٍ
@@ -11394,7 +11737,10 @@
         });
         
         // إضافة تنسيق CSS جديد للتأثيرات الحركية والإشعارات
-        const styleElement = document.createElement('style');
+        <script>
+        // The script content goes here
+        var styleElement = document.createElement('style');
+        
         styleElement.textContent = `
             /* تنسيقات إضافية للإشعارات */
                 /* تنسيقات الإشعار الاحترافي الجديد */
@@ -11650,5 +11996,177 @@
         // إضافة الستايل الجديد إلى رأس المستند
         document.head.appendChild(styleElement);
     </script>
+    
+    <!-- Size Calculator JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize size calculator
+            const heightSlider = document.getElementById('height-slider');
+            const weightSlider = document.getElementById('weight-slider');
+            const heightValue = document.getElementById('height-value');
+            const weightValue = document.getElementById('weight-value');
+            const recommendedSize = document.getElementById('recommended-size');
+            const sizeName = document.getElementById('size-name');
+            const heightThumb = document.getElementById('height-thumb');
+            const weightThumb = document.getElementById('weight-thumb');
+            const metricBtn = document.getElementById('metric-btn');
+            const imperialBtn = document.getElementById('imperial-btn');
+            
+            if (!heightSlider || !weightSlider) return; // Exit if elements don't exist
+            
+            let isMetric = true;
+            
+            // Update height thumb position
+            function updateHeightThumb() {
+                const percent = (heightSlider.value - heightSlider.min) / (heightSlider.max - heightSlider.min) * 100;
+                heightThumb.style.left = `${percent}%`;
+            }
+            
+            // Update weight thumb position
+            function updateWeightThumb() {
+                const percent = (weightSlider.value - weightSlider.min) / (weightSlider.max - weightSlider.min) * 100;
+                weightThumb.style.left = `${percent}%`;
+            }
+            
+            // Convert cm to feet and inches
+            function cmToFeetInches(cm) {
+                const inches = cm / 2.54;
+                const feet = Math.floor(inches / 12);
+                const remainingInches = Math.round(inches % 12);
+                return `${feet}'${remainingInches}"`;
+            }
+            
+            // Convert kg to lbs
+            function kgToLbs(kg) {
+                return Math.round(kg * 2.20462);
+            }
+            
+            // Calculate recommended size based on height and weight
+            function calculateSize(height, weight) {
+                // If not metric, convert to metric for calculation
+                if (!isMetric) {
+                    // Convert feet/inches to cm and lbs to kg
+                    const heightParts = height.split("'");
+                    const feet = parseInt(heightParts[0]);
+                    const inches = parseInt(heightParts[1]);
+                    height = Math.round((feet * 12 + inches) * 2.54);
+                    weight = Math.round(weight / 2.20462);
+                } else {
+                    height = parseInt(height);
+                    weight = parseInt(weight);
+                }
+                
+                // Size determination logic based on height and weight
+                let size;
+                if (height < 155) {
+                    if (weight < 50) size = 'XS';
+                    else if (weight < 65) size = 'S';
+                    else if (weight < 80) size = 'M';
+                    else if (weight < 95) size = 'L';
+                    else size = 'XL';
+                } 
+                else if (height < 165) {
+                    if (weight < 55) size = 'S';
+                    else if (weight < 70) size = 'M';
+                    else if (weight < 85) size = 'L';
+                    else if (weight < 100) size = 'XL';
+                    else size = 'XXL';
+                }
+                else if (height < 175) {
+                    if (weight < 60) size = 'S';
+                    else if (weight < 75) size = 'M';
+                    else if (weight < 90) size = 'L';
+                    else if (weight < 105) size = 'XL';
+                    else size = 'XXL';
+                }
+                else if (height < 185) {
+                    if (weight < 65) size = 'M';
+                    else if (weight < 80) size = 'L';
+                    else if (weight < 95) size = 'XL';
+                    else if (weight < 110) size = 'XXL';
+                    else size = '3XL';
+                }
+                else {
+                    if (weight < 70) size = 'M';
+                    else if (weight < 85) size = 'L';
+                    else if (weight < 100) size = 'XL';
+                    else if (weight < 115) size = 'XXL';
+                    else size = '3XL';
+                }
+                
+                return size;
+            }
+            
+            // Update the displayed values and recalculate size
+            function updateValues() {
+                let heightDisplay, weightDisplay;
+                
+                if (isMetric) {
+                    const heightVal = parseInt(heightSlider.value);
+                    const weightVal = parseInt(weightSlider.value);
+                    heightDisplay = `${heightVal} سم`;
+                    weightDisplay = `${weightVal} كجم`;
+                } else {
+                    const heightVal = parseInt(heightSlider.value);
+                    const weightVal = parseInt(weightSlider.value);
+                    heightDisplay = cmToFeetInches(heightVal);
+                    weightDisplay = `${kgToLbs(weightVal)} رطل`;
+                }
+                
+                // Update displayed values
+                heightValue.textContent = heightDisplay;
+                weightValue.textContent = weightDisplay;
+                
+                // Calculate and update recommended size
+                const size = calculateSize(heightSlider.value, weightSlider.value);
+                if (recommendedSize) recommendedSize.textContent = size;
+                if (sizeName) sizeName.textContent = size;
+                
+                // Animate the size change
+                if (recommendedSize) {
+                    recommendedSize.classList.add('size-change-animation');
+                    setTimeout(() => {
+                        recommendedSize.classList.remove('size-change-animation');
+                    }, 500);
+                }
+            }
+            
+            // Switch between metric and imperial units
+            metricBtn.addEventListener('click', function() {
+                if (!isMetric) {
+                    isMetric = true;
+                    metricBtn.classList.add('active');
+                    imperialBtn.classList.remove('active');
+                    updateValues();
+                }
+            });
+            
+            imperialBtn.addEventListener('click', function() {
+                if (isMetric) {
+                    isMetric = false;
+                    imperialBtn.classList.add('active');
+                    metricBtn.classList.remove('active');
+                    updateValues();
+                }
+            });
+            
+            // Event listeners for slider changes
+            heightSlider.addEventListener('input', function() {
+                updateHeightThumb();
+                updateValues();
+            });
+            
+            weightSlider.addEventListener('input', function() {
+                updateWeightThumb();
+                updateValues();
+            });
+            
+            // Initialize
+            updateHeightThumb();
+            updateWeightThumb();
+            updateValues();
+        });
+    </script>
 </body>
 </html>
+

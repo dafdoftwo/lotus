@@ -8391,6 +8391,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -9102,6 +9103,121 @@
             font-weight: 600;
         }
         </style>
+        
+        <!-- Modal de Confirmación de Pedido -->
+        <div class="modal fade" id="orderConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="orderConfirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="orderConfirmationModalLabel">إتمام الطلب</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>بيانات العميل</h4>
+                                <form id="customerInfoForm">
+                                    <div class="form-group">
+                                        <label for="customerName">الاسم بالكامل</label>
+                                        <input type="text" class="form-control" id="customerName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerPhone">رقم الهاتف</label>
+                                        <input type="tel" class="form-control" id="customerPhone" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerAddress">العنوان بالتفصيل</label>
+                                        <textarea class="form-control" id="customerAddress" rows="3" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerGovernorate">المحافظة</label>
+                                        <select class="form-control" id="customerGovernorate" required>
+                                            <option value="" selected disabled>اختر المحافظة</option>
+                                            <option value="القاهرة">القاهرة</option>
+                                            <option value="الجيزة">الجيزة</option>
+                                            <option value="الإسكندرية">الإسكندرية</option>
+                                            <option value="البحيرة">البحيرة</option>
+                                            <option value="مطروح">مطروح</option>
+                                            <option value="المنوفية">المنوفية</option>
+                                            <option value="القليوبية">القليوبية</option>
+                                            <option value="الشرقية">الشرقية</option>
+                                            <option value="كفر الشيخ">كفر الشيخ</option>
+                                            <option value="الغربية">الغربية</option>
+                                            <option value="الدقهلية">الدقهلية</option>
+                                            <option value="دمياط">دمياط</option>
+                                            <option value="بورسعيد">بورسعيد</option>
+                                            <option value="الإسماعيلية">الإسماعيلية</option>
+                                            <option value="السويس">السويس</option>
+                                            <option value="بني سويف">بني سويف</option>
+                                            <option value="الفيوم">الفيوم</option>
+                                            <option value="المنيا">المنيا</option>
+                                            <option value="أسيوط">أسيوط</option>
+                                            <option value="سوهاج">سوهاج</option>
+                                            <option value="قنا">قنا</option>
+                                            <option value="الأقصر">الأقصر</option>
+                                            <option value="أسوان">أسوان</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerNotes">ملاحظات (اختياري)</label>
+                                        <textarea class="form-control" id="customerNotes" rows="2"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>ملخص الطلب</h4>
+                                <div id="orderSummaryContainer" class="order-summary-container">
+                                    <!-- سيتم تعبئة هذا القسم ديناميكيًا -->
+                                </div>
+                                
+                                <div class="payment-methods mt-4">
+                                    <h4>طريقة الدفع</h4>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="codPayment" value="cod" checked>
+                                        <label class="form-check-label" for="codPayment">
+                                            <i class="fas fa-money-bill-wave"></i> الدفع عند الاستلام
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <!-- القسم الخاص بحالات الطلب -->
+                                <div id="orderStatusSection" class="mt-4" style="display: none;">
+                                    <div id="orderProcessing">
+                                        <div class="d-flex align-items-center">
+                                            <div class="spinner-border text-primary mr-2" role="status">
+                                                <span class="sr-only">جاري المعالجة...</span>
+                                            </div>
+                                            <div>جاري معالجة طلبك...</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="orderSuccess" style="display: none;">
+                                        <div class="alert alert-success">
+                                            <i class="fas fa-check-circle"></i> تم تأكيد طلبك بنجاح!
+                                        </div>
+                                        <p>سنتواصل معك قريبًا لتأكيد تفاصيل الشحن.</p>
+                                        <div class="order-id">رقم الطلب: <span id="confirmedOrderId"></span></div>
+                                    </div>
+                                    
+                                    <div id="orderError" style="display: none;">
+                                        <div class="alert alert-danger">
+                                            <i class="fas fa-exclamation-circle"></i> حدث خطأ أثناء معالجة طلبك
+                                        </div>
+                                        <p>يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+                        <button type="button" class="btn btn-primary" id="submitOrderBtn">تأكيد الطلب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- Notification -->
         <div class="notification" id="notification">
@@ -11649,6 +11765,9 @@
         `;
         // إضافة الستايل الجديد إلى رأس المستند
         document.head.appendChild(styleElement);
-    </script>
+    }
+    });
+</script>
+<script src="js/size-calculator.js"></script>
 </body>
 </html>
