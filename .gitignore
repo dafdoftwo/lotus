@@ -3,6 +3,8 @@
 firebase-debug.log
 firebase-debug.*.log
 ui-debug.log
+.firebaserc
+firebase.json.backup
 
 # Node.js
 node_modules/
@@ -17,9 +19,6 @@ npm-debug.log
 # OS generated files
 .DS_Store
 Thumbs.db
-
-# Firebase config
-.firebaserc
 
 # Logs
 logs
