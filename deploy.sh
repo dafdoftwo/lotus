@@ -3,7 +3,7 @@
 # Ensure the script stops on first error
 set -e
 
-echo "🔥 Starting deployment to Firebase..."
+echo "🔥 Starting deployment to Firebase Hosting..."
 
 # Check if Firebase CLI is installed
 if ! command -v firebase &> /dev/null; then
@@ -19,9 +19,9 @@ firebase login --no-localhost
 echo "📦 Using project: lotus-48d81"
 firebase use lotus-48d81
 
-# Deploy to Firebase
-echo "🚀 Deploying to Firebase..."
-firebase deploy
+# Deploy to Firebase Hosting only
+echo "🚀 Deploying to Firebase Hosting..."
+firebase deploy --only hosting
 
 echo "✅ Deployment completed successfully!"
 echo "🌐 Your website is now live at: https://lotus-48d81.web.app" 
