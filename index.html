@@ -8438,8 +8438,8 @@
                     </div>
                 </div>
                 <div class="hero-image hero-video-wrapper">
-                    <video class="hero-video" src="public/images/black/black_video.mp4" autoplay loop muted playsinline poster="public/images/black-in-home.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.15);">
-                        متصفحك لا يدعم تشغيل الفيديو. <img src="public/images/black-in-home.jpg" alt="فستان لوتس الأنيق">
+                    <video class="hero-video" src="public/images/black/black_video.mp4" autoplay loop muted playsinline poster="public/images/black-in-home.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.15);" preload="none">
+                        متصفحك لا يدعم تشغيل الفيديو. <img src="public/images/black-in-home.jpg" alt="فستان لوتس الأنيق" loading="lazy">
                     </video>
                 </div>
             </div>
@@ -8490,7 +8490,7 @@
         <h3>اكتشفي ألوان فستان لوتس</h3>
         <div class="lotus-color-container">
             <div class="lotus-main-image">
-                <img src="public/images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس" id="main-color-image">
+                <img src="public/images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس" id="main-color-image" loading="lazy">
             </div>
             <div class="lotus-color-details">
                 <div class="lotus-color-selectors">
@@ -8523,16 +8523,16 @@
                 <div class="lotus-thumbnails" id="color-thumbnails">
                     <!-- Black thumbnails (default) -->
                     <div class="lotus-thumbnail active" data-image="public/images/black/TH_K1109614_001_0.jpeg">
-                        <img src="public/images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس أسود">
+                        <img src="public/images/black/TH_K1109614_001_0.jpeg" alt="فستان لوتس أسود" loading="lazy">
                     </div>
                     <div class="lotus-thumbnail" data-image="public/images/black/TH_K1109614_001_D0.jpeg">
-                        <img src="public/images/black/TH_K1109614_001_D0.jpeg" alt="فستان لوتس أسود">
+                        <img src="public/images/black/TH_K1109614_001_D0.jpeg" alt="فستان لوتس أسود" loading="lazy">
                     </div>
                     <div class="lotus-thumbnail" data-image="public/images/black/TH_K1109614_001_B0.jpeg">
-                        <img src="public/images/black/TH_K1109614_001_B0.jpeg" alt="فستان لوتس أسود">
+                        <img src="public/images/black/TH_K1109614_001_B0.jpeg" alt="فستان لوتس أسود" loading="lazy">
                     </div>
                     <div class="lotus-thumbnail" data-image="public/images/black/TH_K1109614_001_F0.avif">
-                        <img src="public/images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس أسود">
+                        <img src="public/images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس أسود" loading="lazy">
                     </div>
                 </div>
                 
@@ -8630,7 +8630,7 @@
                         </div>
                         <div class="color-preview">
                             <div id="colorPreview" class="color-preview-image">
-                                <img src="public/images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس" id="colorPreviewImage">
+                                <img src="public/images/black/TH_K1109614_001_F0.avif" alt="فستان لوتس" id="colorPreviewImage" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -8655,7 +8655,7 @@
                                 <span class="size-box">XXL</span>
                             </label>
                         </div>
-                        <a href="#" class="size-guide-link" id="sizeGuideLink"><i class="fas fa-search"></i> دليل المقاسات</a>
+                        <!-- تم إزالة دليل المقاسات بناءً على طلب المستخدم -->
                         
                         <div id="add-more-dresses" class="add-more-dresses-container">
                             <button type="button" id="addSecondDress" class="add-more-dresses-btn">
@@ -9948,13 +9948,7 @@
             // Initialize color preview
             updateColorPreview();
             
-            // Size guide popup
-            if (sizeGuideLink) {
-                sizeGuideLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('جدول المقاسات:\nM: الطول من 155-165 سم، الوزن من 50-60 كجم\nL: الطول من 165-170 سم، الوزن من 60-70 كجم\nXL: الطول من 170-175 سم، الوزن من 70-80 كجم\nXXL: الطول من 175-185 سم، الوزن من 80-90 كجم');
-                });
-            }
+            // تم إزالة كود دليل المقاسات
             
             // إضافة مستمعي الأحداث لمقاسات الفستان الأول
             const sizeInputs1 = document.querySelectorAll('input[name="size1"]');
