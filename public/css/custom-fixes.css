@@ -1,0 +1,113 @@
+/* تحسينات التأثيرات البصرية والتفاعلات */
+
+/* تأثيرات أيقونات الألوان */
+.order-color-swatch {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.order-color-swatch:hover {
+    transform: scale(1.15) !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.color-radio input:checked + .order-color-swatch::after {
+    content: '\2713'; /* علامة صح ✓ */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* تأثيرات أزرار المقاسات */
+.size-box {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.size-box:hover {
+    transform: scale(1.15) !important;
+    background-color: rgba(191, 30, 46, 0.1) !important;
+}
+
+.size-radio input:checked + .size-box {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+/* تأثيرات أزرار إضافة الفساتين */
+.add-more-dresses-btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.add-more-dresses-btn:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 25px rgba(191, 30, 46, 0.15) !important;
+}
+
+.add-more-dresses-btn:active {
+    transform: translateY(0) !important;
+}
+
+/* تأثيرات تلاشي للصور عند تغييرها */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* تأثيرات تحديثات الأسعار */
+.flash-price {
+    animation: flashPrice 0.8s ease-in-out;
+}
+
+@keyframes flashPrice {
+    0% { color: inherit; }
+    50% { color: var(--accent-color); }
+    100% { color: inherit; }
+}
+
+/* تنسيقات إضافية لملخص الطلب */
+.order-summary-item {
+    transition: all 0.3s ease;
+}
+
+.price-update {
+    animation: priceUpdate 1s ease;
+}
+
+@keyframes priceUpdate {
+    0% { background-color: transparent; }
+    30% { background-color: rgba(191, 30, 46, 0.1); }
+    100% { background-color: transparent; }
+}
+
+/* تحسين تجربة المستخدم في صفحة المنتج */
+.color-preview {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.color-preview img {
+    transition: all 0.5s ease;
+}
+
+.color-preview:hover img {
+    transform: scale(1.05);
+}
+
+/* تعطيل أي تفاعلات متضاربة من الكود القديم */
+[class*="triggerInstantUpdate"],
+[class*="updatePrice"] {
+    pointer-events: none !important;
+} 

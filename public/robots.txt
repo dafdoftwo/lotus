@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lotus-48d81.web.app/sitemap.xml 
+Sitemap: https://loutus-higab.web.app/sitemap.xml 

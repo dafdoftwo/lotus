@@ -1,0 +1,2567 @@
+<!-- قسم نموذج الطلب الاحترافي -->
+<section id="order-now" class="lotus-order-section">
+    <div class="lotus-container">
+        <div class="lotus-order-header">
+            <h2 class="lotus-section-title"><i class="fas fa-sparkles"></i> اطلبي فستان لوتس الآن <i class="fas fa-sparkles"></i></h2>
+            <p class="lotus-section-subtitle">فستان أنيق لكل المناسبات بتصميم عصري وخامة فاخرة</p>
+        </div>
+
+        <!-- نموذج الطلب والمنتج -->
+        <div class="lotus-order-grid">
+            <!-- معلومات المنتج ومعاينة الصورة (محذوف) -->
+            
+            <!-- نموذج الطلب -->
+            <div class="lotus-order-form-container">
+                <form id="lotus-order-form" class="lotus-order-form">
+                    <!-- اختيار اللون (محسّن) -->
+                    <div class="lotus-form-group lotus-color-selection-enhanced">
+                        <h3 class="lotus-group-title">
+                            <i class="fas fa-palette lotus-animated-icon"></i>
+                            اختيار اللون المفضل لديك
+                        </h3>
+                        <div class="lotus-color-options-visual">
+                            <div class="lotus-color-option-visual" data-color="أبيض" data-image="images/White/Firefly 20250418004632.png">
+                                <div class="lotus-color-circle" style="background-color: #ffffff; border: 1px solid #e0e0e0;"></div>
+                            </div>
+                            <div class="lotus-color-option-visual active" data-color="أحمر" data-image="images/red/Firefly 20250418003957.png">
+                                <div class="lotus-color-circle" style="background-color: #c02a2a;"></div>
+                            </div>
+                            <div class="lotus-color-option-visual" data-color="كحلي" data-image="images/navy_blue/Firefly 20250418003030.png">
+                                <div class="lotus-color-circle" style="background-color: #1A2351;"></div>
+                            </div>
+                            <div class="lotus-color-option-visual" data-color="أسود" data-image="images/Black/Firefly 20250418003250.png">
+                                <div class="lotus-color-circle" style="background-color: #222222;"></div>
+                            </div>
+                        </div>
+                        <!-- *** NEW: Container for selected color's main image *** -->
+                        <div class="lotus-selected-color-image-container">
+                            <img src="images/red/Firefly 20250418003957.png" alt="صورة اللون المختار" id="selected-color-main-image">
+                            <div class="lotus-image-shine"></div>
+                        </div>
+                    </div>
+
+                    <!-- اختيار المقاس -->
+                    <div class="lotus-form-group lotus-size-selection">
+                        <h3 class="lotus-group-title">
+                            <i class="fas fa-ruler lotus-animated-icon"></i>
+                            اختيار المقاس
+                        </h3>
+                        <div class="lotus-size-options">
+                            <div class="lotus-size-option" data-size="M">
+                                <span class="lotus-size-text">M</span>
+                            </div>
+                            <div class="lotus-size-option active" data-size="L">
+                                <span class="lotus-size-text">L</span>
+                            </div>
+                            <div class="lotus-size-option" data-size="XL">
+                                <span class="lotus-size-text">XL</span>
+                            </div>
+                            <div class="lotus-size-option" data-size="XXL">
+                                <span class="lotus-size-text">XXL</span>
+                            </div>
+                        </div>
+                        <div class="lotus-size-guide">
+                            <a href="#size-chart" class="lotus-size-guide-link">
+                                <i class="fas fa-tape lotus-animated-icon"></i>
+                                دليل المقاسات
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- الكمية والسعر -->
+                    <div class="lotus-form-group lotus-price-info">
+                        <div class="lotus-quantity-container">
+                            <h3 class="lotus-group-title">
+                                <i class="fas fa-shopping-bag lotus-animated-icon"></i>
+                                الكمية والسعر
+                            </h3>
+                            <div class="lotus-quantity-control">
+                                <!-- *** UPDATED: Container for product items (allows individual options) *** -->
+                                <div class="lotus-products-container" id="products-container">
+                                    <!-- Product items will be dynamically added here by JavaScript -->
+                                </div>
+                                
+                                <div class="lotus-add-product" id="add-product-btn" style="display: flex; background-color: #333333; color: white;">
+                                    <i class="fas fa-plus-circle lotus-pulse-effect"></i>
+                                    <span id="add-product-text">إضافة فستان ثاني</span>
+                                    <span class="discount-badge"><i class="fas fa-tags discount-icon"></i> <span class="discount-text">15% خصم</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- بيانات التوصيل -->
+                    <div class="lotus-form-group lotus-shipping-details">
+                        <h3 class="lotus-group-title">
+                            <i class="fas fa-truck-fast lotus-animated-icon"></i>
+                            بيانات التوصيل
+                        </h3>
+                        
+                        <div class="lotus-input-group">
+                            <label for="customer-name" class="lotus-label">الاسم بالكامل</label>
+                            <div class="lotus-input-container">
+                                <i class="fas fa-user-circle lotus-input-icon"></i>
+                                <input type="text" id="customer-name" name="name" class="lotus-input" placeholder="أدخل اسمك بالكامل على الفاتورة" required>
+                            </div>
+                        </div>
+                        
+                        <div class="lotus-input-group">
+                            <label for="phone-number" class="lotus-label">رقم الموبايل</label>
+                            <div class="lotus-input-container">
+                                <i class="fas fa-mobile-alt lotus-input-icon"></i>
+                                <input type="tel" id="phone-number" name="phone" class="lotus-input" placeholder="أدخل رقم الهاتف للتواصل" required>
+                                <div class="lotus-phone-note">يرجى إدخال رقم هاتف صحيح لتأكيد الطلب</div>
+                            </div>
+                        </div>
+                        
+                        <div class="lotus-input-group">
+                            <label for="city" class="lotus-label">المحافظة</label>
+                            <div class="lotus-input-container">
+                                <i class="fas fa-map-marker-alt lotus-input-icon"></i>
+                                <select id="city" name="city" class="lotus-input" required>
+                                    <option value="" disabled selected>اختر المحافظة</option>
+                                    <option value="القاهرة">القاهرة</option>
+                                    <option value="الإسكندرية">الإسكندرية</option>
+                                    <option value="الجيزة">الجيزة</option>
+                                    <option value="المنصورة">المنصورة</option>
+                                    <option value="طنطا">طنطا</option>
+                                    <option value="أسيوط">أسيوط</option>
+                                    <option value="سوهاج">سوهاج</option>
+                                    <option value="المنيا">المنيا</option>
+                                    <option value="الزقازيق">الزقازيق</option>
+                                    <option value="بورسعيد">بورسعيد</option>
+                                    <option value="السويس">السويس</option>
+                                    <option value="الإسماعيلية">الإسماعيلية</option>
+                                    <option value="أخرى">أخرى</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="lotus-input-group">
+                            <label for="address" class="lotus-label">العنوان بالتفصيل</label>
+                            <div class="lotus-input-container">
+                                <i class="fas fa-home lotus-input-icon"></i>
+                                <textarea id="address" name="address" class="lotus-input lotus-textarea" placeholder="يرجى كتابة العنوان بالتفصيل ليصل الطلب بشكل صحيح" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="lotus-input-group">
+                            <label for="payment-method" class="lotus-label">طريقة الدفع</label>
+                            <div class="lotus-payment-methods">
+                                <div class="lotus-payment-option active">
+                                    <input type="radio" id="cod" name="payment" value="cod" checked>
+                                    <label for="cod" class="lotus-payment-label">
+                                        <i class="fas fa-money-bill-wave lotus-animated-icon"></i>
+                                        <span>الدفع عند الاستلام</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Preview Moved Here -->
+                    <div class="lotus-cart-preview lotus-cart-preview-in-form">
+                        <h4 class="lotus-cart-title-in-form">ملخص الطلب</h4>
+                        <div class="lotus-cart-items" id="cart-items">
+                            <!-- Product cards will be dynamically generated here by JavaScript -->
+                        </div>
+                        
+                        <!-- ملخص السلة والسعر الإجمالي -->
+                        <div class="lotus-cart-summary">
+                            <div class="lotus-cart-totals">
+                                <div class="lotus-summary-row">
+                                    <span class="lotus-summary-label">السعر الإجمالي للباقة:</span>
+                                    <span class="lotus-summary-value" id="base-price">0 ج.م</span>
+                                </div>
+                                <div class="lotus-summary-row" id="shipping-row">
+                                    <span class="lotus-summary-label">الشحن:</span>
+                                    <span class="lotus-summary-value" id="shipping-cost">0 ج.م</span>
+                                </div>
+                                <div class="lotus-summary-row lotus-total-row">
+                                    <span class="lotus-summary-label">الإجمالي النهائي:</span>
+                                    <span class="lotus-summary-value lotus-total" id="total-price">0 ج.م</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- زر تأكيد الطلب -->
+                    <div class="lotus-form-action">
+                        <button type="submit" id="place-order-btn" class="lotus-submit-btn lotus-glowing-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            تأكيد الطلب الآن
+                            <span class="lotus-btn-sparkle"></span>
+                        </button>
+                        
+                        <!-- إضافة عنصر التغذية الراجعة -->
+                        <div id="form-feedback" class="form-feedback" style="display: none;"></div>
+                        
+                        <div class="lotus-secure-badge">
+                            <i class="fas fa-shield-alt lotus-animated-icon"></i>
+                            <span>طلب آمن 100% - استرجاع مجاني خلال 14 يوم</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- إشعار الخصم محذوف كما طلب المستخدم -->
+    <!-- NEW: Temporary Discount Notification Popup -->
+    <div id="discount-toast-notification" class="discount-toast">
+        <span id="toast-message"></span>
+        <button id="toast-close-btn">&times;</button>
+    </div>
+</section>
+
+<!-- NEW: Order Confirmation Section (Initially Hidden) -->
+<section id="order-confirmation-view" class="lotus-confirmation-section" style="display: none;">
+    <div class="lotus-container">
+        <div class="lotus-confirmation-box">
+            <div class="confirmation-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="confirmation-title">تم استلام طلبك بنجاح!</h2>
+            <p class="confirmation-subtitle">شكراً لطلبكِ فستان لوتس. سنتواصل معكِ قريباً لتأكيد تفاصيل الشحن.</p>
+            
+            <div class="confirmation-details">
+                <h3>تفاصيل الطلب:</h3>
+                <p><strong>رقم الطلب:</strong> <span id="conf-order-number"></span></p>
+                <p><strong>الاسم:</strong> <span id="conf-customer-name"></span></p>
+                <p><strong>المحافظة:</strong> <span id="conf-customer-city"></span></p>
+                <div class="conf-items-summary">
+                    <h4>الفساتين المطلوبة:</h4>
+                    <ul id="conf-items-list"></ul>
+                </div>
+                <p class="conf-total"><strong>الإجمالي النهائي:</strong> <span id="conf-total-price"></span></p>
+            </div>
+            
+            <a href="/" class="back-to-home-btn">العودة للرئيسية</a>
+        </div>
+    </div>
+</section>
+
+<!-- Add the order confirmation toast container at the end of the body -->
+</section>
+
+<!-- NEW: Order Confirmation Toast Notification -->
+<div id="order-confirmation-toast" class="lotus-toast-notification">
+    <div class="toast-icon">
+        <i class="fas fa-check-circle"></i>
+    </div>
+    <div class="toast-content">
+        <h4 class="toast-title">تم تأكيد الطلب بنجاح! ✅</h4>
+        <p class="toast-order-id">رقم الطلب: <span id="toast-order-id"></span></p>
+        <p class="toast-details">سيتم التواصل معك قريباً لتأكيد التفاصيل</p>
+    </div>
+</div>
+
+<!-- Optimizaciones móviles para la sección de colores -->
+<style>
+/* ===== نموذج الطلب - CSS المعزول ===== */
+
+.lotus-order-section {
+    padding: 60px 0;
+    background-color: #fcfcfc;
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif;
+    color: #333;
+}
+
+.lotus-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.lotus-order-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lotus-section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.lotus-section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #d4796f;
+}
+
+.lotus-section-subtitle {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.lotus-order-grid {
+    display: grid;
+    /* grid-template-columns: 1fr 1.5fr; */ /* Removed two-column layout */
+    grid-template-columns: 1fr; /* Set to single column */
+    gap: 30px; /* Adjusted gap */
+}
+
+/* معلومات المنتج ومعاينة الصورة (محذوف) */
+/* .lotus-product-preview { ... styles removed ... } */
+/* .lotus-product-image-container { ... styles removed ... } */
+/* .lotus-product-image { ... styles removed ... } */
+
+/* معاينة العربة (الأنماط الخاصة بالقسم الخارجي لم تعد ضرورية) */
+/* .lotus-cart-preview { ... styles removed ... } */
+
+/* NEW: Styles for Cart Preview when INSIDE the form */
+.lotus-cart-preview-in-form {
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 25px; /* Space before it */
+    margin-bottom: 25px; /* Space before button */
+    border: 1px solid #e9ecef; /* Subtle border */
+    box-shadow: none; /* Remove outer shadow */
+}
+
+.lotus-cart-title-in-form {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+    color: #495057; /* Darker grey */
+    text-align: center;
+}
+
+/* Keep existing cart items styles */
+.lotus-cart-items {
+    margin-bottom: 15px; /* Reduced margin */
+}
+
+/* Keep existing cart item styles */
+.lotus-cart-item {
+    padding: 8px 0; /* Slightly reduced padding */
+    border-bottom: 1px dashed #dee2e6; /* Match border color */
+}
+.lotus-cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Keep existing cart item details styles */
+.lotus-cart-item-details {
+    /* ... */
+}
+.lotus-item-name {
+    /* ... */
+    font-size: 15px; /* Slightly smaller */
+}
+.lotus-item-attrs {
+    /* ... */
+     font-size: 13px; /* Slightly smaller */
+}
+.lotus-cart-item-price {
+    /* ... */
+    font-size: 15px; /* Slightly smaller */
+}
+
+/* Keep existing cart summary styles but adjust bg */
+.lotus-cart-summary {
+    background-color: transparent; /* Remove inner background */
+    border-radius: 0;
+    padding: 0;
+    margin-top: 15px; /* Reduced margin */
+}
+
+/* Keep existing summary row styles */
+.lotus-summary-row {
+    /* ... */
+    margin-bottom: 8px; /* Reduced margin */
+}
+.lotus-total-row {
+    margin-top: 12px; /* Reduced margin */
+    padding-top: 12px; /* Reduced padding */
+    border-top: 1px solid #dee2e6; /* Match border color */
+}
+.lotus-summary-label {
+    /* ... */
+     color: #6c757d; /* Slightly lighter grey */
+}
+.lotus-summary-value {
+    /* ... */
+     font-weight: 500; /* Slightly less bold */
+}
+.lotus-discount {
+    /* ... */
+}
+.lotus-total {
+    /* ... */
+    font-size: 19px; /* Slightly larger total */
+    font-weight: 700;
+}
+
+/* نموذج الطلب */
+.lotus-order-form-container {
+    background-color: #ffffff; /* White background */
+    border-radius: 12px; /* Consistent radius */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07); /* Consistent shadow */
+    padding: 35px; /* Increased padding */
+    border: 1px solid #eee; /* Subtle border */
+}
+
+.lotus-form-group {
+    margin-bottom: 35px; /* Increased spacing */
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 30px; /* Increased spacing */
+}
+
+.lotus-form-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.lotus-group-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.lotus-group-title i {
+    margin-left: 10px;
+    color: #d4796f;
+}
+
+/* اختيار اللون (محسّن) */
+.lotus-color-selection-enhanced .lotus-group-title {
+    margin-bottom: 15px;
+}
+
+.lotus-color-options-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Adjusted for smaller items */
+    gap: 10px; /* Adjusted gap */
+    margin-bottom: 15px; 
+    justify-content: center; 
+}
+
+.lotus-color-option-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px; /* Adjusted padding */
+    border-radius: 8px;
+    border: 2px solid #eee; 
+    background-color: #fff;
+    position: relative;
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height */
+}
+
+.lotus-color-option-visual .lotus-color-circle {
+    margin-bottom: 0; /* No margin needed */
+    flex-shrink: 0; 
+}
+
+.lotus-color-option-visual:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    border-color: #ccc; /* Hover border */
+}
+
+.lotus-color-option-visual.active {
+    border-color: #d4796f; /* Keep active border color */
+    background-color: #fff8f7;
+    transform: none; /* Remove scale */
+    /* New selection indicator: outer shadow ring */
+    box-shadow: 0 0 0 3px rgba(212, 121, 111, 0.4); 
+}
+
+.lotus-color-option-visual.active::after {
+    /* Removed checkmark */
+    content: none;
+}
+
+.lotus-color-name-visual {
+    /* Name removed */
+    display: none;
+}
+
+/* اختيار المقاس */
+.lotus-size-options {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.lotus-size-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lotus-size-option:hover {
+    border-color: #d4796f;
+    transform: translateY(-3px);
+}
+
+.lotus-size-option.active {
+    background-color: #d4796f;
+    border-color: #d4796f;
+    transform: scale(1.05);
+}
+
+.lotus-size-text {
+    font-weight: 600;
+    color: #666;
+}
+
+.lotus-size-option.active .lotus-size-text {
+    color: #fff;
+}
+
+.lotus-size-guide {
+    margin-top: 15px;
+}
+
+.lotus-size-guide-link {
+    display: inline-flex;
+    align-items: center;
+    color: #d4796f;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.lotus-size-guide-link i {
+    margin-left: 5px;
+}
+
+.lotus-size-guide-link:hover {
+    color: #c56a5f;
+    text-decoration: underline;
+}
+
+/* الكمية والسعر */
+.lotus-products-container {
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fdfdfd;
+}
+
+.lotus-product-item {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #e8e8e8;
+    position: relative;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+}
+
+.lotus-product-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Product Item Header */
+.lotus-product-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+
+.lotus-product-title {
+    font-weight: 600;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Styles for individual product selectors within the item */
+.lotus-product-item .lotus-form-group.lotus-product-selector-group {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #f0f0f0;
+}
+.lotus-product-item .lotus-form-group.lotus-product-selector-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.lotus-product-item .lotus-group-title {
+    font-size: 15px; /* Smaller title inside item */
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.lotus-product-item .lotus-color-options-visual-item, /* Use specific class */
+.lotus-product-item .lotus-size-options {
+     gap: 8px; /* Slightly smaller gap */
+     display: flex; /* Use flex for better control */
+     flex-wrap: wrap;
+}
+.lotus-product-item .lotus-color-option-visual {
+    padding: 5px; /* Adjusted padding */
+    flex-direction: row; /* Horizontal layout */
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    min-width: auto; /* Let content decide width */
+    cursor: pointer;
+    justify-content: center;
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+}
+.lotus-product-item .lotus-color-option-visual img {
+    /* Image removed */
+    display: none;
+}
+.lotus-product-item .lotus-color-name-visual {
+    /* Name removed */
+    display: none;
+}
+.lotus-product-item .lotus-color-option-visual.active {
+    border-color: #d4796f;
+    background-color: #fff8f7;
+    transform: none; /* Override main selector hover */
+    box-shadow: none;
+}
+.lotus-product-item .lotus-color-option-visual.active .lotus-color-name-visual {
+    color: #d4796f;
+    font-weight: 600;
+}
+.lotus-product-item .lotus-color-option-visual.active::after {
+    /* Hide checkmark inside product item */
+    content: none;
+}
+.lotus-product-item .lotus-size-option {
+    width: 40px; /* Smaller size options */
+    height: 40px;
+    border-width: 1px;
+    cursor: pointer;
+}
+.lotus-product-item .lotus-size-text {
+    font-size: 14px;
+}
+
+/* Remove Button Styles */
+.lotus-remove-product {
+     width: 26px;
+     height: 26px;
+     background-color: #f8f8f8;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     opacity: 0.8;
+     transition: all 0.2s ease;
+     border: 1px solid #e0e0e0;
+     color: #aaa;
+     font-size: 12px;
+}
+
+.lotus-remove-product:hover {
+     opacity: 1;
+     background-color: #ff5252;
+     color: white;
+     border-color: #ff3030;
+     transform: scale(1.1) rotate(90deg);
+}
+
+/* Animation for Product Items */
+.lotus-product-added {
+     opacity: 1;
+     transform: scale(1) translateY(0);
+}
+.lotus-product-removing {
+     opacity: 0;
+     transform: scale(0.95) translateX(-20px);
+     transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Add Product Button */
+.lotus-add-product {
+    display: flex;
+    align-items: center;
+    background-color: #333333; /* Changed to dark background */
+    color: white; /* Changed to white text */
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #222222; /* Darker border */
+    text-align: center;
+    justify-content: center; /* Center content */
+    font-weight: 500;
+}
+
+.lotus-add-product i {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.lotus-add-product:hover {
+    background-color: #222222; /* Darker on hover */
+    transform: translateY(-2px);
+}
+
+/* NEW: Styles for Add Product Button States */
+#add-product-btn[data-state="add-second"] {
+    background-color: #333333; /* Changed to dark background */
+    border-color: #222222;
+    color: white;
+}
+#add-product-btn[data-state="add-third"] {
+    background-color: #222222; /* Even darker for third state */
+    border-color: #111111;
+    color: white;
+}
+
+/* NEW: Styles for Discount Badge next to Add Button */
+.discount-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0c14b, #c5a028, #ffd700, #e6bc2f);
+    background-size: 300% 300%;
+    color: #4b3600;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-right: 10px;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(205, 164, 0, 0.4);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+    transform: rotate(-2deg);
+    animation: pulse-badge 2s infinite, sparkle-gold 3s infinite;
+    border: 1px solid rgba(255, 215, 0, 0.6);
+    overflow: hidden;
+    z-index: 5;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Tajawal', 'Almarai', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Style for the discount icon */
+.discount-icon {
+    margin-left: 6px;
+    font-size: 12px;
+    animation: spin-icon 5s infinite;
+    display: inline-block;
+    color: #6b4800;
+    text-shadow: 0 0 3px rgba(255, 215, 0, 0.7);
+}
+
+/* Animation for the icon */
+@keyframes spin-icon {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Style for the discount text */
+.discount-text {
+    position: relative;
+    display: inline-block;
+    animation: glow-gold 2s infinite;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Gold glow animation for the text */
+@keyframes glow-gold {
+    0%, 100% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.6); }
+    50% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.9), 0 0 15px rgba(255, 215, 0, 0.7); }
+}
+
+/* Animation for the badge */
+@keyframes pulse-badge {
+    0% { transform: rotate(-2deg) scale(1); }
+    50% { transform: rotate(-2deg) scale(1.08); }
+    100% { transform: rotate(-2deg) scale(1); }
+}
+
+/* Gold sparkle animation */
+@keyframes sparkle-gold {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Creating a pseudo-element for the sparkle effect */
+.discount-badge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 10%, transparent 10%) 0 0,
+                radial-gradient(circle, rgba(255, 215, 0, 0.5) 5%, transparent 5%) 10px 10px;
+    background-size: 20px 20px;
+    opacity: 0;
+    z-index: -1;
+    animation: shimmer-gold 4s linear infinite;
+    pointer-events: none;
+}
+
+/* Add a highlight effect to the badge */
+.discount-badge::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 215, 0, 0.4);
+    filter: blur(10px);
+    border-radius: 50%;
+    z-index: -1;
+    animation: float-light 3s ease-in-out infinite alternate;
+}
+
+/* Animation for the highlight */
+@keyframes float-light {
+    0% { transform: translate(0, 0); opacity: 0.3; }
+    100% { transform: translate(5px, 5px); opacity: 0.7; }
+}
+
+/* Gold shimmer animation */
+@keyframes shimmer-gold {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2) rotate(360deg);
+    }
+}
+
+/* Show active badge */
+#add-product-btn[data-state="add-second"] .discount-badge,
+#add-product-btn[data-state="add-third"] .discount-badge,
+.discount-badge.active {
+    opacity: 1;
+}
+
+/* When hovered, increase the effect */
+#add-product-btn:hover .discount-badge {
+    transform: rotate(-2deg) scale(1.1);
+    box-shadow: 0 5px 15px rgba(205, 164, 0, 0.6);
+    background-position: right bottom;
+}
+
+/* NEW: Styles for Temporary Discount Toast Notification */
+.discount-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Position bottom-right */
+    background-color: #28a745; /* Success green */
+    color: white;
+    padding: 15px 25px 15px 15px; /* More padding on left for close button */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
+    display: flex; /* Use flex for layout */
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.discount-toast.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+#toast-message {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#toast-close-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0 5px;
+    margin-right: -10px; /* Adjust position */
+    margin-left: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+#toast-close-btn:hover {
+    opacity: 1;
+    color: white;
+}
+
+/* حقول الإدخال */
+.lotus-input-group {
+    margin-bottom: 20px;
+}
+
+.lotus-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.lotus-input-container {
+    position: relative;
+}
+
+.lotus-input-icon {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    color: #d4796f;
+}
+
+.lotus-input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lotus-input:focus {
+    border-color: #d4796f;
+    box-shadow: 0 0 0 3px rgba(212, 121, 111, 0.1);
+    outline: none;
+}
+
+.lotus-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.lotus-phone-note {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* طرق الدفع */
+.lotus-payment-methods {
+    display: flex;
+    gap: 15px;
+}
+
+.lotus-payment-option {
+    position: relative;
+    flex: 1;
+}
+
+.lotus-payment-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.lotus-payment-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lotus-payment-label i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #888;
+}
+
+.lotus-payment-option input[type="radio"]:checked + .lotus-payment-label {
+    border-color: #d4796f;
+    background-color: #fff8f7;
+}
+
+.lotus-payment-option input[type="radio"]:checked + .lotus-payment-label i {
+    color: #d4796f;
+}
+
+/* زر تأكيد الطلب */
+.lotus-form-action {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.lotus-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d4796f;
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.lotus-submit-btn i {
+    margin-left: 10px;
+}
+
+.lotus-submit-btn:hover {
+    background-color: #c56a5f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 121, 111, 0.2);
+}
+
+.lotus-secure-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.lotus-secure-badge i {
+    color: #4CAF50;
+    margin-left: 5px;
+}
+
+/* إشعار الخصم (محسّن) */
+.lotus-discount-notification.enhanced {
+    background-color: #ffffff;
+    border-left: 5px solid #4CAF50; /* Green accent border */
+    width: 350px; /* Slightly wider */
+    padding: 0; /* Remove padding, content handles it */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.lotus-discount-notification.enhanced .lotus-notification-content {
+    display: flex;
+    align-items: flex-start; /* Align items top */
+    padding: 15px 20px; /* Adjusted padding */
+    position: relative; /* For close button */
+}
+
+.lotus-discount-notification.enhanced .lotus-notification-icon {
+    background-color: #4CAF50;
+    margin-left: 15px; /* Consistent margin */
+    margin-top: 5px; /* Align icon better */
+}
+
+.lotus-discount-notification.enhanced .lotus-notification-message h4 {
+    font-size: 16px;
+    font-weight: 600; /* Bolder title */
+    margin-bottom: 8px; /* More space */
+}
+
+.lotus-discount-notification.enhanced .lotus-notification-message p {
+    font-size: 14px;
+    margin-bottom: 10px; /* Space before summary */
+    color: #555;
+}
+
+.lotus-notification-summary {
+    font-size: 13px;
+    background-color: #f8f8f8;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+.lotus-notification-summary span {
+    display: block; /* Stack summary items */
+    margin-bottom: 3px;
+    color: #666;
+}
+.lotus-notification-summary span:last-child {
+    margin-bottom: 0;
+}
+.lotus-notification-summary strong {
+    color: #333;
+    font-weight: 600;
+}
+.lotus-notification-summary .lotus-discount {
+    color: #4CAF50; /* Ensure discount color */
+}
+
+.lotus-close-notification {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Positioned left in RTL */
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+.lotus-close-notification:hover {
+    color: #555;
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 992px) {
+    /* No longer needed as grid is always 1 column */
+    /* .lotus-order-grid { ... } */
+    
+    /* Removed styles for .lotus-product-preview */
+
+    /* .lotus-product-image-container { ... } */
+    
+    /* Form container already takes full width */
+    /* .lotus-order-form-container { ... } */
+} /* End @media (max-width: 992px) */
+
+@media (max-width: 768px) {
+    .lotus-order-section {
+        padding: 40px 0;
+    }
+    
+    .lotus-section-title {
+        font-size: 28px; /* Adjust title size */
+    }
+    
+    .lotus-section-subtitle {
+        font-size: 16px;
+    }
+    
+    .lotus-form-group {
+        margin-bottom: 25px; /* Reduce group spacing */
+        padding-bottom: 20px;
+    }
+
+    .lotus-group-title {
+        font-size: 17px; /* Slightly smaller group titles */
+        margin-bottom: 15px;
+    }
+
+    /* Styles for cart preview inside form on mobile */
+    .lotus-cart-preview-in-form {
+         padding: 15px;
+         margin-top: 20px;
+         margin-bottom: 20px;
+    }
+
+    .lotus-cart-title-in-form {
+         font-size: 17px;
+         margin-bottom: 10px;
+         padding-bottom: 8px;
+    }
+
+    .lotus-color-options-visual {
+         grid-template-columns: repeat(auto-fit, minmax(45px, 1fr)); /* Further adjust */
+         gap: 8px;
+    }
+
+    .lotus-color-option-visual {
+        width: 45px;
+        height: 45px;
+    }
+
+    .lotus-color-name-visual {
+        font-size: 11px; /* Smaller font */
+    }
+
+    .lotus-size-options {
+         gap: 10px; /* Reduce gap */
+         justify-content: center; /* Center size options */
+    }
+
+    .lotus-size-option {
+        width: 45px; /* Slightly smaller */
+        height: 45px;
+    }
+
+    .lotus-input {
+        padding: 10px 40px 10px 12px; /* Adjust padding */
+        font-size: 15px;
+    }
+
+    .lotus-label {
+        font-size: 15px;
+    }
+
+    .lotus-payment-methods {
+         flex-direction: column;
+     }
+
+    .lotus-submit-btn {
+        padding: 14px 25px; /* Adjust padding */
+        font-size: 17px;
+    }
+} /* End @media (max-width: 768px) */
+
+@media (max-width: 576px) {
+    .lotus-order-form-container {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    }
+    
+    .lotus-group-title {
+        font-size: 16px;
+    }
+    
+    .lotus-cart-preview-in-form { /* Cart preview inside form */
+        padding: 12px; /* Reduce padding further */
+        border-radius: 6px;
+    }
+
+    .lotus-cart-title-in-form {
+        font-size: 16px;
+    }
+
+    .lotus-summary-row {
+        font-size: 13px; /* Slightly smaller summary text */
+    }
+
+    .lotus-total {
+        font-size: 17px; /* Ensure total stands out */
+    }
+
+    .lotus-color-options-visual {
+        grid-template-columns: repeat(4, 1fr); /* More consistent 4 columns */
+        gap: 8px;
+    }
+
+    .lotus-submit-btn {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .lotus-secure-badge {
+        font-size: 13px;
+    }
+} /* End @media (max-width: 576px) */
+
+/* إضافات بريق وأنيميشن للطلب */
+.lotus-animated-icon {
+    animation: iconPulse 2s infinite;
+}
+
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.lotus-pulse-effect {
+    animation: pulsate 1.5s ease-out infinite;
+    color: #e91e63;
+}
+
+@keyframes pulsate {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+.lotus-image-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+}
+
+.lotus-glowing-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #e91e63, #ff5722, #e91e63);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+    box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
+    transition: all 0.3s ease;
+}
+
+.lotus-glowing-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(242, 97, 103, 0.6);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.lotus-btn-sparkle {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    animation: sparkle 5s linear infinite;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+@keyframes sparkle {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* تعزيز لون الخيارات */
+.lotus-color-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lotus-color-option-visual:hover .lotus-color-circle {
+    transform: scale(1.15); /* Slightly enhance hover on circle */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+}
+
+.lotus-color-option-visual.active .lotus-color-circle {
+    transform: scale(1.1); /* Less scaling when active */
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #d4796f; /* Inner white ring, outer active color ring */
+}
+
+/* تأثيرات للأزرار */
+.lotus-size-option {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.lotus-size-option:after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    transform: scale(0.5);
+}
+
+.lotus-size-option:hover:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.lotus-size-option.active:after {
+    opacity: 1;
+    animation: pulse-size 2s infinite;
+}
+
+@keyframes pulse-size {
+    0% { transform: scale(0.8); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(0.8); opacity: 0.3; }
+}
+
+/* NEW: Styles for Order Confirmation Section */
+.lotus-confirmation-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif;
+    min-height: 80vh; /* Ensure it takes up significant space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInConfirmation 0.8s ease-out;
+}
+
+@keyframes fadeInConfirmation {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.lotus-confirmation-box {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.confirmation-icon {
+    font-size: 60px;
+    color: #28a745; /* Green success color */
+    margin-bottom: 20px;
+    animation: scaleUpIcon 0.5s ease-out 0.3s backwards;
+}
+
+@keyframes scaleUpIcon {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.confirmation-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.confirmation-subtitle {
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.confirmation-details {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: right; /* Align details to the right */
+    border: 1px solid #e9ecef;
+}
+
+.confirmation-details h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+    color: #495057;
+}
+
+.confirmation-details p {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #555;
+}
+
+.confirmation-details p strong {
+    color: #333;
+    min-width: 80px; /* Align labels */
+    display: inline-block;
+}
+
+.conf-items-summary h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#conf-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#conf-items-list li {
+    font-size: 14px;
+    color: #666;
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+#conf-items-list li:last-child {
+    border-bottom: none;
+}
+
+.conf-total {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #dee2e6;
+    font-size: 17px !important; /* Ensure larger size */
+    font-weight: 600;
+}
+.conf-total strong {
+    font-weight: 700;
+}
+
+.back-to-home-btn {
+    display: inline-block;
+    background-color: #d4796f;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-to-home-btn:hover {
+    background-color: #c56a5f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(212, 121, 111, 0.2);
+}
+
+/* أنماط عنصر التغذية الراجعة */
+.form-feedback {
+    margin: 15px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-feedback.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.form-feedback.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.form-feedback.info {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    border: 1px solid #bbdefb;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* NEW: Styles for Order Confirmation Toast */
+.lotus-toast-notification {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background-color: #fff;
+    border-right: 5px solid #4CAF50;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    padding: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0.4s;
+    direction: rtl;
+}
+
+.lotus-toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear;
+}
+
+.toast-icon {
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 28px;
+}
+
+.toast-content {
+    padding: 15px;
+    flex: 1;
+}
+
+.toast-title {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.toast-order-id {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    color: #555;
+}
+
+.toast-details {
+    font-size: 13px;
+    margin: 0;
+    color: #777;
+}
+
+@keyframes toastFadeOut {
+    from { opacity: 1; transform: translateX(-50%) translateY(0); }
+    to { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
+
+/* Toast fadeout animation */
+.lotus-toast-notification.hide {
+    animation: toastFadeOut 0.5s ease forwards;
+}
+
+@media (max-width: 480px) {
+    .lotus-toast-notification {
+        width: 90%;
+        max-width: 300px;
+        top: 20px;
+    }
+    
+    .toast-icon {
+        padding: 12px;
+        font-size: 24px;
+    }
+    
+    .toast-content {
+        padding: 12px;
+    }
+}
+
+</style>
+
+<script>
+/* JavaScript Code for Order Form - Refactored for Multiple Products & Package Deals */
+(function() {
+    // Wait for the DOM to be fully loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initOrderForm);
+    } else {
+        initOrderForm();
+    }
+    
+    // Make initOrderForm globally accessible through window object
+    window.initOrderForm = initOrderForm;
+    
+    function initOrderForm() {
+        console.log('Lotus Order Form: Initializing (Professional Scenario V2 - Firestore Integration)...');
+        
+        // Add a check to prevent duplicate initialization 
+        if (window.orderFormInitialized) {
+            console.log('Order form already initialized - skipping duplicate initialization');
+            return;
+        }
+        
+        // Set flag to prevent duplicate initialization
+        window.orderFormInitialized = true;
+        
+        // --- Firebase Configuration (Fallback - ideally load globally) ---
+        const firebaseConfig = {
+          apiKey: "AIzaSyCUq7yBq_gu_W5O6SLTUO2upQUFNa0blL8",
+          authDomain: "loutus-higab.firebaseapp.com",
+          projectId: "loutus-higab",
+          storageBucket: "loutus-higab.firebasestorage.app", 
+          messagingSenderId: "971174136438",
+          appId: "1:971174136438:web:a513b9b212260c34d52d57",
+          measurementId: "G-6EHG240K0E"
+        };
+        // Initialize Firebase if not already done
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        } else {
+            firebase.app(); // if already initialized, use that app
+        }
+        const db = firebase.firestore();
+
+        // --- Configuration ---
+        const products = []; 
+        let nextProductId = 1; 
+        let toastTimeout = null; // Variable to hold the timeout reference
+        
+        // Add the missing maxProducts constant
+        const maxProducts = 3;
+        
+        const packagePrices = {
+            1: 770,
+            2: 1399,
+            3: 1900
+        };
+        const shippingCostBase = 49; 
+        const freeShippingThreshold = 3;
+
+        let currentMainColor = 'أحمر';
+        let currentMainSize = 'L';
+        const defaultImage = 'images/red/Firefly 20250418003957.png';
+
+        // --- DOM Elements ---
+        const formContainer = document.querySelector('.lotus-order-form-container');
+        const mainColorOptionsContainer = formContainer.querySelector('.lotus-color-options-visual');
+        const mainSizeOptionsContainer = formContainer.querySelector('.lotus-size-options');
+        const selectedColorImage = document.getElementById('selected-color-main-image'); 
+        const addProductBtn = document.getElementById('add-product-btn');
+        const addProductText = document.getElementById('add-product-text');
+        const discountBadge = addProductBtn.querySelector('.discount-badge'); // Get the new badge span
+        const productsContainer = document.getElementById('products-container'); 
+        const cartPreviewInForm = formContainer.querySelector('.lotus-cart-preview-in-form');
+        const cartItemsContainer = cartPreviewInForm.querySelector('#cart-items'); 
+        const basePriceElement = cartPreviewInForm.querySelector('#base-price');
+        const shippingCostElement = cartPreviewInForm.querySelector('#shipping-cost');
+        const totalPriceElement = cartPreviewInForm.querySelector('#total-price');
+        const orderForm = document.getElementById('lotus-order-form');
+        const placeOrderBtn = document.getElementById('place-order-btn');
+        const formFeedback = document.getElementById('form-feedback'); // Assuming an element for feedback exists
+        
+        // --- Input Fields ---
+        const customerNameInput = document.getElementById('customer-name');
+        const customerPhoneInput = document.getElementById('phone-number');
+        const customerCityInput = document.getElementById('city');
+        const customerAddressInput = document.getElementById('address');
+        const paymentMethodSelect = document.querySelector('input[name="payment-method"]:checked'); // Get checked initially
+
+        // --- Product Management ---
+        function addProduct() {
+            if (products.length >= maxProducts) {
+                return; // Don't add more than the maximum
+            }
+            
+            // Create new product ID with string prefix to avoid issues with parseInt
+            const productId = 'p' + Date.now();
+            
+            // Get current color and size from main selectors
+            const newProduct = {
+                id: productId,
+                color: currentMainColor,
+                size: currentMainSize,
+                quantity: 1
+            };
+            
+            // Add to products array
+            products.push(newProduct);
+            
+            // Track AddToCart event via Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'AddToCart', {
+                    content_type: 'product',
+                    content_ids: [`lotus_${newProduct.color}_${newProduct.size}`],
+                    content_name: 'فستان لوتس',
+                    value: packagePrices[1],
+                    currency: 'EGP'
+                });
+                console.log('Facebook Pixel: AddToCart event tracked');
+            }
+            
+            addProductToDisplay(newProduct); 
+            updateAddButtonState(); 
+            updateCartDisplay(); 
+
+            // Show temporary toast notification AFTER adding 2nd or 3rd
+            if (products.length === 2 || products.length === 3) {
+                showDiscountToast();
+            }
+            
+            console.log('Product added:', newProduct, 'Current products:', products);
+        }
+        
+        function removeProduct(productId) {
+            const productIndex = products.findIndex(p => p.id === productId);
+            if (productIndex === -1 || products.length === 1) return; 
+
+            const removedProduct = products.splice(productIndex, 1)[0];
+            console.log('Product removed:', removedProduct, 'Current products:', products);
+
+            const productElement = productsContainer.querySelector(`.lotus-product-item[data-product-id="${productId}"]`);
+            if (productElement) {
+                productElement.classList.add('lotus-product-removing');
+                setTimeout(() => {
+                    productElement.remove();
+                    updateStateAfterRemoval(); 
+                }, 300); 
+            } else {
+                updateStateAfterRemoval(); 
+            }
+        }
+        
+        function updateStateAfterRemoval(){
+             updateAddButtonState();
+             updateCartDisplay(); 
+             updateProductItemTitles(); 
+             updateRemoveButtonVisibility(); 
+             // Hide the toast if it's visible and we go below 2 items
+             if (products.length < 2 && discountToast && discountToast.classList.contains('active')) {
+                  hideDiscountToast();
+             }
+        }
+
+        function updateProductDetails(productId, type, value) {
+             const product = products.find(p => p.id === productId);
+             if (product) {
+                 if (type === 'color') product.color = value;
+                 if (type === 'size') product.size = value;
+                 console.log(`Product ${productId} updated:`, product);
+                 updateCartDisplay(); 
+             }
+        }
+        
+        function updateMainSelection(type, value) {
+            if (type === 'color') {
+                currentMainColor = value;
+                const activeColorOption = mainColorOptionsContainer.querySelector(`.lotus-color-option-visual[data-color="${value}"]`);
+                if (activeColorOption && selectedColorImage) {
+                    selectedColorImage.src = activeColorOption.getAttribute('data-image');
+                }
+            } else if (type === 'size') {
+                currentMainSize = value;
+            }
+             console.log(`Main selection updated: ${type}=${value}`);
+        }
+
+        // --- UI Update Functions ---
+        function updateProductItemTitles() {
+            const items = productsContainer.querySelectorAll('.lotus-product-item');
+            items.forEach((item, index) => {
+                const titleElement = item.querySelector('.lotus-product-title');
+                if (titleElement) titleElement.textContent = `فستان لوتس #${index + 1}`;
+            });
+        }
+
+        function addProductToDisplay(product) {
+            const productElement = document.createElement('div');
+            productElement.className = 'lotus-product-item';
+            productElement.setAttribute('data-product-id', product.id);
+
+            const removeButtonHTML = products.length > 1 ? `<div class="lotus-remove-product" title="إزالة الفستان"><i class="fas fa-times"></i></div>` : '';
+
+            const productHeaderHTML = `
+                 <div class="lotus-product-item-header">
+                     <span class="lotus-product-title"></span> 
+                     ${removeButtonHTML} 
+                 </div>`;
+
+            const colorSelectorHTML = createIndividualSelectorHTML('color', product.id, product.color);
+            const sizeSelectorHTML = createIndividualSelectorHTML('size', product.id, product.size);
+
+            productElement.innerHTML = `
+                ${productHeaderHTML}
+                ${colorSelectorHTML}
+                ${sizeSelectorHTML}
+            `;
+
+            productsContainer.appendChild(productElement);
+            updateProductItemTitles(); 
+
+            const removeBtn = productElement.querySelector('.lotus-remove-product');
+            if(removeBtn) removeBtn.addEventListener('click', () => removeProduct(product.id));
+            
+            attachIndividualSelectorListeners(productElement, product.id); 
+            updateRemoveButtonVisibility(); 
+
+            requestAnimationFrame(() => { productElement.classList.add('lotus-product-added'); });
+        }
+
+        function updateRemoveButtonVisibility() {
+             const items = productsContainer.querySelectorAll('.lotus-product-item');
+             items.forEach(item => {
+                 let removeBtn = item.querySelector('.lotus-remove-product');
+                 const productId = item.getAttribute('data-product-id');
+                 if (products.length > 1) {
+                     if (!removeBtn) { 
+                         const header = item.querySelector('.lotus-product-item-header');
+                         if (header) {
+                              removeBtn = document.createElement('div');
+                              removeBtn.className = 'lotus-remove-product';
+                              removeBtn.title = 'إزالة الفستان';
+                              removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                              removeBtn.addEventListener('click', () => removeProduct(productId));
+                              header.appendChild(removeBtn);
+                         }
+                     }
+                 } else {
+                     if (removeBtn) removeBtn.remove(); 
+                 }
+             });
+        }
+        
+        function createIndividualSelectorHTML(type, productId, currentValue) {
+             const groupTitle = type === 'color' ? 'اللون' : 'المقاس';
+             const iconClass = type === 'color' ? 'fa-palette' : 'fa-ruler';
+             const optionsContainerClass = type === 'color' ? 'lotus-color-options-visual-item' : 'lotus-size-options';
+             const optionClass = type === 'color' ? 'lotus-color-option-visual' : 'lotus-size-option';
+             const dataAttr = type === 'color' ? 'data-color' : 'data-size';
+             const mainOptionsContainer = type === 'color' ? mainColorOptionsContainer : mainSizeOptionsContainer;
+
+             let optionsHTML = '';
+             if (mainOptionsContainer) {
+                  mainOptionsContainer.querySelectorAll(`.${optionClass}`).forEach(optionNode => {
+                       const optionValue = optionNode.getAttribute(dataAttr);
+                       const isActive = optionValue === currentValue;
+                       const clonedOption = optionNode.cloneNode(true); 
+                       clonedOption.classList.toggle('active', isActive);
+                       clonedOption.setAttribute('data-product-ref', productId);
+                       clonedOption.setAttribute('data-selector-type', type);
+                       const nameSpan = clonedOption.querySelector('.lotus-color-name-visual'); 
+                       if (nameSpan) nameSpan.remove(); 
+                       optionsHTML += clonedOption.outerHTML;
+                  });
+             }
+
+             return `
+                  <div class="lotus-form-group lotus-product-selector-group">
+                       <h4 class="lotus-group-title"><i class="fas ${iconClass}"></i> ${groupTitle}</h4>
+                       <div class="${optionsContainerClass}">
+                           ${optionsHTML}
+                       </div>
+                  </div>
+             `;
+        }
+
+        function updateAddButtonState() {
+            addProductBtn.classList.remove('disabled'); // Enable by default
+            addProductBtn.style.display = 'flex'; // Make sure button is visible
+            
+            if (products.length === 0) {
+                // Initial state (though the first product is added automatically)
+                addProductText.textContent = 'إضافة الفستان الأول';
+                discountBadge.style.display = 'none'; 
+                addProductBtn.setAttribute('data-state', 'add-first'); // Optional state attribute
+            } else if (products.length === 1) {
+                addProductText.textContent = 'إضافة فستان ثاني'; // Corrected text
+                discountBadge.style.display = 'inline-flex';
+                const discountTextEl = discountBadge.querySelector('.discount-text');
+                if (discountTextEl) {
+                    discountTextEl.textContent = '15% خصم'; // Correct discount
+                } else {
+                    discountBadge.innerHTML = '<i class="fas fa-tags discount-icon"></i> <span class="discount-text">15% خصم</span>';
+                }
+                discountBadge.classList.add('active');
+                addProductBtn.setAttribute('data-state', 'add-second');
+            } else if (products.length === 2) {
+                addProductText.textContent = 'إضافة فستان ثالث'; // This was correct
+                discountBadge.style.display = 'inline-flex';
+                const discountTextEl = discountBadge.querySelector('.discount-text');
+                if (discountTextEl) {
+                    discountTextEl.textContent = '35% خصم'; // Correct discount
+                } else {
+                    discountBadge.innerHTML = '<i class="fas fa-tags discount-icon"></i> <span class="discount-text">35% خصم</span>';
+                }
+                discountBadge.classList.add('active');
+                addProductBtn.setAttribute('data-state', 'add-third');
+            } else { // products.length >= 3
+                addProductText.textContent = 'تم الوصول للحد الأقصى';
+                discountBadge.style.display = 'none'; // Hide badge when maxed out
+                addProductBtn.classList.add('disabled');
+                addProductBtn.style.cursor = 'not-allowed'; // Visual cue for disabled
+                // Optional: Slightly fade the button when disabled
+                addProductBtn.style.opacity = '0.7'; 
+                addProductBtn.setAttribute('data-state', 'max-reached');
+            }
+            
+             // Ensure button isn't disabled unless max is reached
+             if (products.length < 3) {
+                 addProductBtn.style.cursor = 'pointer';
+                 addProductBtn.style.opacity = '1';
+             }
+        }
+        
+        // --- Toast Notification for Discounts ---
+        let discountToast = null;
+        let toastMessage = null;
+        let toastCloseBtn = null;
+        // toastTimeout is already declared above, so no need to redeclare it
+        
+        function showDiscountToast() {
+            // Create toast if it doesn't exist
+            if (!discountToast) {
+                createToastElements();
+            }
+            
+            // Clear any existing timeout
+            if (toastTimeout) {
+                clearTimeout(toastTimeout);
+            }
+            
+            // Set appropriate message based on number of products
+            const message = products.length === 2 
+                ? 'رائع! لقد حصلت على خصم 15% من خلال إضافة فستان آخر. أضف فستان ثالث للحصول على 35% خصم!' 
+                : 'تهانينا! لقد حصلت على خصم 35% من خلال طلب 3 فساتين!';
+            
+            toastMessage.textContent = message;
+            discountToast.classList.add('active');
+            
+            // Add highlight animation to the discount on the summary
+            const totalPriceElement = document.getElementById('total-price');
+            if (totalPriceElement) {
+                totalPriceElement.classList.add('highlight-discount');
+                setTimeout(() => {
+                    totalPriceElement.classList.remove('highlight-discount');
+                }, 3000);
+            }
+            
+            // Auto hide after 7 seconds
+            toastTimeout = setTimeout(() => {
+                hideDiscountToast();
+            }, 7000);
+        }
+        
+        function hideDiscountToast() {
+            if (discountToast) {
+                discountToast.classList.remove('active');
+            }
+        }
+        
+        function createToastElements() {
+            // Create toast elements if they don't exist
+            if (!discountToast) {
+                discountToast = document.createElement('div');
+                discountToast.id = 'discount-toast-notification';
+                discountToast.className = 'discount-toast';
+                
+                toastMessage = document.createElement('span');
+                toastMessage.id = 'toast-message';
+                
+                toastCloseBtn = document.createElement('button');
+                toastCloseBtn.id = 'toast-close-btn';
+                toastCloseBtn.innerHTML = '&times;';
+                toastCloseBtn.addEventListener('click', hideDiscountToast);
+                
+                discountToast.appendChild(toastMessage);
+                discountToast.appendChild(toastCloseBtn);
+                document.body.appendChild(discountToast);
+                
+                // Add CSS for highlight animation if not exists
+                if (!document.getElementById('highlight-discount-style')) {
+                    const style = document.createElement('style');
+                    style.id = 'highlight-discount-style';
+                    style.textContent = `
+                        @keyframes highlight-pulse {
+                            0% { color: #d4796f; transform: scale(1); }
+                            50% { color: #ff4500; transform: scale(1.05); }
+                            100% { color: #d4796f; transform: scale(1); }
+                        }
+                        .highlight-discount {
+                            animation: highlight-pulse 0.5s ease-in-out 3;
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            }
+        }
+        
+        // --- Price Calculation ---
+        function calculateTotalPrice(productCount) {
+            // Calculate base price based on number of products
+            let basePrice = 0;
+            let discount = 0;
+            
+            if (productCount === 1) {
+                basePrice = packagePrices[1]; // Price for 1 dress
+            } else if (productCount === 2) {
+                basePrice = packagePrices[1] * 2; // Price for 2 dresses without discount
+                discount = basePrice - packagePrices[2]; // Apply 15% discount
+                basePrice = packagePrices[2]; // Use the discounted package price
+            } else if (productCount === 3) {
+                basePrice = packagePrices[1] * 3; // Price for 3 dresses without discount
+                discount = basePrice - packagePrices[3]; // Apply 35% discount
+                basePrice = packagePrices[3]; // Use the discounted package price
+            }
+            
+            // Calculate shipping cost (free for 3 or more products)
+            const shippingCost = productCount >= freeShippingThreshold ? 0 : shippingCostBase;
+            
+            // Calculate total
+            const total = basePrice + shippingCost;
+            
+            return {
+                basePrice,
+                discount,
+                shipping: shippingCost,
+                total
+            };
+        }
+
+        function updateCartDisplay() {
+            if (!cartPreviewInForm || !cartItemsContainer || !basePriceElement || !shippingCostElement || !totalPriceElement) {
+                console.error("Cart summary elements within the form are missing!");
+                return;
+            }
+            
+            cartItemsContainer.innerHTML = ''; 
+
+            products.forEach((product, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'lotus-cart-item';
+                itemElement.setAttribute('data-item-id', product.id); 
+
+                const currentPackagePrice = packagePrices[products.length] || 0;
+                const displayPricePerItem = products.length > 0 ? Math.round(currentPackagePrice / products.length) : 0;
+
+                itemElement.innerHTML = `
+                    <div class="lotus-cart-item-details">
+                        <span class="lotus-item-name">فستان لوتس #${index + 1}</span> 
+                        <span class="lotus-item-attrs">${product.color} | ${product.size}</span>
+                    </div>
+                    <div class="lotus-cart-item-price">
+                        ~<span class="lotus-price">${displayPricePerItem}</span> ج.م
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+            });
+
+            calculateTotal(); 
+        }
+
+        function calculateTotal() {
+            const numItems = products.length;
+            let currentPackagePrice = 0;
+            let shipping = 0;
+            let total = 0;
+            let discount = 0;
+            let originalPrice = 0;
+            
+            if (numItems > 0) {
+                // Calculate original price without discount
+                originalPrice = packagePrices[1] * numItems;
+                
+                // Apply the package price based on quantity
+                currentPackagePrice = packagePrices[numItems];
+                
+                // Calculate discount amount
+                discount = originalPrice - currentPackagePrice;
+                
+                // Calculate shipping
+                shipping = numItems >= freeShippingThreshold ? 0 : shippingCostBase;
+                
+                // Calculate total
+                total = currentPackagePrice + shipping;
+            }
+            
+            // Update price displays
+            basePriceElement.textContent = `${currentPackagePrice} ج.م`;
+            
+            // Show discount if applicable
+            const discountRow = document.getElementById('discount-row');
+            const discountElement = document.getElementById('discount-amount');
+            
+            if (discountRow && discountElement) {
+                if (discount > 0) {
+                    discountElement.textContent = `- ${discount} ج.م`;
+                    discountRow.style.display = 'flex';
+                } else {
+                    discountRow.style.display = 'none';
+                }
+            }
+            
+            // Update shipping display
+            shippingCostElement.textContent = shipping === 0 && numItems > 0 ? 'مجاني!' : `${shipping} ج.م`;
+            
+            // Update total
+            totalPriceElement.textContent = `${total} ج.م`;
+            
+            // Add pulse effect when price changes
+            if (total > 0 && !totalPriceElement.classList.contains('lotus-pulse-effect')) {
+                 totalPriceElement.classList.add('lotus-pulse-effect');
+                 setTimeout(() => totalPriceElement.classList.remove('lotus-pulse-effect'), 1500);
+            } else if (total === 0 && totalPriceElement.classList.contains('lotus-pulse-effect')) {
+                 totalPriceElement.classList.remove('lotus-pulse-effect'); 
+            }
+            
+            return { total, discount, shipping, basePrice: currentPackagePrice };
+        }
+        
+        // --- Event Listener Setup ---
+        function attachMainSelectorsListeners() {
+             mainColorOptionsContainer.querySelectorAll('.lotus-color-option-visual').forEach(option => {
+                  option.addEventListener('click', function() {
+                       mainColorOptionsContainer.querySelectorAll('.lotus-color-option-visual').forEach(opt => opt.classList.remove('active'));
+                       this.classList.add('active');
+                       updateMainSelection('color', this.getAttribute('data-color'));
+                  });
+             });
+             mainSizeOptionsContainer.querySelectorAll('.lotus-size-option').forEach(option => {
+                  option.addEventListener('click', function() {
+                       mainSizeOptionsContainer.querySelectorAll('.lotus-size-option').forEach(opt => opt.classList.remove('active'));
+                       this.classList.add('active');
+                       updateMainSelection('size', this.getAttribute('data-size'));
+                  });
+             });
+        }
+        
+        function attachIndividualSelectorListeners(productElement, productId) {
+             productElement.querySelectorAll('[data-selector-type]').forEach(option => {
+                  option.addEventListener('click', function() {
+                      const type = this.getAttribute('data-selector-type');
+                      const value = this.getAttribute(type === 'color' ? 'data-color' : 'data-size');
+                      const parentOptionsContainer = this.closest(`.${type === 'color' ? 'lotus-color-options-visual-item' : 'lotus-size-options'}`);
+                      
+                      if (parentOptionsContainer) {
+                          parentOptionsContainer.querySelectorAll(`[data-selector-type="${type}"]`).forEach(opt => opt.classList.remove('active'));
+                          this.classList.add('active');
+                          updateProductDetails(productId, type, value);
+                          
+                          console.log(`Product ${productId} ${type} updated to ${value}`);
+                      }
+                  });
+             });
+        }
+        
+        function updateIndividualSelectorUI(productId, type, value) {
+            const productItem = productsContainer.querySelector(`.lotus-product-item[data-product-id="${productId}"]`);
+            if (!productItem) return;
+            const optionsContainerClass = type === 'color' ? '.lotus-color-options-visual-item' : '.lotus-size-options';
+            const dataAttr = type === 'color' ? 'data-color' : 'data-size';
+            productItem.querySelectorAll(`${optionsContainerClass} [data-selector-type="${type}"]`).forEach(opt => {
+                opt.classList.toggle('active', opt.getAttribute(dataAttr) === value);
+            });
+        }
+
+        function updateMainSelectorActiveStates(type, value) {
+            if (type === 'color') {
+                 mainColorOptionsContainer.querySelectorAll('.lotus-color-option-visual').forEach(opt => {
+                     opt.classList.toggle('active', opt.getAttribute('data-color') === value);
+                 });
+            } else if (type === 'size') {
+                 mainSizeOptionsContainer.querySelectorAll('.lotus-size-option').forEach(opt => {
+                     opt.classList.toggle('active', opt.getAttribute('data-size') === value);
+                 });
+            }
+        }
+        
+        // --- Form Validation ---
+        function validateForm() {
+            let isValid = true;
+            const requiredFields = [customerNameInput, customerPhoneInput, customerCityInput, customerAddressInput];
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('invalid-field'); // Add class for visual feedback
+                } else {
+                    field.classList.remove('invalid-field');
+                }
+            });
+
+            // Validate phone format (basic example)
+             const phonePattern = /^01[0-2,5][0-9]{8}$/;
+            if (!phonePattern.test(customerPhoneInput.value.trim())){
+                 isValid = false;
+                 customerPhoneInput.classList.add('invalid-field');
+                 showFeedback('الرجاء إدخال رقم هاتف مصري صحيح.', 'error');
+            } else {
+                 customerPhoneInput.classList.remove('invalid-field');
+            }
+
+            return isValid;
+        }
+
+        function setSubmitButtonState(isDisabled, text = 'تأكيد الطلب الأن') {
+             if(placeOrderBtn){
+                  placeOrderBtn.disabled = isDisabled;
+                  placeOrderBtn.textContent = text;
+                  if(isDisabled){
+                       placeOrderBtn.classList.add('submitting');
+                  } else {
+                       placeOrderBtn.classList.remove('submitting');
+                  }
+             }
+        }
+        
+        function showFeedback(message, type = 'info') { 
+            // Ensure the feedback container exists in your HTML structure
+            if (!formFeedback) {
+                 console.warn('Form feedback element not found. Cannot display message:', message);
+                 alert(message); // Fallback to alert
+                 return;
+            }
+            formFeedback.textContent = message;
+            formFeedback.className = `form-feedback ${type}`; // Apply class for styling (e.g., .success, .error)
+            formFeedback.style.display = 'block';
+            
+            // Optional: Auto-hide after a few seconds
+            // setTimeout(() => { formFeedback.style.display = 'none'; }, 5000);
+        }
+
+        // --- Form Submission ---
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Form validation
+            if (!validateForm()) {
+                return;
+            }
+            
+            // Track InitiateCheckout event via Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'InitiateCheckout', {
+                    content_type: 'product',
+                    content_ids: products.map(item => `lotus_${item.color}_${item.size}`),
+                    num_items: products.length,
+                    value: calculatedTotal.total,
+                    currency: 'EGP'
+                });
+                console.log('Facebook Pixel: InitiateCheckout event tracked');
+            }
+            
+            // Disable submit button
+            setSubmitButtonState(true);
+            
+            // 1. Gather Customer Data
+            const customerData = {
+                customerName: customerNameInput.value.trim(),
+                phone: customerPhoneInput.value.trim(),
+                governorate: customerCityInput.value.trim(),
+                address: customerAddressInput.value.trim(),
+                paymentMethod: document.querySelector('input[name="payment-method"]:checked')?.value || 'cash_on_delivery'
+            };
+
+            // 2. Gather Product Data (already in 'products' array)
+            const itemsData = products.map(p => ({ 
+                color: p.color,
+                size: p.size,
+                quantity: 1 // Assuming quantity is always 1 per item in this setup
+            }));
+
+            // 3. Calculate Final Total (already calculated in updateCartDisplay)
+            const calculatedTotal = calculateTotalPrice(products.length);
+            const finalTotalAmount = calculatedTotal.total;
+
+            // 4. Generate Order ID (Example: SO-timestamp)
+            const orderId = `SO-${Date.now()}`;
+
+            // 5. Create Firestore Order Object
+            const orderData = {
+                ...customerData, // Spread customer details
+                orderId: orderId,
+                items: itemsData,
+                totalAmount: finalTotalAmount,
+                shippingCost: calculatedTotal.shipping,
+                status: 'pending', // Initial status
+                orderDate: firebase.firestore.Timestamp.now(),
+                // Add any other relevant fields if needed
+            };
+
+            console.log('Submitting order data to Firestore:', orderData);
+
+            // 6. Send to Firestore
+            db.collection('orders').add(orderData)
+                .then((docRef) => {
+                    console.log('Order submitted successfully with ID: ', docRef.id);
+                    
+                    // تتبع حدث الشراء عبر Facebook Pixel
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'Purchase', {
+                            value: finalTotalAmount,
+                            currency: 'EGP',
+                            content_type: 'product',
+                            content_ids: itemsData.map(item => `lotus_${item.color}_${item.size}`),
+                            num_items: itemsData.length
+                        });
+                        console.log('Facebook Pixel: Purchase event tracked');
+                    }
+                    
+                    // Update URL for Facebook Pixel tracking
+                    window.history.pushState({}, '', '/confirm');
+                    
+                    // Show confirmation toast notification
+                    showOrderConfirmationToast(orderId, customerData.customerName);
+                    
+                    // Show confirmation section
+                    const orderFormSection = document.querySelector('.lotus-order-section');
+                    const confirmationSection = document.getElementById('order-confirmation-view');
+                    if (orderFormSection && confirmationSection) {
+                        // Hide order form
+                        orderFormSection.style.display = 'none';
+                        
+                        // Update confirmation details
+                        document.getElementById('conf-order-number').textContent = orderId;
+                        document.getElementById('conf-customer-name').textContent = customerData.customerName;
+                        document.getElementById('conf-customer-city').textContent = customerData.governorate;
+                        
+                        // Update items list
+                        const itemsList = document.getElementById('conf-items-list');
+                        itemsList.innerHTML = '';
+                        itemsData.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = `فستان لوتس - اللون: ${item.color} - المقاس: ${item.size}`;
+                            itemsList.appendChild(li);
+                        });
+                        
+                        // Update total price
+                        document.getElementById('conf-total-price').textContent = `${finalTotalAmount} جنيه`;
+                        
+                        // Show confirmation section
+                        confirmationSection.style.display = 'block';
+                        
+                        // Scroll to top
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        // Fallback to feedback if confirmation section not found
+                        showFeedback('تم إرسال طلبك بنجاح! رقم الطلب: ' + orderId, 'success');
+                    }
+                    
+                    // Reset form fields (will be hidden but reset anyway)
+                    orderForm.reset();
+                    products.length = 0; // Clear products array
+                    productsContainer.innerHTML = ''; // Clear displayed products
+                    addProduct(); // Add back the initial product display
+                    setSubmitButtonState(false); // Re-enable button
+                })
+                .catch((error) => {
+                    console.error('Error adding document: ', error);
+                    showFeedback('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.', 'error');
+                    setSubmitButtonState(false); // Re-enable button
+                });
+        }
+
+        // --- Event Listeners Setup ---
+        // Attach Form Submit Listener
+        if (orderForm) {
+            orderForm.addEventListener('submit', handleFormSubmit);
+        } else {
+            console.error('Order form element not found!');
+        }
+
+        // --- Initial Setup Call ---
+        addProduct(); // Add the initial product display
+
+        // --- Initialization ---
+        createToastElements(); // Ensure toast elements exist or are created
+        updateAddButtonState(); 
+        updateCartDisplay(); 
+        attachMainSelectorsListeners(); 
+        updateMainSelectorActiveStates('color', currentMainColor);
+        updateMainSelectorActiveStates('size', currentMainSize);
+        if (selectedColorImage) selectedColorImage.src = defaultImage; 
+        
+        addProductBtn.addEventListener('click', addProduct); 
+
+        // NEW: Function to convert Arabic/Persian numerals to Western Arabic numerals
+        function convertNumerals(str) {
+            const persianArabicMap = {
+                '۰': '0', '۱': '1', '۲': '2', '۳': '3', '۴': '4', '۵': '5', '۶': '6', '۷': '7', '۸': '8', '۹': '9',
+                '٠': '0', '١': '1', '٢': '2', '٣': '3', '٤': '4', '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9'
+            };
+            return str.replace(/[۰-۹٠-٩]/g, function(match) {
+                return persianArabicMap[match];
+            });
+        }
+
+        // NEW: Add input listener for phone number conversion
+        const phoneNumberInput = document.getElementById('phone-number');
+        if (phoneNumberInput) {
+            phoneNumberInput.addEventListener('input', function(e) {
+                // Convert numerals and update the value
+                const convertedValue = convertNumerals(e.target.value);
+                // Prevent cursor jumping by only updating if value changed
+                if (convertedValue !== e.target.value) {
+                    // Store cursor position
+                    const start = e.target.selectionStart;
+                    const end = e.target.selectionEnd;
+                    e.target.value = convertedValue;
+                    // Restore cursor position
+                    e.target.setSelectionRange(start, end);
+                }
+            });
+        }
+
+        // (Validation Styles remain the same)
+        if (!document.getElementById('lotus-validation-styles')) {
+            const validationStyle = document.createElement('style');
+            validationStyle.id = 'lotus-validation-styles';
+            validationStyle.textContent = `/* (Validation styles as before) */
+                .lotus-invalid-field {
+                    border-color: #ff5252 !important;
+                    box-shadow: 0 0 0 3px rgba(255, 82, 82, 0.1) !important;
+                }
+                .lotus-error-message {
+                    color: #ff5252;
+                    font-size: 12px;
+                    margin-top: 5px;
+                    animation: fadeIn 0.3s ease;
+                }
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(-5px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+            `;
+            document.head.appendChild(validationStyle);
+        }
+        
+        console.log('Lotus Order Form: Professional Scenario V2 Initialized.');
+    } // End of initOrderForm
+
+    // NEW: Function to show order confirmation toast
+    function showOrderConfirmationToast(orderId, customerName) {
+        const toast = document.getElementById('order-confirmation-toast');
+        const orderIdSpan = document.getElementById('toast-order-id');
+        
+        if (!toast || !orderIdSpan) return;
+        
+        // Update toast content
+        orderIdSpan.textContent = orderId;
+        
+        // Show toast
+        toast.classList.add('show');
+        
+        // Hide toast after 3 seconds
+        setTimeout(() => {
+            toast.classList.add('hide');
+            setTimeout(() => {
+                toast.classList.remove('show');
+                toast.classList.remove('hide');
+            }, 500);
+        }, 3000);
+    }
+
+})(); // End of IIFE
+</script> 

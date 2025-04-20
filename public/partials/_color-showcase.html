@@ -1,0 +1,479 @@
+<!-- Color Showcase Section -->
+<section class="lotus-color-showcase" id="colors">
+    <h3>اكتشفي ألوان فستان لوتس</h3>
+    <div class="lotus-color-container">
+        <div class="lotus-main-image">
+            <div class="lotus-image-zoom-container">
+                <img src="images/Black/Firefly 20250418003250.png" alt="فستان لوتس" id="main-color-image">
+                <div class="lotus-zoom-icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+        <div class="lotus-color-details">
+            <div class="lotus-color-selectors">
+                <h4 class="lotus-color-selector-title">اختاري اللون المناسب لكِ</h4>
+                <div class="lotus-color-options">
+                    <div class="lotus-color-option" data-color="أحمر" 
+                         data-main="images/red/Firefly 20250418003957.png" 
+                         style="background-color: #B74141;">
+                         <span class="color-name-tooltip">أحمر</span>
+                    </div>
+                    <div class="lotus-color-option" data-color="أبيض" 
+                         data-main="images/White/Firefly 20250418004632.png" 
+                         style="background-color: #F5F5F5; border: 1px solid #e0e0e0;">
+                         <span class="color-name-tooltip">أبيض</span>
+                    </div>
+                    <div class="lotus-color-option" data-color="كحلي" 
+                         data-main="images/navy_blue/Firefly 20250418003030.png" 
+                         style="background-color: #1A2351;">
+                         <span class="color-name-tooltip">كحلي</span>
+                    </div>
+                    <div class="lotus-color-option active" data-color="أسود" 
+                         data-main="images/Black/Firefly 20250418003250.png" 
+                         style="background-color: #333333;">
+                         <span class="color-name-tooltip">أسود</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lotus-color-info">
+                <h3 class="lotus-color-name" id="color-name">اللون الأسود</h3>
+                <p id="color-description">فستان أنيق بتصميم عصري يناسب مختلف المناسبات</p>
+            </div>
+            
+            <div class="lotus-thumbnails-container">
+                <div class="lotus-thumbnails" id="color-thumbnails">
+                    <!-- Black thumbnails (default) -->
+                    <div class="lotus-thumbnail active" data-image="images/Black/Firefly 20250418003250.png">
+                        <img src="images/Black/Firefly 20250418003250.png" alt="فستان لوتس أسود">
+                    </div>
+                    <div class="lotus-thumbnail" data-image="images/Black/Firefly 20250418003545.png">
+                        <img src="images/Black/Firefly 20250418003545.png" alt="فستان لوتس أسود">
+                    </div>
+                    <div class="lotus-thumbnail" data-image="images/Black/Firefly 20250418003641.png">
+                        <img src="images/Black/Firefly 20250418003641.png" alt="فستان لوتس أسود">
+                    </div>
+                    <div class="lotus-thumbnail" data-image="images/Black/Firefly 20250418004444.png">
+                        <img src="images/Black/Firefly 20250418004444.png" alt="فستان لوتس أسود">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lotus-color-action">
+                <a href="#order-form-placeholder" class="lotus-color-button">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>اطلبي الآن</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para zoom de imagen -->
+    <div id="image-zoom-modal" class="image-zoom-modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img id="zoomed-image" src="" alt="صورة مكبرة للفستان">
+        </div>
+    </div>
+</section>
+
+<!-- Optimizaciones móviles para la sección de colores -->
+<style>
+    .lotus-color-showcase {
+        padding: 60px 20px;
+        position: relative;
+    }
+    
+    .lotus-color-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    .lotus-main-image {
+        width: 50%;
+        position: relative;
+    }
+    
+    .lotus-image-zoom-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .lotus-main-image img {
+        width: 100%;
+        display: block;
+        border-radius: 10px;
+    }
+    
+    .lotus-zoom-icon {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.8);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0.7;
+        z-index: 2;
+    }
+    
+    .lotus-color-details {
+        width: 45%;
+        padding: 0 15px;
+    }
+    
+    .lotus-color-selectors {
+        margin-bottom: 20px;
+    }
+    
+    .lotus-color-selector-title {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        color: var(--secondary-color);
+    }
+    
+    .lotus-color-options {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .lotus-color-option {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .lotus-color-option.active {
+        box-shadow: 0 0 0 2px white, 0 0 0 4px var(--accent-color);
+    }
+    
+    .color-name-tooltip {
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--secondary-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 15px;
+        font-size: 0.75rem;
+        opacity: 0;
+        pointer-events: none;
+        white-space: nowrap;
+    }
+    
+    .lotus-color-option:hover .color-name-tooltip {
+        opacity: 1;
+    }
+    
+    .lotus-color-info {
+        margin: 20px 0;
+    }
+    
+    .lotus-color-name {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+        color: var(--secondary-color);
+    }
+    
+    .lotus-thumbnails-container {
+        position: relative;
+        margin: 25px 0;
+    }
+    
+    .lotus-thumbnails {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .lotus-thumbnails::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .lotus-thumbnail {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .lotus-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .lotus-thumbnail.active {
+        box-shadow: 0 0 0 2px white, 0 0 0 4px var(--accent-color);
+    }
+    
+    .lotus-color-action {
+        margin-top: 30px;
+    }
+    
+    .lotus-color-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, var(--accent-color), #800f1a);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        box-shadow: 0 5px 15px rgba(191, 30, 46, 0.3);
+    }
+    
+    /* Modal de zoom */
+    .image-zoom-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        opacity: 0;
+    }
+    
+    .image-zoom-modal.show {
+        opacity: 1;
+    }
+    
+    .modal-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #zoomed-image {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1000;
+        text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    
+    /* Optimizaciones móviles */
+    @media (max-width: 991px) {
+        .lotus-color-container {
+            gap: 20px;
+        }
+        
+        .lotus-main-image,
+        .lotus-color-details {
+            width: 48%;
+        }
+        
+        .lotus-thumbnail {
+            width: 70px;
+            height: 70px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .lotus-color-showcase {
+            padding: 40px 15px;
+        }
+        
+        .lotus-color-container {
+            flex-direction: column;
+        }
+        
+        .lotus-main-image,
+        .lotus-color-details {
+            width: 100%;
+        }
+        
+        .lotus-main-image {
+            margin-bottom: 30px;
+        }
+        
+        .lotus-color-details {
+            padding: 0;
+        }
+        
+        .lotus-color-options {
+            justify-content: center;
+            gap: 18px;
+        }
+        
+        .lotus-color-option {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .lotus-color-info {
+            text-align: center;
+        }
+        
+        .lotus-color-selector-title {
+            text-align: center;
+        }
+        
+        .lotus-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 5px 0;
+        }
+        
+        .lotus-thumbnail {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+        }
+        
+        .lotus-color-action {
+            text-align: center;
+        }
+        
+        .lotus-color-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+        }
+        
+        .lotus-zoom-icon {
+            opacity: 1;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .lotus-color-showcase h3 {
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        
+        .lotus-color-name {
+            font-size: 1.2rem;
+        }
+        
+        .lotus-color-selector-title {
+            font-size: 1rem;
+        }
+        
+        .lotus-color-option {
+            width: 45px;
+            height: 45px;
+        }
+        
+        /* Mejorar la visualización de tooltips en pantallas pequeñas */
+        .color-name-tooltip {
+            display: none;
+        }
+        
+        /* Texto junto a cada color para identificarlo mejor */
+        .lotus-color-option::after {
+            content: attr(data-color);
+            position: absolute;
+            bottom: -20px;
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 0.7rem;
+            color: #555;
+        }
+    }
+</style>
+
+<!-- Simplified script without animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainImage = document.getElementById('main-color-image');
+        const thumbnails = document.querySelectorAll('.lotus-thumbnail');
+        const colorOptions = document.querySelectorAll('.lotus-color-option');
+        const zoomIcon = document.querySelector('.lotus-zoom-icon');
+        const modal = document.getElementById('image-zoom-modal');
+        const zoomedImage = document.getElementById('zoomed-image');
+        const closeModal = document.querySelector('.close-modal');
+        
+        // Handle thumbnail clicks
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                const imageSrc = this.getAttribute('data-image');
+                mainImage.src = imageSrc;
+                
+                // Update active thumbnail
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Handle color options
+        colorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const color = this.getAttribute('data-color');
+                const mainImageSrc = this.getAttribute('data-main');
+                
+                // Update main image directly without transitions
+                mainImage.src = mainImageSrc;
+                
+                // Update active color
+                colorOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update color name
+                document.getElementById('color-name').textContent = `اللون ال${color}`;
+            });
+        });
+        
+        // Handle zoom functionality
+        if (zoomIcon) {
+            zoomIcon.addEventListener('click', function() {
+                const currentSrc = mainImage.src;
+                zoomedImage.src = currentSrc;
+                modal.style.display = 'block';
+                modal.classList.add('show');
+            });
+        }
+        
+        // Handle modal close
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            });
+        }
+    });
+</script> 

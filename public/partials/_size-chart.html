@@ -1,0 +1,704 @@
+<!-- Size Chart Section -->
+<section id="size-chart" class="lotus-size-chart-section">
+    <div class="lotus-container">
+        <div class="lotus-interactive-size-calculator">
+            <h2 class="lotus-calculator-title">حساب المقاس المناسب</h2>
+            
+            <!-- Unit Toggle -->
+            <div class="lotus-unit-toggle">
+                <div class="lotus-toggle-button lotus-metric lotus-active" onclick="switchToMetric()" data-unit="metric">متري (سم، كجم)</div>
+                <div class="lotus-toggle-button lotus-imperial" onclick="switchToImperial()" data-unit="imperial">إمبريالي (قدم، رطل)</div>
+            </div>
+            
+            <!-- Height Slider -->
+            <div class="lotus-measurement-slider-container">
+                <div class="lotus-measurement-label">
+                    <span class="lotus-label-text">الطول</span>
+                    <i class="fas fa-ruler-vertical lotus-measurement-icon"></i>
+                </div>
+                <div class="lotus-measurement-value-container">
+                    <div class="lotus-measurement-value" id="lotus-height-value">165 سم</div>
+                </div>
+                <div class="lotus-slider-container">
+                    <input type="range" min="155" max="185" value="165" class="lotus-measurement-slider" id="lotus-height-slider" oninput="sliderChanged()">
+                    <div class="lotus-slider-ticks">
+                        <span class="lotus-tick">155</span>
+                        <span class="lotus-tick">165</span>
+                        <span class="lotus-tick">175</span>
+                        <span class="lotus-tick">185</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Weight Slider -->
+            <div class="lotus-measurement-slider-container">
+                <div class="lotus-measurement-label">
+                    <span class="lotus-label-text">الوزن</span>
+                    <i class="fas fa-weight lotus-measurement-icon"></i>
+                </div>
+                <div class="lotus-measurement-value-container">
+                    <div class="lotus-measurement-value" id="lotus-weight-value">65 كجم</div>
+                </div>
+                <div class="lotus-slider-container">
+                    <input type="range" min="50" max="90" value="65" class="lotus-measurement-slider" id="lotus-weight-slider" oninput="sliderChanged()">
+                    <div class="lotus-slider-ticks">
+                        <span class="lotus-tick">50</span>
+                        <span class="lotus-tick">60</span>
+                        <span class="lotus-tick">70</span>
+                        <span class="lotus-tick">80</span>
+                        <span class="lotus-tick">90</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Result Display -->
+            <div class="lotus-size-result-container">
+                <div class="lotus-size-result-title">المقاس الموصى به</div>
+                <div class="lotus-size-result-display">
+                    <div class="lotus-size-result" id="lotus-size-result">M</div>
+                </div>
+                <div class="lotus-size-result-text" id="lotus-size-result-text">المقاس الموصى به هو M</div>
+                <button id="lotus-proceed-button" class="lotus-proceed-button" onclick="proceedWithSize()">
+                    <i class="fas fa-shopping-cart lotus-btn-icon"></i>
+                    متابعة الطلب بهذا المقاس
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* ===== ISOLATION CSS WITH SPECIFIC NAMESPACES ===== */
+.lotus-size-chart-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.lotus-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.lotus-interactive-size-calculator {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.lotus-calculator-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+}
+
+.lotus-calculator-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #d4796f;
+}
+
+/* Unit Toggle */
+.lotus-unit-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: #f5f5f5;
+    border-radius: 50px;
+    padding: 5px;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.lotus-toggle-button {
+    flex: 1;
+    text-align: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.lotus-toggle-button.lotus-active {
+    color: #333;
+    background-color: #e8c6be;
+}
+
+/* Measurement Sliders */
+.lotus-measurement-slider-container {
+    margin-bottom: 40px;
+}
+
+.lotus-measurement-label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.lotus-measurement-icon {
+    margin-left: 10px;
+    color: #d4796f;
+}
+
+.lotus-label-text {
+    display: inline-block;
+}
+
+.lotus-measurement-value-container {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 8px 15px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.lotus-measurement-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #d4796f;
+}
+
+.lotus-slider-container {
+    position: relative;
+    padding: 0 15px;
+}
+
+.lotus-measurement-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: 1px solid #e0e0e0;
+}
+
+.lotus-measurement-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #d4796f;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.lotus-measurement-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #d4796f;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.lotus-measurement-slider::-webkit-slider-runnable-track {
+    height: 8px;
+    cursor: pointer;
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+.lotus-measurement-slider::-moz-range-track {
+    height: 8px;
+    cursor: pointer;
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+.lotus-measurement-slider:focus {
+    outline: none;
+}
+
+.lotus-measurement-slider:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px rgba(212, 121, 111, 0.2);
+}
+
+.lotus-measurement-slider:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 3px rgba(212, 121, 111, 0.2);
+}
+
+.lotus-slider-ticks {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.lotus-tick {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    position: relative;
+}
+
+/* Result Display */
+.lotus-size-result-container {
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.lotus-size-result-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.lotus-size-result-title:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: #d4796f;
+}
+
+.lotus-size-result-display {
+    margin: 20px 0;
+}
+
+.lotus-size-result {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: #e8c6be;
+    color: #d4796f;
+    font-size: 42px;
+    font-weight: 700;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.lotus-size-result-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.lotus-proceed-button {
+    background-color: #d4796f;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.lotus-btn-icon {
+    margin-left: 8px;
+}
+
+.lotus-proceed-button:hover {
+    background-color: #c56a5f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 121, 111, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .lotus-interactive-size-calculator {
+        padding: 20px;
+    }
+    
+    .lotus-calculator-title {
+        font-size: 24px;
+    }
+    
+    .lotus-unit-toggle {
+        width: 100%;
+    }
+    
+    .lotus-toggle-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .lotus-measurement-slider-container {
+        margin-bottom: 30px;
+    }
+    
+    .lotus-measurement-label {
+        font-size: 16px;
+    }
+    
+    .lotus-measurement-value {
+        font-size: 16px;
+    }
+    
+    .lotus-size-result {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 36px;
+    }
+    
+    .lotus-slider-ticks {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .lotus-tick {
+        font-size: 10px;
+    }
+    
+    .lotus-tick:nth-child(odd) {
+        display: block;
+    }
+}
+</style>
+
+<script>
+// متغيرات عامة
+var isMetric = true; // هل نحن في وضع القياس المتري؟
+
+// دالة تتفاعل مع تغيير قيم أشرطة التمرير
+function sliderChanged() {
+    console.log('تم تغيير قيمة الشريط');
+    updateDisplayValues();
+    calculateSize();
+}
+
+// دالة تحديث القيم المعروضة
+function updateDisplayValues() {
+    var heightSlider = document.getElementById('lotus-height-slider');
+    var weightSlider = document.getElementById('lotus-weight-slider');
+    var heightValue = document.getElementById('lotus-height-value');
+    var weightValue = document.getElementById('lotus-weight-value');
+    
+    if (!heightSlider || !weightSlider || !heightValue || !weightValue) {
+        console.error('عناصر العرض غير موجودة!');
+        return;
+    }
+    
+    var height = parseFloat(heightSlider.value);
+    var weight = parseFloat(weightSlider.value);
+    
+    if (isMetric) {
+        // وضع متري: عرض السنتيمترات والكيلوجرامات
+        heightValue.textContent = height + ' سم';
+        weightValue.textContent = weight + ' كجم';
+    } else {
+        // وضع إمبريالي: عرض القدم/البوصة والأرطال
+        var feet = Math.floor(height / 30.48);
+        var inches = Math.round((height / 2.54) % 12);
+        heightValue.textContent = feet + "'" + inches + '"';
+        weightValue.textContent = Math.round(weight * 2.20462) + ' رطل';
+    }
+}
+
+// دالة حساب المقاس المناسب
+function calculateSize() {
+    console.log('جاري حساب المقاس...');
+    var heightSlider = document.getElementById('lotus-height-slider');
+    var weightSlider = document.getElementById('lotus-weight-slider');
+    var sizeResult = document.getElementById('lotus-size-result');
+    var sizeResultText = document.getElementById('lotus-size-result-text');
+    var proceedButton = document.getElementById('lotus-proceed-button');
+    
+    if (!heightSlider || !weightSlider || !sizeResult || !sizeResultText) {
+        console.error('العناصر الأساسية غير موجودة!');
+        return;
+    }
+    
+    // الحصول على القيم الحالية بوحدات مترية
+    var heightCm = parseFloat(heightSlider.value);
+    var weightKg = parseFloat(weightSlider.value);
+    
+    console.log('الطول:', heightCm, 'سم، الوزن:', weightKg, 'كجم');
+    
+    // تعريف مراكز نطاقات المقاسات (متوسط كل نطاق)
+    var sizeRanges = [
+        { size: "M", heightCenter: 160, weightCenter: 55, heightRange: [155, 165], weightRange: [50, 60] },
+        { size: "L", heightCenter: 167.5, weightCenter: 65, heightRange: [165, 170], weightRange: [60, 70] },
+        { size: "XL", heightCenter: 172.5, weightCenter: 75, heightRange: [170, 175], weightRange: [70, 80] },
+        { size: "XXL", heightCenter: 180, weightCenter: 85, heightRange: [175, 185], weightRange: [80, 90] }
+    ];
+    
+    // التحقق أولاً إذا كان ضمن نطاق محدد بدقة
+    var exactSize = null;
+    for (var i = 0; i < sizeRanges.length; i++) {
+        var range = sizeRanges[i];
+        if (heightCm >= range.heightRange[0] && heightCm <= range.heightRange[1] && 
+            weightKg >= range.weightRange[0] && weightKg <= range.weightRange[1]) {
+            exactSize = range.size;
+            break;
+        }
+    }
+    
+    // إذا وجدنا مقاس مطابق تماماً
+    if (exactSize) {
+        console.log('المقاس المحدد (ضمن النطاق تماماً):', exactSize);
+        updateSizeDisplay(exactSize);
+        return;
+    }
+    
+    // لم نجد مقاس مطابق تماماً، نستخدم منطق المقاس الأقرب
+    
+    // الوزن النسبي للطول والوزن في حساب المسافة (اختياري لضبط أهمية كل عامل)
+    var heightWeight = 0.6; // أهمية الطول
+    var weightWeight = 0.4; // أهمية الوزن
+    
+    // حساب المسافة النسبية لكل مقاس
+    var closestSize = null;
+    var minDistance = Number.MAX_VALUE;
+    
+    for (var i = 0; i < sizeRanges.length; i++) {
+        var range = sizeRanges[i];
+        
+        // المسافة المعيارية للطول (نسبة الفرق إلى المدى الكلي)
+        var heightDistance = Math.abs(heightCm - range.heightCenter) / 30; // مقسوم على المدى التقريبي للطول
+        
+        // المسافة المعيارية للوزن (نسبة الفرق إلى المدى الكلي)
+        var weightDistance = Math.abs(weightKg - range.weightCenter) / 40; // مقسوم على المدى التقريبي للوزن
+        
+        // المسافة المرجحة (مزيج من مسافة الطول والوزن)
+        var distance = (heightWeight * heightDistance) + (weightWeight * weightDistance);
+        
+        // تفضيل مقاس أكبر في حالة التعادل (لراحة أكبر)
+        if (distance < minDistance || (Math.abs(distance - minDistance) < 0.01 && i > 0)) {
+            minDistance = distance;
+            closestSize = range.size;
+        }
+    }
+    
+    // تحديد المقاس الأمثل بناءً على المنطق التكميلي
+    // - إذا كان الطول أقل بكثير من النطاق لكن الوزن مناسب، نختار المقاس الأصغر
+    // - إذا كان الوزن أكبر بكثير، نختار المقاس الأكبر
+    if (heightCm < 155 && weightKg < 55) {
+        closestSize = "M"; // للأشخاص ذوي البنية الصغيرة جداً
+    } else if (heightCm > 180 && weightKg > 85) {
+        closestSize = "XXL"; // للأشخاص ذوي البنية الكبيرة جداً
+    }
+    
+    console.log('المقاس المحسوب (الأقرب):', closestSize);
+    updateSizeDisplay(closestSize);
+}
+
+// دالة تحديث عرض المقاس
+function updateSizeDisplay(size) {
+    var sizeResult = document.getElementById('lotus-size-result');
+    var sizeResultText = document.getElementById('lotus-size-result-text');
+    var proceedButton = document.getElementById('lotus-proceed-button');
+    
+    if (!sizeResult || !sizeResultText) return;
+    
+    // تحديث عرض المقاس
+    sizeResult.classList.remove('lotus-size-outside-range');
+    sizeResultText.classList.remove('lotus-text-outside-range', 'lotus-text-standard');
+    
+    // دائماً نعرض المقاس بشكل إيجابي
+    sizeResult.textContent = size;
+    sizeResultText.textContent = 'المقاس الموصى به هو ' + size;
+    sizeResultText.classList.add('lotus-text-standard');
+    
+    if (proceedButton) {
+        proceedButton.style.display = 'inline-block';
+        proceedButton.innerHTML = '<i class="fas fa-shopping-cart lotus-btn-icon"></i> متابعة الطلب بمقاس ' + size;
+    }
+    
+    // تأثير حركي للنتيجة
+    animateResult();
+}
+
+// دالة التحويل إلى الوحدات المترية
+function switchToMetric() {
+    console.log('التحويل إلى الوحدات المترية');
+    
+    if (isMetric) return; // بالفعل في الوحدات المترية
+    
+    var metricButton = document.querySelector('.lotus-toggle-button.lotus-metric');
+    var imperialButton = document.querySelector('.lotus-toggle-button.lotus-imperial');
+    var heightSlider = document.getElementById('lotus-height-slider');
+    var weightSlider = document.getElementById('lotus-weight-slider');
+    
+    if (!metricButton || !imperialButton || !heightSlider || !weightSlider) {
+        console.error('عناصر التحويل غير موجودة!');
+        return;
+    }
+    
+    // تغيير الفئة النشطة للأزرار
+    metricButton.classList.add('lotus-active');
+    imperialButton.classList.remove('lotus-active');
+    
+    // الحصول على القيم الحالية
+    var height = parseFloat(heightSlider.value);
+    var weight = parseFloat(weightSlider.value);
+    
+    // تحديث تكوين أشرطة التمرير
+    updateTicksForMetric();
+    
+    // تحويل وضع الوحدات
+    isMetric = true;
+    
+    // تحديث العرض
+    updateDisplayValues();
+    calculateSize();
+}
+
+// دالة التحويل إلى الوحدات الإمبريالية
+function switchToImperial() {
+    console.log('التحويل إلى الوحدات الإمبريالية');
+    
+    if (!isMetric) return; // بالفعل في الوحدات الإمبريالية
+    
+    var metricButton = document.querySelector('.lotus-toggle-button.lotus-metric');
+    var imperialButton = document.querySelector('.lotus-toggle-button.lotus-imperial');
+    var heightSlider = document.getElementById('lotus-height-slider');
+    var weightSlider = document.getElementById('lotus-weight-slider');
+    
+    if (!metricButton || !imperialButton || !heightSlider || !weightSlider) {
+        console.error('عناصر التحويل غير موجودة!');
+        return;
+    }
+    
+    // تغيير الفئة النشطة للأزرار
+    metricButton.classList.remove('lotus-active');
+    imperialButton.classList.add('lotus-active');
+    
+    // الحصول على القيم الحالية
+    var height = parseFloat(heightSlider.value);
+    var weight = parseFloat(weightSlider.value);
+    
+    // تحديث تكوين أشرطة التمرير
+    updateTicksForImperial();
+    
+    // تحويل وضع الوحدات
+    isMetric = false;
+    
+    // تحديث العرض
+    updateDisplayValues();
+    calculateSize();
+}
+
+// تحديث علامات التجزئة للوحدات المترية
+function updateTicksForMetric() {
+    var heightTicks = document.querySelectorAll('.lotus-measurement-slider-container:first-of-type .lotus-tick');
+    var weightTicks = document.querySelectorAll('.lotus-measurement-slider-container:last-of-type .lotus-tick');
+    
+    if (heightTicks.length === 0 || weightTicks.length === 0) {
+        console.error('علامات التجزئة غير موجودة!');
+        return;
+    }
+    
+    // تحديث علامات الطول
+    var heightValues = ['155', '165', '175', '185'];
+    for (var i = 0; i < heightTicks.length && i < heightValues.length; i++) {
+        heightTicks[i].textContent = heightValues[i];
+    }
+    
+    // تحديث علامات الوزن
+    var weightValues = ['50', '60', '70', '80', '90'];
+    for (var j = 0; j < weightTicks.length && j < weightValues.length; j++) {
+        weightTicks[j].textContent = weightValues[j];
+    }
+}
+
+// تحديث علامات التجزئة للوحدات الإمبريالية
+function updateTicksForImperial() {
+    var heightTicks = document.querySelectorAll('.lotus-measurement-slider-container:first-of-type .lotus-tick');
+    var weightTicks = document.querySelectorAll('.lotus-measurement-slider-container:last-of-type .lotus-tick');
+    
+    if (heightTicks.length === 0 || weightTicks.length === 0) {
+        console.error('علامات التجزئة غير موجودة!');
+        return;
+    }
+    
+    // تحديث علامات الطول
+    var heightValues = ['5\'1"', '5\'5"', '5\'9"', '6\'1"'];
+    for (var i = 0; i < heightTicks.length && i < heightValues.length; i++) {
+        heightTicks[i].textContent = heightValues[i];
+    }
+    
+    // تحديث علامات الوزن
+    var weightValues = ['110', '132', '154', '176', '198'];
+    for (var j = 0; j < weightTicks.length && j < weightValues.length; j++) {
+        weightTicks[j].textContent = weightValues[j];
+    }
+}
+
+// دالة المتابعة بالمقاس المحدد
+function proceedWithSize() {
+    console.log('المتابعة بالمقاس المحدد');
+    
+    var sizeResult = document.getElementById('lotus-size-result');
+    if (!sizeResult) {
+        console.error('عنصر المقاس غير موجود!');
+        return;
+    }
+    
+    var size = sizeResult.textContent;
+    if (size && size !== '-' && size !== '?') {
+        var orderFormSection = document.getElementById('order-now');
+        if (orderFormSection) {
+            orderFormSection.scrollIntoView({ behavior: 'smooth' });
+            
+            setTimeout(function() {
+                var sizeSelect = document.getElementById('dress-size');
+                if (sizeSelect) {
+                    for (var i = 0; i < sizeSelect.options.length; i++) {
+                        if (sizeSelect.options[i].value === size || sizeSelect.options[i].text.includes(size)) {
+                            sizeSelect.selectedIndex = i;
+                            var event = new Event('change');
+                            sizeSelect.dispatchEvent(event);
+                            break;
+                        }
+                    }
+                }
+            }, 800);
+        }
+    }
+}
+
+// التهيئة الأولية عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('تم تحميل الصفحة، بدء تهيئة حاسبة المقاسات');
+    updateDisplayValues();
+    calculateSize();
+});
+</script>

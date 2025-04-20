@@ -1,0 +1,224 @@
+/* CSS for Discount Section */
+.discount-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f9f9f9 0%, #f1f1f1 100%);
+}
+
+.discount-section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.discount-section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.discount-section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.discount-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.discount-option {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    width: 300px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.discount-option.animated {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.discount-option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.discount-option.popular {
+    border: 3px solid #f8bb00;
+}
+
+.popular-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f8bb00;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-bottom-left-radius: 8px;
+}
+
+.discount-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.discount-price {
+    font-size: 2.2rem;
+    color: #222;
+    font-weight: 800;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.original-price {
+    font-size: 1.3rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.discount-features {
+    margin: 25px 0;
+    text-align: right;
+}
+
+.discount-feature {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.discount-feature i {
+    color: #4CAF50;
+    margin-left: 10px;
+    font-size: 1.1rem;
+}
+
+.discount-feature.highlight {
+    font-weight: 600;
+    color: #333;
+}
+
+.discount-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #f8bb00;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 20px;
+}
+
+.discount-btn:hover {
+    background-color: #e6a800;
+    transform: translateY(-3px);
+}
+
+/* Free shipping tag */
+.free-shipping-tag {
+    background-color: #4CAF50;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .discount-options {
+        gap: 20px;
+    }
+    
+    .discount-option {
+        width: calc(50% - 20px);
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .discount-section {
+        padding: 40px 0;
+    }
+    
+    .discount-section-title {
+        font-size: 2rem;
+    }
+    
+    .discount-option {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .discount-title {
+        font-size: 1.3rem;
+    }
+    
+    .discount-price {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animation Delay for Each Card */
+.discount-option:nth-child(1).animated {
+    transition-delay: 0.1s;
+}
+
+.discount-option:nth-child(2).animated {
+    transition-delay: 0.3s;
+}
+
+.discount-option:nth-child(3).animated {
+    transition-delay: 0.5s;
+}
+
+/* Touch Optimizations for Mobile */
+@media (max-width: 767px) {
+    .discount-btn {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+    
+    /* Larger touch targets */
+    .discount-feature {
+        padding: 5px 0;
+    }
+    
+    /* Better visibility for active states on touch */
+    .discount-option:active {
+        background-color: #fafafa;
+    }
+    
+    .discount-btn:active {
+        background-color: #d99e00;
+    }
+} 

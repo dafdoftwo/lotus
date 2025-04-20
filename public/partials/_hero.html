@@ -1,0 +1,68 @@
+<!-- Hero Section -->
+<header class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <!-- Hero Media (Image + Video) - Moved to top for better mobile experience -->
+            <div class="hero-media">
+                <!-- Video container - now for all devices -->
+                <div class="hero-video-wrapper">
+                    <video autoplay muted loop playsinline id="hero-video">
+                        <source src="images/Black/black_video.mp4" type="video/mp4">
+                        <!-- Fallback text if video doesn't load -->
+                        متصفحك لا يدعم تشغيل الفيديو.
+                    </video>
+                </div>
+                
+                <!-- Static image fallback only if JavaScript is disabled -->
+                <!-- Removed non-existent image references
+                <div class="hero-image no-js-only">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/hero/hero-image-tablet.webp">
+                        <img src="images/hero/hero-image.webp" alt="فستان لوتس" class="primary-hero-image">
+                    </picture>
+                </div>
+                -->
+                
+                <!-- Floating badges - Solo contador, sin badge de descuento -->
+                <div class="floating-elements">
+                    <div class="floating-badge bottom">
+                        <div class="badge-content">
+                            <div class="timer-value" id="timerValue">05:00:00</div>
+                            <div class="timer-text">ينتهي العرض خلال</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile timer - improved visibility -->
+                <div class="mobile-timer">
+                    <div class="mobile-timer-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="mobile-timer-value" id="mobileTimerValue">05:00:00</div>
+                </div>
+            </div>
+            
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <div class="pre-title">الإطلالة الأكثر أناقة لعام 2025</div>
+                <h1 class="hero-title">فستان لوتس: أناقة لا مثيل لها وعروض لا تُفوَّت!</h1>
+                <p class="hero-subtitle">انغمسي في عالم من الأناقة الراقية مع فستان لوتس. مُصمم ليمنحكِ إطلالة آسرة تخطف الأنظار بقصّته الانسيابية.</p>
+                <div class="special-offer">
+                    <span>عرض خاص: وفري أكثر عند شراء قطعتين أو ثلاثة!</span>
+                </div>
+                <a href="#order-form-placeholder" class="btn btn-cta">اطلبي الآن واحصلي على عرضك</a>
+                
+                <div class="hero-badges">
+                    <div class="hero-badge">
+                        <i class="fas fa-truck"></i>
+                        <span>شحن مجاني مع 3 قطع</span>
+                    </div>
+                    <div class="hero-badge">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>الدفع عند الاستلام</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> 

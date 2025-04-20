@@ -1,12 +1,10 @@
 {
   "name": "lotus-dress",
   "version": "1.0.0",
-  "description": "Elegant landing page for Lotus Dress with admin panel",
-  "main": "index.html",
+  "description": "HELDEN/Lotus E-commerce Website",
+  "main": "index.js",
   "scripts": {
-    "deploy": "./deploy.sh",
-    "create-admin": "node create-admin.js",
-    "sync-deploy": "./sync-and-deploy.sh"
+    "create-admin": "node create-admin.js"
   },
   "keywords": [
     "e-commerce",
@@ -19,6 +17,6 @@
   "private": true,
   "dependencies": {
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
-    "firebase": "^10.11.0"
+    "firebase": "^10.12.0"
   }
 }

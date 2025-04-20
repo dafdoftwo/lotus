@@ -1,0 +1,498 @@
+<!-- Features Section -->
+<section class="features-section" id="features">
+    <div class="container">
+        <!-- معرض صور فستان لوتس -->
+        <div class="dress-gallery-section">
+            <h3 class="gallery-title">شاهدي فستان لوتس بأناقته المميزة</h3>
+            <p class="gallery-subtitle">مجموعة راقية من التصاميم بألوان متناسقة تناسب جميع الأذواق</p>
+            
+            <div class="dress-gallery">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="dress-card black-dress">
+                            <div class="dress-image">
+                                <img src="images/dresses/black.png" alt="فستان لوتس - اللون الأسود" onerror="this.src='https://via.placeholder.com/400x600/333333/ffffff?text=فستان+لوتس+الأسود'">
+                                <div class="dress-overlay">
+                                    <div class="color-tag">الأسود</div>
+                                    <div class="dress-details">
+                                        <h4>فستان لوتس الأسود</h4>
+                                        <p>الأناقة المطلقة بتفاصيل بيضاء تضيف لمسة من التميز</p>
+                                        <a href="#color-showcase-placeholder" class="dress-btn">عرض الألوان</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="dress-card red-dress">
+                            <div class="dress-image">
+                                <img src="images/dresses/red.png" alt="فستان لوتس - اللون الأحمر" onerror="this.src='https://via.placeholder.com/400x600/bf1e2e/ffffff?text=فستان+لوتس+الأحمر'">
+                                <div class="dress-overlay">
+                                    <div class="color-tag">الأحمر</div>
+                                    <div class="dress-details">
+                                        <h4>فستان لوتس الأحمر</h4>
+                                        <p>إطلالة جذابة تجمع بين الجرأة والأناقة لمناسباتك الخاصة</p>
+                                        <a href="#color-showcase-placeholder" class="dress-btn">عرض الألوان</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="dress-card white-dress">
+                            <div class="dress-image">
+                                <img src="images/dresses/white.png" alt="فستان لوتس - اللون الأبيض" onerror="this.src='https://via.placeholder.com/400x600/ffffff/333333?text=فستان+لوتس+الأبيض'">
+                                <div class="dress-overlay">
+                                    <div class="color-tag">الأبيض</div>
+                                    <div class="dress-details">
+                                        <h4>فستان لوتس الأبيض</h4>
+                                        <p>نقاء وبساطة مع خطوط أنيقة تمنحك إطلالة راقية ومريحة</p>
+                                        <a href="#color-showcase-placeholder" class="dress-btn">عرض الألوان</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="dress-card navy-dress">
+                            <div class="dress-image">
+                                <img src="images/dresses/navy-blue.png" alt="فستان لوتس - اللون الكحلي" onerror="this.src='https://via.placeholder.com/400x600/1A2351/ffffff?text=فستان+لوتس+الكحلي'">
+                                <div class="dress-overlay">
+                                    <div class="color-tag">الكحلي</div>
+                                    <div class="dress-details">
+                                        <h4>فستان لوتس الكحلي</h4>
+                                        <p>أناقة وفخامة مع اللون الكحلي الراقي المناسب للمناسبات المميزة</p>
+                                        <a href="#color-showcase-placeholder" class="dress-btn">عرض الألوان</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-cta">
+                    <p>أربعة ألوان فاخرة مصممة لتناسب ذوقك ومختلف المناسبات، مع قماش عالي الجودة وتفاصيل دقيقة</p>
+                    <a href="#order-form-placeholder" class="gallery-btn">اطلبي الآن</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Estilos específicos para la sección de características -->
+<style>
+    .features-section {
+        padding: 80px 0;
+        background-color: var(--light-color);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    @media (max-width: 768px) {
+        /* Optimizaciones móviles para animaciones */
+        .feature-card {
+            height: auto;
+            min-height: 250px;
+            transition: all 0.3s ease-out !important;
+        }
+        
+        /* Reducimos las animaciones en móvil para mejorar rendimiento */
+        .card-shine {
+            display: none;
+        }
+        
+        /* Simplificar efectos de hover en tarjetas para móviles */
+        .card-hovered {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+        }
+        
+        /* Mejorar tamaño y espaciado de iconos para toques en pantalla táctil */
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+    }
+    
+    /* Estilos de animaciones para características */
+    .section-header {
+        position: relative;
+    }
+    
+    /* Animaciones de entrada */
+    .features-section .section-title {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .features-section .section-title.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    @media (max-width: 768px) {
+        .benefits-counter {
+            position: relative;
+            top: -10px;
+            left: 0;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+<!-- Estilos específicos para pantallas extra pequeñas -->
+<style>
+    @media (max-width: 480px) {
+        .features-section {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<!-- Estilos específicos para معرض صور فستان لوتس -->
+<style>
+    /* معرض صور الفستان */
+    .dress-gallery-section {
+        margin: 60px 0;
+        text-align: center;
+    }
+    
+    .gallery-title {
+        font-size: 1.8rem;
+        color: var(--secondary-color);
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+    
+    .gallery-subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .dress-gallery {
+        overflow: hidden;
+    }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .gallery-item {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .gallery-item-large {
+        grid-row: span 2;
+    }
+    
+    .dress-image {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: #f9f9f9;
+    }
+    
+    .dress-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .dress-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        color: white;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+    
+    .dress-details {
+        text-align: right;
+    }
+    
+    .dress-details h4 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+    
+    .dress-details p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        opacity: 0.9;
+    }
+    
+    .color-tag {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--accent-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease 0.1s;
+        z-index: 2;
+    }
+    
+    .dress-btn {
+        display: inline-block;
+        padding: 8px 20px;
+        background: var(--accent-color);
+        color: white;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .dress-btn:hover {
+        background: #a1171e;
+        transform: translateY(-3px);
+    }
+    
+    .gallery-item:hover .dress-image img {
+        transform: scale(1.1);
+    }
+    
+    .gallery-item:hover .dress-overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .gallery-item:hover .color-tag {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .gallery-cta {
+        background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .gallery-cta p {
+        color: #444;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .gallery-btn {
+        display: inline-block;
+        padding: 12px 35px;
+        background: linear-gradient(135deg, var(--accent-color), #800f1a);
+        color: white;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(191, 30, 46, 0.2);
+    }
+    
+    .gallery-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(191, 30, 46, 0.3);
+    }
+    
+    /* تعديلات للأجهزة المحمولة */
+    @media (max-width: 992px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .gallery-item-large {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .dress-gallery-section {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            font-size: 1.5rem;
+        }
+        
+        .gallery-subtitle {
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        
+        .gallery-grid {
+            gap: 15px;
+        }
+        
+        .dress-overlay {
+            opacity: 1;
+            transform: translateY(0);
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0));
+        }
+        
+        .color-tag {
+            opacity: 1;
+            transform: translateY(0);
+            font-size: 0.8rem;
+            padding: 4px 12px;
+        }
+        
+        .dress-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .dress-details p {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .dress-btn {
+            padding: 6px 15px;
+            font-size: 0.8rem;
+        }
+        
+        .gallery-cta {
+            padding: 20px;
+        }
+        
+        .gallery-cta p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .gallery-btn {
+            padding: 10px 25px;
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .gallery-item-large {
+            grid-column: span 1;
+        }
+        
+        .dress-overlay {
+            padding: 12px;
+        }
+        
+        .color-tag {
+            top: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+        
+        .dress-details h4 {
+            font-size: 1rem;
+        }
+        
+        .gallery-cta p {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // تهيئة معرض الصور
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        // إضافة تأثير ظهور تدريجي مع تمرير الصفحة
+        if ('IntersectionObserver' in window) {
+            const galleryObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // تأخير متزايد لكل عنصر
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 150);
+                        galleryObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            // تجهيز عناصر المعرض للتحريك
+            galleryItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                galleryObserver.observe(item);
+            });
+        }
+        
+        // إضافة تفاعلات للصور على الأجهزة غير اللمسية
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (!isTouchDevice) {
+            galleryItems.forEach(item => {
+                // إظهار التفاصيل عند تمرير المؤشر
+                item.addEventListener('mouseenter', function() {
+                    const otherItems = [...galleryItems].filter(el => el !== item);
+                    otherItems.forEach(el => {
+                        el.style.opacity = '0.7';
+                        el.style.transform = 'scale(0.98)';
+                    });
+                });
+                
+                // إعادة العناصر لحالتها الطبيعية
+                item.addEventListener('mouseleave', function() {
+                    galleryItems.forEach(el => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'scale(1)';
+                    });
+                });
+            });
+        }
+    });
+</script> 

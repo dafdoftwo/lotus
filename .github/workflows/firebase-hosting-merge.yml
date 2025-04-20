@@ -16,9 +16,9 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LOTUS_48D81 }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LOTUS_HIJAB }}
           channelId: live
-          projectId: lotus-48d81
+          projectId: lotus-hijab
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
     defaults:

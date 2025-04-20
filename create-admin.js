@@ -1,62 +1,74 @@
-/**
- * Script to create an admin user in Firebase Authentication
- * Run with: node create-admin.js <email> <password>
- */
-
 const { initializeApp } = require('firebase/app');
-const { getAuth, createUserWithEmailAndPassword } = require('firebase/auth');
-const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccountKey.json');
+const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } = require('firebase/auth');
 
-// Firebase configuration
+// Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyDYU9lSIWN9MUREXrhkMr-hXPGgBc5upfw",
-  authDomain: "lotus-48d81.firebaseapp.com",
-  projectId: "lotus-48d81",
-  storageBucket: "lotus-48d81.firebasestorage.app",
-  messagingSenderId: "584959487002",
-  appId: "1:584959487002:web:7f6663e0f7855519aab5a3",
-  measurementId: "G-VZTR3BVL2M"
+  apiKey: "AIzaSyCUq7yBq_gu_W5O6SLTUO2upQUFNa0blL8",
+  authDomain: "loutus-higab.firebaseapp.com",
+  projectId: "loutus-higab",
+  storageBucket: "loutus-higab.firebasestorage.app",
+  messagingSenderId: "971174136438",
+  appId: "1:971174136438:web:a513b9b212260c34d52d57",
+  measurementId: "G-6EHG240K0E"
 };
 
-// Parse command line arguments
-const email = process.argv[2];
-const password = process.argv[3];
-
-if (!email || !password) {
-  console.error('Usage: node create-admin.js <email> <password>');
-  process.exit(1);
-}
-
-// Initialize Firebase Admin SDK
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
-// Initialize Firebase client SDK
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Create user
-createUserWithEmailAndPassword(auth, email, password)
+// Admin user details
+const email = 'senatorever@gmail.com';
+const password = 'ABMabm2122@@';
+const displayName = 'Lotus Admin';
+// User UID: RdIYWmYaCsV5jXbFybJBmWXVvFp2 (already exists)
+
+// Sign in with existing credentials
+signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // User created successfully
     const user = userCredential.user;
-    console.log(`✅ Admin user created successfully: ${user.email}`);
-    console.log(`UID: ${user.uid}`);
+    console.log('Successfully authenticated existing admin user:', user.uid);
     
-    // Set custom claims to make the user an admin
-    return admin.auth().setCustomUserClaims(user.uid, { admin: true })
-      .then(() => {
-        console.log('✅ Admin privileges granted');
-        console.log('\nYou can now log in to the admin panel at:');
-        console.log('https://lotus-48d81.web.app/admin');
-        process.exit(0);
-      });
+    // Update profile with display name if needed
+    return updateProfile(user, {
+      displayName: displayName
+    });
+  })
+  .then(() => {
+    console.log('Admin user profile updated successfully');
+    console.log('You can now log in with:');
+    console.log(`Email: ${email}`);
+    console.log(`Password: ${password}`);
+    process.exit(0);
   })
   .catch((error) => {
-    console.error('❌ Error creating admin user:');
-    console.error(`Code: ${error.code}`);
-    console.error(`Message: ${error.message}`);
-    process.exit(1);
+    console.error('Error authenticating admin user:', error.code, error.message);
+    
+    if (error.code === 'auth/user-not-found') {
+      // If user doesn't exist, create it
+      console.log('User not found, creating new admin user...');
+      
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log('Admin user created successfully:', user.uid);
+          
+          // Update profile with display name
+          return updateProfile(user, {
+            displayName: displayName
+          });
+        })
+        .then(() => {
+          console.log('Admin user profile updated successfully');
+          console.log('You can now log in with:');
+          console.log(`Email: ${email}`);
+          console.log(`Password: ${password}`);
+          process.exit(0);
+        })
+        .catch((createError) => {
+          console.error('Error creating admin user:', createError.code, createError.message);
+          process.exit(1);
+        });
+    } else {
+      process.exit(1);
+    }
   }); 

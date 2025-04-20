@@ -1,39 +1,41 @@
 #!/bin/bash
 
-# Ensure the script stops on first error
-set -e
+# توضيح عمل السكريبت
+echo "🚀 بدء عملية نشر موقع لوتس"
+echo "============================"
 
-echo "🔥 Starting deployment to Firebase Hosting..."
-
-# Copy the latest index.html to the public directory
-echo "📄 Copying latest index.html to public directory..."
-cp index.html public/
-
-# Ensure images directory exists in public
-echo "🖼️ Ensuring all media files are in place..."
-mkdir -p public/images
-
-# Check if Firebase CLI is installed
-if ! command -v firebase &> /dev/null; then
-    echo "Firebase CLI is not installed. Installing now..."
+# التأكد من وجود Firebase CLI
+if ! command -v firebase &> /dev/null
+then
+    echo "❌ لم يتم العثور على Firebase CLI. جاري التثبيت..."
     npm install -g firebase-tools
+else
+    echo "✅ Firebase CLI موجود بالفعل."
 fi
 
-# Login to Firebase (if not already logged in)
-echo "🔐 Checking Firebase login status..."
-firebase login --no-localhost
+# التأكد من تسجيل الدخول إلى Firebase
+echo "🔑 التحقق من حالة تسجيل الدخول إلى Firebase..."
+firebase login:list
+if [ $? -ne 0 ]; then
+    echo "👤 يرجى تسجيل الدخول إلى حساب Firebase الخاص بك"
+    firebase login
+else
+    echo "✅ تم تسجيل الدخول بالفعل إلى Firebase."
+fi
 
-# Select project
-echo "📦 Using project: lotus-48d81"
-firebase use lotus-48d81
+# تحديد مشروع Firebase
+echo "📦 Using project: loutus-higab"
+firebase use loutus-higab
 
-# Deploy storage rules first
-echo "📝 Deploying storage rules..."
-firebase deploy --only storage
+# بناء وتحسين الموقع (اختياري - يمكن تخصيصه حسب احتياجاتك)
+echo "🔨 تحضير الملفات للنشر..."
+# يمكنك إضافة خطوات بناء هنا مثل:
+# npm run build
 
-# Deploy to Firebase Hosting
-echo "🚀 Deploying to Firebase Hosting..."
+# نشر الموقع على Firebase Hosting
+echo "🚀 جاري نشر الموقع على Firebase Hosting..."
 firebase deploy --only hosting
 
-echo "✅ Deployment completed successfully!"
-echo "🌐 Your website is now live at: https://lotus-48d81.web.app" 
+# إظهار رسالة نجاح
+echo "✨ تم نشر الموقع بنجاح!"
+echo "🌐 Your website is now live at: https://loutus-higab.web.app" 

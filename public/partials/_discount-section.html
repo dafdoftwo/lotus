@@ -1,0 +1,222 @@
+<!-- قسم الخصومات والعروض -->
+<section id="discount-section" class="section discount-section">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">كلما اشتريتِ أكثر، وفرتِ أكثر!</h2>
+            <p class="section-subtitle">استفيدي من عروضنا الحصرية واحصلي على خصومات خاصة على الكميات</p>
+        </div>
+
+        <div class="discount-options-container">
+            <div class="discount-option">
+                <div class="discount-header">
+                    <h3 class="discount-title">1 فستان</h3>
+                    <div class="discount-price">770 جنية</div>
+                </div>
+                <div class="discount-features">
+                    <div class="discount-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>جودة فائقة</span>
+                    </div>
+                    <div class="discount-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>الدفع عند الاستلام</span>
+                    </div>
+                </div>
+                <a href="#order-now" class="discount-btn">اطلبي الآن</a>
+            </div>
+
+            <div class="discount-option popular">
+                <div class="popular-badge">الأكثر طلباً</div>
+                <div class="discount-header">
+                    <h3 class="discount-title">2 فستان</h3>
+                    <div class="discount-price">1399 جنية</div>
+                    <div class="discount-tag">خصم خاص!</div>
+                </div>
+                <div class="discount-features">
+                    <div class="discount-feature highlight">
+                        <i class="fas fa-check-circle"></i>
+                        <span>توفير 141 جنية</span>
+                    </div>
+                    <div class="discount-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>الدفع عند الاستلام</span>
+                    </div>
+                </div>
+                <a href="#order-now" class="discount-btn">اطلبي الآن</a>
+            </div>
+
+            <div class="discount-option">
+                <div class="discount-header">
+                    <h3 class="discount-title">3 فساتين</h3>
+                    <div class="discount-price">1900 جنية</div>
+                </div>
+                <div class="discount-features">
+                    <div class="discount-feature highlight">
+                        <i class="fas fa-check-circle"></i>
+                        <span>توفير 410 جنية</span>
+                    </div>
+                    <div class="discount-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>الدفع عند الاستلام</span>
+                    </div>
+                    <div class="discount-feature special">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>شحن مجاني!</span>
+                    </div>
+                </div>
+                <a href="#order-now" class="discount-btn">اطلبي الآن</a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .discount-section {
+            background-color: #f8f9fb;
+            padding: 60px 0;
+        }
+        
+        .discount-options-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .discount-option {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+        
+        .discount-option:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .discount-option.popular {
+            border: 2px solid #ff6b6b;
+            transform: scale(1.05);
+        }
+        
+        .discount-option.popular:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            width: max-content;
+            background-color: #ff6b6b;
+            color: white;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        .discount-header {
+            margin-bottom: 25px;
+        }
+        
+        .discount-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .discount-price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .discount-tag {
+            display: inline-block;
+            background-color: #ffeded;
+            color: #ff6b6b;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+        
+        .discount-features {
+            margin-bottom: 25px;
+        }
+        
+        .discount-feature {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            color: #555;
+        }
+        
+        .discount-feature i {
+            margin-left: 10px;
+            color: #4CAF50;
+        }
+        
+        .discount-feature.highlight {
+            font-weight: bold;
+            color: #222;
+        }
+        
+        .discount-feature.highlight i,
+        .discount-feature.special i {
+            color: #ff6b6b;
+        }
+        
+        .discount-feature.special {
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+        
+        .discount-btn {
+            display: block;
+            background-color: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .discount-btn:hover {
+            background-color: #ff5252;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .discount-options-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .discount-option {
+                width: 90%;
+                max-width: 350px;
+                margin-bottom: 20px;
+            }
+            
+            .discount-option.popular {
+                transform: scale(1);
+                order: -1;
+            }
+            
+            .discount-option.popular:hover {
+                transform: translateY(-8px);
+            }
+        }
+    </style>
+</section> 
